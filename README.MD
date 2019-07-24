@@ -18,7 +18,7 @@
   - **邮箱**
     + **[企鹅邮箱](https://w.mail.qq.com)**
     + **[临时邮箱](https://10minutemail.net/m/?lang=zh-cn)**
-  -  **音乐**
+  - **音乐**
     + **[无损音乐](http://www.xiaoluo666.cn/musicPlayer/)**
     + **[无损音乐](https://m.sq688.com/)**
     + **[在线听音乐](http://www.cndkk.com/Music/)**
@@ -104,7 +104,6 @@ fi
 echo -e "\n\n\n\n\n 输入bdy开始食用\n\n\n    config set -appid=310646 \n\n    cd /apps/baidu_shurufa \n\n    config set -appid=265486 \n\n    config set -savedir /sdcard/Android \n\n"
 ```
 
----
 ## 音乐
 ```
 白石溪             玉人歌
