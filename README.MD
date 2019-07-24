@@ -2,9 +2,6 @@
 
 ---
 > **bookstar**  
-  - **[我的时间站](https://nibazshab.github.io/time.html)**
-  - **[我的资源库](https://github.com/NibaZShab/NibaZShab.github.io/releases)**
-    + ---
   - **养老院**
     + **[聚合图床](https://www.superbed.cn/)**
     + **[github](https://github.com/)**
@@ -69,40 +66,40 @@ cat a b>c
 ```
 ---
 > $TERMUX_bps-go.sh
-```
-#! /bin/bash
-apt update && apt upgrade -y
-apt install zip wget -y
-termux-setup-storage
-action1()
-{
-   wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.3.3/BaiduPCS-Go-v3.3.3-android-21-arm64.zip
-   unzip 1.zip && rm 1.zip
-   mv BaiduPCS-Go-v3.3.3-android-21-arm64 BaiduPCS-Go
-   echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
-   chmod 777 $PREFIX/bin/bdy
-}
-action2()
-{
-   wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-android-21-arm64.zip
-   unzip 1.zip && rm 1.zip
-   mv BaiduPCS-Go-v3.5.6-android-21-arm64 BaiduPCS-Go
-   echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
-   chmod 777 $PREFIX/bin/bdy
-}
-read -p " 
-1 --- v3.3.3          2 --- v3.5.6
-YOUR CHOOSE IS " choose
-if [ $choose = "1" ]
-then
-    action1
-fi
-if [ $choose = "2" ]
-then
-    action2
-fi
-echo -e "\n\n\n\n\n 输入bdy开始食用\n\n\n    config set -appid=310646 \n\n    cd /apps/baidu_shurufa \n\n    config set -appid=265486 \n\n    config set -savedir /sdcard/Android \n\n"
-```
+  ```
+  #! /bin/bash
+  apt update && apt upgrade -y
+  apt install zip wget -y
+  termux-setup-storage
+  action1()
+  {
+     wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.3.3/BaiduPCS-Go-v3.3.3-android-21-arm64.zip
+     unzip 1.zip && rm 1.zip
+     mv BaiduPCS-Go-v3.3.3-android-21-arm64 BaiduPCS-Go
+     echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
+     chmod 777 $PREFIX/bin/bdy
+  }
+  action2()
+  {
+     wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-android-21-arm64.zip
+     unzip 1.zip && rm 1.zip
+     mv BaiduPCS-Go-v3.5.6-android-21-arm64 BaiduPCS-Go
+     echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
+     chmod 777 $PREFIX/bin/bdy
+  }
+  read -p " 
+  1 --- v3.3.3          2 --- v3.5.6
+  YOUR CHOOSE IS " choose
+  if [ $choose = "1" ]
+  then
+      action1
+  fi
+  if [ $choose = "2" ]
+  then
+      action2
+  fi
+  echo -e "\n\n\n\n\n 输入bdy开始食用\n\n\n    config set -appid=310646 \n\n    cd /apps/baidu_shurufa \n\n    config set -appid=265486 \n\n    config set -savedir /sdcard/Android \n\n"
+  ```
 
 ## 音乐
 ```
