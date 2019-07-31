@@ -1,8 +1,6 @@
 ---
 title: Huge The Book
 date: 2020-07-12 22:07:12
-description: 书签和一些好玩的东西
-comments: false
 ---
 
 # 404 NOT FOUND
@@ -48,6 +46,7 @@ comments: false
     + **[termux](https://www.sqlsec.com/2018/05/termux.html)**
 
 ## Lot Of Any
+
 ### termimal
 ```
 • aria2c启动指令
@@ -77,6 +76,7 @@ $ echo "abcdefg" >> abc
 • 新建文件夹abc
 $ mkdir abc
 ```
+
 ### vim
 ```
 • 把每一行的abc替换成cba
@@ -102,6 +102,7 @@ $ :set nowrap
 • 显示行号
 $ :set nu
 ```
+
 ### bps-go.sh
 ```bash
 #!/bin/bash
@@ -185,9 +186,12 @@ jojo的奇妙冒险
 Alice or Alice
 辉夜大小姐想让我告白
 ```
+
 ### read
-一个非常棒的电纸书阅读器的颜色配置
+一个非常棒的电纸书阅读器的颜色配置。
 
 | 背景 | 文本 | 
 | :------: | :------: | 
 | ![](/markdown/pictures/01.png) | ![](/markdown/pictures/02.png) |
+
+# 完
