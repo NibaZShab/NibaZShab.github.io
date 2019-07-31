@@ -1,4 +1,5 @@
 # 404 NOT FOUND
+---
 
 此文之实质乎，是乃**markdown**之文，近日，忽觉余之尚缺一博客，是故，题此文也。  
   
@@ -189,4 +190,5 @@ Alice or Alice
 | :------: | :------: | 
 | ![](/markdown/pictures/01.png) | ![](/markdown/pictures/02.png) |
 
+---
 # 完
