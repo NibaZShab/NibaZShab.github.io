@@ -1,9 +1,10 @@
 ---
 title: Huge The Book
 date: 2020-07-12 22:07:12
-description: 书签和一些好玩的东东
+description: 书签和一些好玩的东西
 comments: false
 ---
+
 # 404 NOT FOUND
 
 此文之实质乎，是乃**markdown**之文，近日，忽觉余之尚缺一博客，是故，题此文也。  
@@ -24,6 +25,7 @@ comments: false
     + **[github](https://github.com/)**
     + **[百度云](https://pan.baidu.com/)**
     + **[聚合图床](https://www.superbed.cn/)**
+    + **[石墨文档](https://shimo.im/)**
   - **不可名状**
     + **[好萌动漫](https://nicemoe.at/)**
     + **[熊猫书签exhentai](https://expanda.org/)**
@@ -44,7 +46,6 @@ comments: false
     + **[pixiv图搜图](http://saucenao.com/)**
     + **[内网穿透](https://ngrok.com)**
     + **[termux](https://www.sqlsec.com/2018/05/termux.html)**
-    + **[石墨文档](https://shimo.im/)**
 
 ## Lot Of Any
 ### termimal
@@ -185,13 +186,8 @@ Alice or Alice
 辉夜大小姐想让我告白
 ```
 ### read
-```
-• 背景颜色值
-$ #FFF5EFD9
-$ (245,239,217,255)
-```
-```
-• 文字颜色值
-$ #FF191910
-$ (25,25,16,255)
-```
+一个非常棒的电纸书阅读器的颜色配置
+
+| 背景 | 文本 | 
+| :------: | :------: | 
+| ![](/markdown/pictures/01.png) | ![](/markdown/pictures/02.png) |
