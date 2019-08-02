@@ -139,31 +139,7 @@ then
 fi
 echo -e "\n\n\n\n\n 输入bdy开始食用\n\n\n    config set -appid=310646 \n\n    cd /apps/baidu_shurufa \n\n    config set -appid=265486 \n\n    config set -savedir /sdcard/Android \n\n"
 ```
-### music
-```
-白石溪             玉人歌
-落花雨             漂亮面对
-仙居谣             霜雪千年
-山外小楼夜听雨       一半一半
-两小无猜           千年食谱颂
-前尘如梦           I LOVE U
-锦鲤抄             极乐净土
-世末歌者           寄明月
-深夜诗人           花依世界·凝
-V家萌妹            咸咸的
-嘘つきは恋のはじまり 东京不太热
-葬歌               灰烬
-阴阳先生           圈圈点点圈圈点点
-骑士背影           我的一个道姑朋友
-泠重乞愿           一重加害
-二重变革           三重爱恋
-四重罪孽           五重空洞
-六重不忠           七重诟病
-八重回归           九重现实
-十重孤独           长夜雨
-追光使者           孙尚香
-权御天下&操戈天下
-```
+
 ### anime
 ```
 在下坂本，有何贵干
@@ -192,8 +168,11 @@ Alice or Alice
 一个非常棒的电纸书阅读器的颜色配置。
 
 | 背景 | 文本 | 
-| :------: | :------: | 
+| :---: | :---: | 
 | ![](/markdown/pictures/01.png) | ![](/markdown/pictures/02.png) |
+
+### music
+![](/markdown/pictures/03.png
 
 ---
 # 完
