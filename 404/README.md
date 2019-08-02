@@ -1,13 +1,7 @@
 # 404 NOT FOUND
 ---
 
-此文之实质乎，是乃**markdown**之文，近日，忽觉余之尚缺一博客，是故，题此文也。  
-  
-是以集书签之素雅，动漫之风趣，亦有天籁之音相伴。  
-  
-可悲，余长叹余之**html**尚浅，不足以登大雅之堂，若论**css**及**js**脚本，余实属无奈。至于此，不得已题此**markdown**。  
-  
-若有来者，愿助余之题**html**之文，余自当感激不尽，不胜言谢。  
+此文之质，乃``MarkDown``之文。近日，忽觉余之尚缺一博客乎，是故，题此文也。是以集书签之素雅，动漫之风趣，亦有天籁之音相伴。可悲，余长叹余之``HTML``功力尚浅，不足以登大雅之堂，若论``CSS``及``JavaScript``，余则实属无奈。至于此，不得已题此``MarkDown``。若有来者，愿助余之题``HTML``之文，余自当感激不尽，不胜言谢。
 
 ## Huge The Book
 > **bookstars**  
@@ -46,7 +40,11 @@
 ### termimal
 ```
 • aria2c启动指令
-$ aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c
+$ aria2c --enable-rpc --rpc-listen-all
+```
+```
+• 当前目录路径
+$ ./
 ```
 ```
 • apk内部资源路径
@@ -63,10 +61,6 @@ $ chattr -或+R +i abc
 ```
 • 合并文件a和b为文件c
 $ cat a b > c
-```
-```
-• 新建文件abc并写入abcdefg
-$ echo "abcdefg" >> abc
 ```
 ```
 • 新建文件夹abc
@@ -160,7 +154,7 @@ Alice or Alice
 ```
 
 ### read
-一个非常棒的电纸书阅读器的颜色配置。
+下面的是一个非常棒的电纸书阅读器的界面的颜色配置。
 
 | 背景 | 文本 | 
 | :---: | :---: | 
