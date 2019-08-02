@@ -167,7 +167,7 @@ Alice or Alice
 | ![](/markdown/pictures/01.png) | ![](/markdown/pictures/02.png) |
 
 ### music
-![](/markdown/pictures/03.png
+![](/markdown/pictures/03.png)
 
 ---
 # 完
