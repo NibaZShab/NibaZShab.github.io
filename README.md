@@ -1,5 +1,39 @@
-## You need not to README. 
-**This is just a markdown md, it don not have some important things.**  
+# README
+---
+
+虽然  
   
-### Nothing to read.
-**Somethings if you want to konw, please [chick here](https://nibazshab.github.io/404).**
+这篇文章名字  
+  
+叫做  
+  
+**README**  
+  
+但是  
+  
+其实你  
+  
+根本不必  
+  
+**README**  
+  
+因为  
+  
+这里根本就  
+  
+没有  
+  
+需要你知道的  
+  
+**but**  
+  
+你也可以考虑一下  
+
+**[看看我的信息资料](/about)**  
+  
+然后  
+  
+### 关注我
+
+---
+# 完
