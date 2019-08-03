@@ -27,17 +27,6 @@ date: 2019-08-02 14:07:25
 * [github开源地址](https://github.com/termux/termux-app)
 * [Google Play下载地址](https://play.google.com/store/apps/details?id=com.termux)
 
-# 基本操作
-## 从屏幕左往右划
-可以添加新的终端窗口，显示隐藏快捷键，给窗口改名
-
-![](/markdown/pictures/05.png)
-
-## 自定义快捷键
-快捷键是``$HOME/.termux/``下的``termux.properties``文件，可以修改它添加更多快捷键
-
-![](/markdown/pictures/06.png)
-
 # 基本命令
 这里主要提一下``pkg``命令，简单介绍一下，如下：
 ```sh
@@ -52,6 +41,17 @@ pkg list-installed            列出已经安装的包
 pkg shoe <package>            显示某个包的详细信息
 pkg files <package>           显示某个包的相关文件夹路径
 ```
+
+# 基本操作
+## 从屏幕左往右划
+可以添加新的终端窗口，显示隐藏快捷键，给窗口改名
+
+![](/markdown/pictures/05.png)
+
+## 自定义快捷键
+快捷键是``$HOME/.termux/``下的``termux.properties``文件，可以修改它添加更多快捷键
+
+![](/markdown/pictures/06.png)
 
 # 目录环境结构
 ```sh
@@ -69,7 +69,7 @@ pkg files <package>           显示某个包的相关文件夹路径
 ![](/markdown/pictures/07.png)
 
 # 更换为国内源
-因为某些众所周知的原因，默认的源非常的慢，所以需要切换为国内的源，这里推荐清华大学源
+因为某些众所周知的原因，官方源非常的慢，所以需要切换为国内的源，推荐清华大学源
 
 ## 官方的解决方法
 设置默认编辑器
@@ -115,7 +115,7 @@ ln -s /data/data/com.termux/files/home/storage/shared/Pictures Pictures
 
 ![](/markdown/pictures/11.png)
 
-当我们用了一段时间的``Termux``之后，也许会想要自定义一下启动问候语，这时候就可以进行一些操作  
+当我们用了一段时间的``Termux``之后，也许会想要自定义一下启动问候语，这时候就可以这样  
 编辑问候语文件直接修改：
 ```sh
 vim $PREFIX/etc/motd
@@ -127,7 +127,7 @@ vim $PREFIX/etc/motd
 # 管理员身份
 在进行终端操作时，我们难免会遇到需要管理员权限的问题，在管理员身份下，输入``exit``可回到普通身份
 ## 没有ROOT
-利用proot工具来模拟某些需要root的环境
+利用``proot``工具来模拟某些需要``root``的环境
 ```sh
 pkg install proot
 ```
@@ -138,7 +138,7 @@ termux-chroot
 即可模拟``root``环境
 在这个``proot``环境下面,相当于是进入了``home``目录,可以很方便地进行一些配置
 ## 已经ROOT
-由于直接输入``su``会导致一些功能丢失，所以我们采用``Termux``专门的``tsu``
+由于直接输入``su``会导致一些功能丢失，所以我们采用``Termux``专求的``tsu``来代替``su``
 ```sh
 pkg install tsu
 ```
@@ -245,4 +245,4 @@ caddy
 
 ---
 # 完
-注：本文主要来自[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)
+注：本文优化自[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)

@@ -13,18 +13,18 @@ Termux是一个Android下一个高级的终端模拟器，开源且不需要root
 <li><a href="https://github.com/termux/termux-app" target="_blank" rel="noopener">github开源地址</a></li>
 <li><a href="https://play.google.com/store/apps/details?id=com.termux" target="_blank" rel="noopener">Google Play下载地址</a></li>
 </ul>
+<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><p>这里主要提一下<code>pkg</code>命令，简单介绍一下，如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pkg search &lt;query&gt;            搜索包</span><br><span class="line">pkg install &lt;package&gt;         安装包</span><br><span class="line">pkg uninstall &lt;package&gt;       卸载包</span><br><span class="line">pkg reinstall &lt;package&gt;       重新安装包</span><br><span class="line">pkg update                    更新源</span><br><span class="line">pkg upgrade                   升级软件包</span><br><span class="line">pkg list-all                  列出可供安装的所有包</span><br><span class="line">pkg list-installed            列出已经安装的包</span><br><span class="line">pkg shoe &lt;package&gt;            显示某个包的详细信息</span><br><span class="line">pkg files &lt;package&gt;           显示某个包的相关文件夹路径</span><br></pre></td></tr></table></figure>
+
 <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="从屏幕左往右划"><a href="#从屏幕左往右划" class="headerlink" title="从屏幕左往右划"></a>从屏幕左往右划</h2><p>可以添加新的终端窗口，显示隐藏快捷键，给窗口改名</p>
 <p><img src="/markdown/pictures/05.png" alt></p>
 <h2 id="自定义快捷键"><a href="#自定义快捷键" class="headerlink" title="自定义快捷键"></a>自定义快捷键</h2><p>快捷键是<code>$HOME/.termux/</code>下的<code>termux.properties</code>文件，可以修改它添加更多快捷键</p>
 <p><img src="/markdown/pictures/06.png" alt></p>
-<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><p>这里主要提一下<code>pkg</code>命令，简单介绍一下，如下：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pkg search &lt;query&gt;            搜索包</span><br><span class="line">pkg install &lt;package&gt;         安装包</span><br><span class="line">pkg uninstall &lt;package&gt;       卸载包</span><br><span class="line">pkg reinstall &lt;package&gt;       重新安装包</span><br><span class="line">pkg update                    更新源</span><br><span class="line">pkg upgrade                   升级软件包</span><br><span class="line">pkg list-all                  列出可供安装的所有包</span><br><span class="line">pkg list-installed            列出已经安装的包</span><br><span class="line">pkg shoe &lt;package&gt;            显示某个包的详细信息</span><br><span class="line">pkg files &lt;package&gt;           显示某个包的相关文件夹路径</span><br></pre></td></tr></table></figure>
-
 <h1 id="目录环境结构"><a href="#目录环境结构" class="headerlink" title="目录环境结构"></a>目录环境结构</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">~ &gt; <span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line">/data/data/com.termux/files/home</span><br><span class="line"></span><br><span class="line"> ~ &gt; <span class="built_in">echo</span> <span class="variable">$PREFIX</span></span><br><span class="line">/data/data/com.termux/files/usr</span><br><span class="line"></span><br><span class="line"> ~ &gt; <span class="built_in">echo</span> <span class="variable">$TMPPREFIX</span></span><br><span class="line">/data/data/com.termux/files/usr/tmp/zsh</span><br></pre></td></tr></table></figure>
 
 <p>这个HOME路径看上去不太一样,为了方便,<code>Termux</code>提供了一个特殊的环境变量<code>PREFIX</code></p>
 <p><img src="/markdown/pictures/07.png" alt></p>
-<h1 id="更换为国内源"><a href="#更换为国内源" class="headerlink" title="更换为国内源"></a>更换为国内源</h1><p>因为某些众所周知的原因，默认的源非常的慢，所以需要切换为国内的源，这里推荐清华大学源</p>
+<h1 id="更换为国内源"><a href="#更换为国内源" class="headerlink" title="更换为国内源"></a>更换为国内源</h1><p>因为某些众所周知的原因，官方源非常的慢，所以需要切换为国内的源，推荐清华大学源</p>
 <h2 id="官方的解决方法"><a href="#官方的解决方法" class="headerlink" title="官方的解决方法"></a>官方的解决方法</h2><p>设置默认编辑器</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> EDITOR=vi</span><br></pre></td></tr></table></figure>
 
@@ -48,20 +48,20 @@ Termux是一个Android下一个高级的终端模拟器，开源且不需要root
 <p>这样可以直接在<code>home</code>目录下去访问<code>Pictures</code>文件夹,非常方便文件的传输，大大提升了工作效率</p>
 <h2 id="修改启动问候语"><a href="#修改启动问候语" class="headerlink" title="修改启动问候语"></a>修改启动问候语</h2><p>默认的问候语如下图：</p>
 <p><img src="/markdown/pictures/11.png" alt></p>
-<p>当我们用了一段时间的<code>Termux</code>之后，也许会想要自定义一下启动问候语，这时候就可以进行一些操作<br>编辑问候语文件直接修改：</p>
+<p>当我们用了一段时间的<code>Termux</code>之后，也许会想要自定义一下启动问候语，这时候就可以这样<br>编辑问候语文件直接修改：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="variable">$PREFIX</span>/etc/motd</span><br></pre></td></tr></table></figure>
 
 <p>修改完的效果如下：</p>
 <p><img src="/markdown/pictures/12.png" alt></p>
 <h1 id="管理员身份"><a href="#管理员身份" class="headerlink" title="管理员身份"></a>管理员身份</h1><p>在进行终端操作时，我们难免会遇到需要管理员权限的问题，在管理员身份下，输入<code>exit</code>可回到普通身份</p>
-<h2 id="没有ROOT"><a href="#没有ROOT" class="headerlink" title="没有ROOT"></a>没有ROOT</h2><p>利用proot工具来模拟某些需要root的环境</p>
+<h2 id="没有ROOT"><a href="#没有ROOT" class="headerlink" title="没有ROOT"></a>没有ROOT</h2><p>利用<code>proot</code>工具来模拟某些需要<code>root</code>的环境</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install proot</span><br></pre></td></tr></table></figure>
 
 <p>然后在终端输入如下指令：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-chroot</span><br></pre></td></tr></table></figure>
 
 <p>即可模拟<code>root</code>环境<br>在这个<code>proot</code>环境下面,相当于是进入了<code>home</code>目录,可以很方便地进行一些配置</p>
-<h2 id="已经ROOT"><a href="#已经ROOT" class="headerlink" title="已经ROOT"></a>已经ROOT</h2><p>由于直接输入<code>su</code>会导致一些功能丢失，所以我们采用<code>Termux</code>专门的<code>tsu</code></p>
+<h2 id="已经ROOT"><a href="#已经ROOT" class="headerlink" title="已经ROOT"></a>已经ROOT</h2><p>由于直接输入<code>su</code>会导致一些功能丢失，所以我们采用<code>Termux</code>专求的<code>tsu</code>来代替<code>su</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install tsu</span><br></pre></td></tr></table></figure>
 
 <p>然后输入：</p>
@@ -116,5 +116,5 @@ Termux是一个Android下一个高级的终端模拟器，开源且不需要root
 <p><img src="/markdown/pictures/15.png" alt></p>
 <p>可以在设置界面里面<code>设置简体中文</code>,可以修改<code>更新默认密码</code><br>可以直接查看文件，也支持Linux命令搜索</p>
 <hr>
-<h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1><p>注：本文主要来自<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程</a></p>
+<h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1><p>注：本文优化自<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程</a></p>
 </div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-02</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://yoursite.com/2019/08/02/Termux-Of-Used/,Hexo Book,终端termux的一些配置,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2020/07/12/Huge-The-Book/" title="Huge The Book">Prev Page</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/07/19/Welcome-To-Hexo/" title="初始默认文章">Next Page</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
