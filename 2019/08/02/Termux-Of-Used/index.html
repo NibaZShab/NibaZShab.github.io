@@ -98,23 +98,14 @@ Termux是一个Android下一个高级的终端模拟器，开源且不需要root
 
 <p>使用效果图，亲测挺好用的：</p>
 <p><img src="/markdown/pictures/14.png" alt></p>
-<h1 id="多功能文件分享"><a href="#多功能文件分享" class="headerlink" title="多功能文件分享"></a>多功能文件分享</h1><ul>
-<li><a href="https://github.com/mholt/caddy" target="_blank" rel="noopener">官方项目地址</a></li>
+<h1 id="局域网文件分享"><a href="#局域网文件分享" class="headerlink" title="局域网文件分享"></a>局域网文件分享</h1><ul>
+<li><img src="https://filebrowser.xyz/" alt="官方网站"><br><code>filebrowser</code>是一个局域网分享文件的优质项目<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://filebrowser.xyz/get.sh | bash</span><br><span class="line">filebrowser -r /你要分享的文件路径</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<h3 id="安装caddy"><a href="#安装caddy" class="headerlink" title="安装caddy"></a>安装caddy</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">curl https://getcaddy.com | bash -s personal http.filemanager</span><br></pre></td></tr></table></figure>
-
-<p>这一步可能要执行很久，耐心等待就好</p>
-<h3 id="编写配置文件"><a href="#编写配置文件" class="headerlink" title="编写配置文件"></a>编写配置文件</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vim Caddyfile</span><br></pre></td></tr></table></figure>
-
-<h3 id="内容如下"><a href="#内容如下" class="headerlink" title="内容如下"></a>内容如下</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:8080 &#123;</span><br><span class="line">filemanager / /sdcard</span><br><span class="line">timeouts none</span><br><span class="line">gzip</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里的<code>8080</code>端口号可以随意指定,因为手机权限比较低,所以一般设置<code>1024</code>以上的端口</p>
-<h3 id="启动caddy"><a href="#启动caddy" class="headerlink" title="启动caddy"></a>启动caddy</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caddy</span><br></pre></td></tr></table></figure>
-
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>浏览器访问<code>http://127.0.0.1:8080</code>即可，局域网内的用户访问手机<code>ip</code>地址即可.</p>
-<p>默认账号和密码为<code>admin</code>,<code>admin</code></p>
+<p>浏览器访问<code>http://127.0.0.1:8080</code>即可，局域网内的用户访问手机<code>ip</code>地址即可  </p>
+<p>默认的账号和密码都是<code>admin</code></p>
 <p><img src="/markdown/pictures/15.png" alt></p>
-<p>可以在设置界面里面<code>设置简体中文</code>,可以修改<code>更新默认密码</code><br>可以直接查看文件，也支持Linux命令搜索</p>
 <hr>
 <h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1><p>注：本文选自<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">Termux 高级终端安装使用配置教程</a></p>
 </div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-02</span><i class="fa fa-tag"></i></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2090/01/27/404-Helpful/" title="公益404，做有温度的网站">Prev Page</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/07/19/Welcome-To-Hexo/" title="初始默认文章">Next Page</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

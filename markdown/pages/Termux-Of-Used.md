@@ -204,44 +204,18 @@ node node-server.js
 
 ![](/markdown/pictures/14.png)
 
-# 多功能文件分享
-* [官方项目地址](https://github.com/mholt/caddy)
-
-### 安装caddy
-```sh
-cd ~
-curl https://getcaddy.com | bash -s personal http.filemanager
+# 局域网文件分享
+* ![官方网站](https://filebrowser.xyz/)
+``filebrowser``是一个局域网分享文件的优质项目
 ```
-这一步可能要执行很久，耐心等待就好
-
-### 编写配置文件
-```sh
-cd ~
-vim Caddyfile
+curl -fsSL https://filebrowser.xyz/get.sh | bash
+filebrowser -r /你要分享的文件路径
 ```
-### 内容如下
-```sh
-:8080 {
-filemanager / /sdcard
-timeouts none
-gzip
-}
-```
-这里的``8080``端口号可以随意指定,因为手机权限比较低,所以一般设置``1024``以上的端口
-
-### 启动caddy
-```sh
-caddy
-```
-## 效果
-浏览器访问``http://127.0.0.1:8080``即可，局域网内的用户访问手机``ip``地址即可.
-
-默认账号和密码为``admin``,``admin``
+浏览器访问``http://127.0.0.1:8080``即可，局域网内的用户访问手机``ip``地址即可  
+  
+默认的账号和密码都是``admin``
 
 ![](/markdown/pictures/15.png)
-
-可以在设置界面里面``设置简体中文``,可以修改``更新默认密码``
-可以直接查看文件，也支持Linux命令搜索
 
 ---
 # 完
