@@ -43,10 +43,6 @@
 $ aria2c --enable-rpc --rpc-listen-all
 ```
 ```
-• 当前目录路径
-$ ./
-```
-```
 • apk内部资源路径
 $ /android_asset/
 ```
@@ -61,10 +57,6 @@ $ chattr -或+R +i abc
 ```
 • 合并文件a和b为文件c
 $ cat a b > c
-```
-```
-• 新建文件夹abc
-$ mkdir abc
 ```
 
 ### vim
