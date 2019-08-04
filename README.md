@@ -29,7 +29,7 @@
   
 你也可以考虑一下  
 
-**[看看我的信息资料](/about)**  
+**[看看我的信息资料](https://nibazshab.github.io/about)**  
   
 然后  
   
