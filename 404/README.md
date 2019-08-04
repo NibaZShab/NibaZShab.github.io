@@ -58,6 +58,10 @@ $ chattr -或+R +i abc
 • 合并文件a和b为文件c
 $ cat a b > c
 ```
+```
+• 清空abc内容但不删除abc
+$ : > abc
+```
 
 ### vim
 ```

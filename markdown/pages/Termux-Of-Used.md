@@ -205,7 +205,7 @@ node node-server.js
 ![](/markdown/pictures/14.png)
 
 # 局域网文件分享
-* ![官方网站](https://filebrowser.xyz/)
+* [官方项目](https://filebrowser.xyz)
 ``filebrowser``是一个局域网分享文件的优质项目
 ```
 curl -fsSL https://filebrowser.xyz/get.sh | bash
