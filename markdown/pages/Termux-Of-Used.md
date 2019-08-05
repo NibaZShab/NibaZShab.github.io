@@ -204,19 +204,15 @@ node node-server.js
 
 ![](/markdown/pictures/14.png)
 
-# 局域网文件分享
-* [官方项目](https://filebrowser.xyz)
-``filebrowser``是一个局域网分享文件的优质项目
+# 终端二维码
+Linux 命令行下的二维码，主要核心是这个网址：``http://qrenco.de/``
+**注：``"``和``"``之间可以填写任意字符**
+```sh
+echo "http://qrenco.de/" |curl -F-=\<- qrenco.de
 ```
-curl -fsSL https://filebrowser.xyz/get.sh | bash
-filebrowser -r /你要分享的文件路径
-```
-浏览器访问``http://127.0.0.1:8080``即可，局域网内的用户访问手机``ip``地址即可  
-  
-默认的账号和密码都是``admin``
-
 ![](/markdown/pictures/15.png)
+如果你不嫌无聊的话还可以扫一下这个二维码，然后就打开我的博客了
 
 ---
 # 完
-注：本文选自[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)
+注：转载于[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)
