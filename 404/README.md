@@ -28,7 +28,7 @@
     + **[无损音乐](https://m.sq688.com/)**
     + **[在线听音乐](http://www.cndkk.com/Music/)**
   - **没什么用**
-    + **[网页自动生成](http://sc.ilysc.cn/)**
+    + **[网站生成器](http://sc.ilysc.cn/)**
     + **[腾讯微Q关闭推送广告](https://privacy.qq.com/yszc-m.htm)**
     + **[web ua检测](http://service.spiritsoft.cn/ua.html)**
     + **[pixiv图搜图](http://saucenao.com/)**
@@ -62,6 +62,10 @@ $ cat a b > c
 • 清空abc内容但不删除abc
 $ : > abc
 ```
+```
+• 查找文件abc并删除
+$ find / -name "abc" |xargs rm -rf
+```
 
 ### vim
 ```
@@ -87,6 +91,10 @@ $ :set nowrap
 ```
 • 显示行号
 $ :set nu
+```
+```
+• 清空当前行
+$ dd
 ```
 
 ### bps-go.sh
