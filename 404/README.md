@@ -14,12 +14,14 @@
     + **[百度云](https://pan.baidu.com/)**
     + **[聚合图床](https://www.superbed.cn/)**
     + **[石墨文档](https://shimo.im/)**
+    + **[奶牛快传](https://cowtransfer.com/)**
   - **不可名状**
     + **[好萌动漫](https://nicemoe.at/)**
     + **[熊猫书签exhentai](https://expanda.org/)**
     + **[恋爱游戏网](https://www.lianaiyx.com/)**
     + **[galgames发布地](https://www.nyagal.com/)**
     + **[loadbt](https://www.loadbt.com/files)**
+    + **[bt搜索聚合](https://hao.su/909/)**
   - **邮箱**
     + **[企鹅邮箱](https://w.mail.qq.com)**
     + **[临时邮箱](https://10minutemail.net/m/?lang=zh-cn)**
@@ -155,6 +157,8 @@ jojo的奇妙冒险
 轻音少女
 Alice or Alice
 辉夜大小姐想让我告白
+GJ部
+平凡职业造就世界最强
 ```
 
 ### read
