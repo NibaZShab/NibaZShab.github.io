@@ -9,7 +9,7 @@ echo "https://sssssystem.github.io" >> Sssssystem
 ```bash
 echo "点击下方图片" >> README.md
 ```
-``bash
+```bash
 echo "打开新世界">> README.md
 ```
 
