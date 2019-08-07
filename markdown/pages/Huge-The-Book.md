@@ -19,8 +19,8 @@ date: 2090-01-27 12:07:12
     + **[github](https://github.com/)**
     + **[百度云](https://pan.baidu.com/)**
     + **[聚合图床](https://www.superbed.cn/)**
-    + **[石墨文档](https://shimo.im/)**
     + **[奶牛传输](https://cowtransfer.com/)**
+    + **[石墨文档](https://shimo.im/)**
   - **不可名状**
     + **[好萌动漫](https://nicemoe.at/)**
     + **[熊猫书签exhentai](https://expanda.org/)**
@@ -46,61 +46,57 @@ date: 2090-01-27 12:07:12
 ## Lot Of Any
 
 ### termimal
-```
-• aria2c启动指令
-$ aria2c --enable-rpc --rpc-listen-all
-```
-```
+```sh
 • apk内部资源路径
 $ /android_asset/
 ```
-```
+```sh
 • 挂载目录为可读写
 $ mount -o remount -rw  /
 ```
-```
+```sh
 • 加或解锁文件abc
 $ chattr -或+R +i abc
 ```
-```
+```sh
 • 合并文件a和b为文件c
 $ cat a b > c
 ```
-```
+```sh
 • 清空abc内容但不删除abc
 $ : > abc
 ```
-```
+```sh
 • 查找文件abc并删除
 $ find / -name "abc" |xargs rm -rf
 ```
 
 ### vim
-```
+```sh
 • 把每一行的abc替换成cba
 $ :1,$s/abc/cba/g
 ```
-```
+```sh
 • 把包含abc的行全部删除
 $ :g/abc/d
 ```
-```
+```sh
 • 在每一行行首添加abc
 $ :%s/^/abc/
 ```
-```
+```sh
 • 在每一行行尾添加abc
 $ :%s/$/abc/
 ```
-```
+```sh
 • 取消自动折行
 $ :set nowrap
 ```
-```
+```sh
 • 显示行号
 $ :set nu
 ```
-```
+```sh
 • 清空当前行
 $ dd
 ```

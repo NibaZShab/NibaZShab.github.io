@@ -1,6 +1,6 @@
 ---
 title: 终端termux的一些配置
-date: 2019-08-02 14:07:25
+date: 2019-08-07 20:59:16
 ---
 
 ![](/markdown/pictures/04.png)
@@ -189,7 +189,7 @@ pkg install aria2
 ```
 ### 本地启动
 ```sh
-aria2c --enable-rpc --rpc-listen-all
+aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c
 ```
 这个``rpc``服务模式监听的是``6800``端口，方便接下来的 Web 界面的操作
 
