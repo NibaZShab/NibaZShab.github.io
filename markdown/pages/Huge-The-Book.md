@@ -13,13 +13,14 @@ date: 2090-01-27 12:07:12
   - **[我的图与时钟](https://nibazshab.github.io/404/time.html)**
   - **[我的hexo博客](https://nibazshab.github.io)**
   - **[我的旧破烂站](https://github.com/NibaZShab/NibaZShab.github.io/releases)**
+  - **[刘宇哲的小站](https://sssssystem.github.io)**
     + ---
   - **养老院**
     + **[github](https://github.com/)**
     + **[百度云](https://pan.baidu.com/)**
     + **[聚合图床](https://www.superbed.cn/)**
     + **[石墨文档](https://shimo.im/)**
-    + **[奶牛快传](https://cowtransfer.com/)**
+    + **[奶牛传输](https://cowtransfer.com/)**
   - **不可名状**
     + **[好萌动漫](https://nicemoe.at/)**
     + **[熊猫书签exhentai](https://expanda.org/)**
