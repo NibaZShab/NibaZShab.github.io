@@ -221,6 +221,8 @@ time echo "scale = 10000;4 * a(1)" | bc -l
 ```
 ![](/markdown/pictures/17.png)
 
+我这里计算的是小数点后``1000``位，计算``10000``位毕竟消耗时间，懒得等
+
 # 刷流量
 这是一个刷流量的指令，会一直消耗你的流量，我也不知道为啥要刷流量，有什么意义吗？
 ```sh
@@ -230,11 +232,12 @@ do
 wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk 
 done
 ```
-注：``/dev/null``是手机上的一个目录，不过完全不占内存，类似于``linux黑洞``，所有指向这个目录的内容全部都会消失！  
-注：后面那个``https://dlie.......``是一个下载链接，可以自己替换掉
+``/dev/null``是手机上的一个目录，类似于``linux黑洞``，所有指向这个路径的文件都会消失  
+  
+注：后面那个``https://dlie5.myapp.com/m.......``是一个下载链接，可以自己替换掉
 
 # 终端版百度云
-这是一位大佬开发的项目``BaiduPCS-Go``, 原本是可以做到不限速下载百度云的，可惜在去年和百度官方进行了一番深切交流，不得不弃坑，具体的安装方式可以去他的``github``看看  
+这个百度云叫``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原本是可以做到不限速下载百度云的，可惜在去年和百度官方进行了一番深切交流，不得不弃坑，具体的安装方式可以去他的``github``看看  
 **[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**
 
 ![](/markdown/pictures/18.png)
