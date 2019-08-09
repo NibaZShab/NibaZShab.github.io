@@ -25,23 +25,19 @@ date: 2090-01-27 12:07:12
     + **[好萌动漫](https://nicemoe.at/)**
     + **[熊猫书签exhentai](https://expanda.org/)**
     + **[恋爱游戏网](https://www.lianaiyx.com/)**
-    + **[galgames发布地](https://www.nyagal.com/)**
+    + **[gal资源站](https://www.nyagal.com/)**
+    + **[忧郁的弟弟](https://www.mmgal.com/)**
     + **[loadbt](https://www.loadbt.com/files)**
     + **[bt搜索聚合](https://hao.su/909/)**
   - **邮箱**
     + **[企鹅邮箱](https://w.mail.qq.com)**
     + **[临时邮箱](https://10minutemail.net/m/?lang=zh-cn)**
-  - **音乐**
-    + **[无损音乐](http://www.xiaoluo666.cn/musicPlayer/)**
-    + **[无损音乐](https://m.sq688.com/)**
-    + **[在线听音乐](http://www.cndkk.com/Music/)**
   - **没什么用**
-    + **[网站生成器](http://sc.ilysc.cn/)**
+    + **[网页生成站](http://sc.ilysc.cn/)**
     + **[腾讯微Q关闭推送广告](https://privacy.qq.com/yszc-m.htm)**
     + **[web ua检测](http://service.spiritsoft.cn/ua.html)**
-    + **[pixiv图搜图](http://saucenao.com/)**
+    + **[pixiv以图搜图](http://saucenao.com/)**
     + **[内网穿透](https://ngrok.com)**
-    + **[termux](https://www.sqlsec.com/2018/05/termux.html)**
 
 ## Lot Of Any
 
@@ -134,7 +130,7 @@ if [ $choose = "2" ]
 then
     action2
 fi
-echo -e "\n\n\n\n\n 输入bdy开始食用\n\n\n    config set -appid=310646 \n\n    cd /apps/baidu_shurufa \n\n    config set -appid=265486 \n\n    config set -savedir /sdcard/Android \n\n"
+echo -e "\n\n\n\n\n   输入bdy开始食用\n配置如下：\n\n    config set -appid=310646 \n\n    cd /apps/baidu_shurufa \n\n    config set -appid=265486 \n\n    config set -savedir /sdcard/Android \n\n"
 ```
 
 ### anime
