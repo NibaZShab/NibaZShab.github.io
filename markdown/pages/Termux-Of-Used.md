@@ -214,15 +214,33 @@ echo "http://qrenco.de/" |curl -F-=\<- qrenco.de
 如果你不嫌无聊的话还可以扫一下这个二维码，然后就打开我的博客了
 
 # 计算圆周率
-一个计算圆周率``π``的小代码，用``4``个核心来计算``π``小数点后一万位，通过比较时间长短来比较性能
+一个计算圆周率``π``的小代码，用``4``个核心来计算``π``小数点后``10000``位，通过比较所耗时间长短来比较性能
 ```sh
 pkg install bc
 time echo "scale = 10000;4 * a(1)" | bc -l
 ```
 ![](/markdown/pictures/17.png)
 
+# 刷流量
+这是一个刷流量的指令，会一直消耗你的流量，我也不知道为啥要刷流量，有什么意义吗？
+```sh
+i=0
+while [ $((i++)) -le 999 ]
+do
+wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk 
+done
+```
+注：``/dev/null``是手机上的一个目录，不过完全不占内存，类似于``linux黑洞``，所有指向这个目录的内容全部都会消失！  
+注：后面那个``https://dlie.......``是一个下载链接，可以自己替换掉
+
+# 终端版百度云
+这是一位大佬开发的项目``BaiduPCS-Go``, 原本是可以做到不限速下载百度云的，可惜在去年和百度官方进行了一番深切交流，不得不弃坑，具体的安装方式可以去他的``github``看看  
+**[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**
+
+![](/markdown/pictures/18.png)
+
 ## hexo-anatole
-这只是一个主题配置文件的备份，防止我自己忘记
+这只是一个``hexo``博客主题配置文件的备份，防止我自己忘记
 ### _config.yml
 ```yml
 title: Hexo Book
@@ -330,4 +348,4 @@ hexo d
 
 ---
 # 完
-注：转载于[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)
+注：部分转自[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)
