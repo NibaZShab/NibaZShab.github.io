@@ -1,6 +1,6 @@
 ---
 title: 终端termux的一些配置
-date: 2019-08-07 20:59:16
+date: 2019-08-09 09:50:16
 ---
 
 ![](/markdown/pictures/04.png)
@@ -212,6 +212,121 @@ echo "http://qrenco.de/" |curl -F-=\<- qrenco.de
 ```
 ![](/markdown/pictures/15.png)
 如果你不嫌无聊的话还可以扫一下这个二维码，然后就打开我的博客了
+
+# 计算圆周率
+一个计算圆周率``π``的小代码，用``4``个核心来计算``π``小数点后一万位，通过比较时间长短来比较性能
+```sh
+pkg install bc
+time echo "scale = 10000;4 * a(1)" | bc -l
+```
+![](/markdown/pictures/17.png)
+
+## hexo-anatole
+这只是一个主题配置文件的备份，防止我自己忘记
+### _config.yml
+```yml
+title: Hexo Book
+subtitle:
+description: hello world
+keywords:
+author: NibaZShab
+language: eng
+timezone:
+avatar: /images/head.png
+
+url: http://nibazshab.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link: true
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+index_generator:
+  path: ''
+  per_page: 6
+  order_by: -date
+
+default_category: uncategorized
+category_map:
+tag_map:
+
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+per_page: 6
+pagination_dir: page
+
+theme: anatole
+
+deploy:
+  type: git
+  repo: git@github.com:NibaZShab/NibaZShab.github.io.git
+  branch: master
+
+archive_generator:
+  per_page: 0  
+  yearly: false
+  monthly: false
+  daily: false
+```
+### 上传配置
+```bash
+# 准备上传 :
+#!/bin/bash
+
+# 文章整理
+echo  "---
+title: Huge The Book
+date: 2090-01-27 12:07:12
+---
+" >> /sdcard/$/a.md
+cat /sdcard/$/a.md /sdcard/$/1/404/README.md > /sdcard/$/1/markdown/pages/Huge-The-Book.md
+rm /sdcard/$/a.md
+rm $HOME/blog/source/_posts/*
+cp /sdcard/$/1/markdown/pages/* $HOME/blog/source/_posts
+
+hexo clean   # 清理无用文件
+
+hexo g   # 生成静态博客
+cp $HOME/blog/public/2090/01/27/Huge-The-Book/* /sdcard/$/1/2090/01/27/Huge-The-Book/
+cd $HOME/blog/public/
+cp -rf  archives css fonts images js /sdcard/$/1/
+cp $HOME/blog/public/index.html /sdcard/$/1/
+cd $HOME
+rm -rf $HOME/blog/public/2*
+
+# 完成提示
+echo "
+请修改 Huge-The-Book 文件最后一行
+修改结束后输入 hexod 上传"
+
+# hexod :
+#!/bin/bash
+cp -rf /sdcard/$/1/* $HOME/blog/public/
+hexo d
+```
 
 ---
 # 完
