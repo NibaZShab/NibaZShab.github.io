@@ -43,6 +43,15 @@ date: 2090-01-27 12:07:12
 
 ### termimal
 ```sh
+• 空白符号
+$ ㅤ
+```
+```sh
+• tar备份
+$ tar -cvf /sdcard/backup.tar /data/data/com.termux   # 备份
+$ tar -xvf /sdcard/backup.tar                         # 恢复
+```
+```sh
 • apk内部资源路径
 $ /android_asset/
 ```
