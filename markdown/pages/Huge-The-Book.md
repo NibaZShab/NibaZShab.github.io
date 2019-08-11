@@ -43,37 +43,42 @@ date: 2090-01-27 12:07:12
 
 ### termimal
 ```sh
+• 截屏
+$ screencap /sdcard/abc.png
+```
+```sh
 • 空白符号
-$ ㅤ
+$ ㅤㅤㅤ
 ```
 ```sh
 • tar备份
-$ tar -cvf /sdcard/backup.tar /data/data/com.termux   # 备份
-$ tar -xvf /sdcard/backup.tar                         # 恢复
+$ tar -cvf /sdcard/abc.tar /   # 备份
+$ tar -xvf /sdcard/abc.tar     # 恢复
 ```
 ```sh
-• apk内部资源路径
+• apk包内资源
 $ /android_asset/
 ```
 ```sh
-• 挂载目录为可读写
-$ mount -o remount -rw  /
+• 挂载为可读写
+$ mount -o remount -rw /
 ```
 ```sh
-• 加或解锁文件abc
-$ chattr -或+R +i abc
+• 锁定文件abc
+$ chattr -R +i abc     # 加锁
+$ chattr -R -i abc     # 解锁
 ```
 ```sh
-• 合并文件a和b为文件c
+• 合并a和b为c
 $ cat a b > c
 ```
 ```sh
-• 清空abc内容但不删除abc
+• 清空abc但不删除
 $ : > abc
 ```
 ```sh
-• 查找文件abc并删除
-$ find / -name "abc" |xargs rm -rf
+• 查找abc并删除
+$ find / -name abc |xargs rm -rf
 ```
 
 ### vim
@@ -109,37 +114,58 @@ $ dd
 ### bps-go.sh
 ```bash
 #!/bin/bash
-apt update && apt upgrade -y
-apt install zip wget -y
-termux-setup-storage
+echo "
+****************************************************
+*
+*   BaiduPCS-Go
+*
+*      Windows
+*      Linux / macOS
+*      Android / iOS
+*
+*   https://github.com/iikira/BaiduPCS-Go/
+*
+****************************************************
+"
 action1()
 {
-   wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.3.3/BaiduPCS-Go-v3.3.3-android-21-arm64.zip
-   unzip 1.zip && rm 1.zip
-   mv BaiduPCS-Go-v3.3.3-android-21-arm64 BaiduPCS-Go
-   echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
-   chmod 777 $PREFIX/bin/bdy
+   echo "Goodbye"
 }
 action2()
 {
+   apt update && apt upgrade -y
+   apt install zip wget -y
+   termux-setup-storage
    wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-android-21-arm64.zip
    unzip 1.zip && rm 1.zip
    mv BaiduPCS-Go-v3.5.6-android-21-arm64 BaiduPCS-Go
    echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
    chmod 777 $PREFIX/bin/bdy
+   echo "
+****************************************************
+*
+*   百度输入法接口的配置如下:
+*
+*     config set -appid=310646
+*     cd /apps/baidu_shurufa
+*     config set -appid=265486
+*     config set -savedir /sdcard/Download
+*
+*   输入 bdy 即可食用
+*
+****************************************************
+"
 }
 read -p " 
-1 --- v3.3.3          2 --- v3.5.6
-YOUR CHOOSE IS [1/2] " choose
-if [ $choose = "1" ]
+Do you want to continue? [Y/n] " choose
+if [ $choose = "n" ]
 then
     action1
 fi
-if [ $choose = "2" ]
+if [ $choose = "y" ]
 then
     action2
 fi
-echo -e "\n\n\n\n\n   输入bdy开始食用\n配置如下：\n\n    config set -appid=310646 \n\n    cd /apps/baidu_shurufa \n\n    config set -appid=265486 \n\n    config set -savedir /sdcard/Android \n\n"
 ```
 
 ### anime
