@@ -1,7 +1,13 @@
 # 404 NOT FOUND
 ---
 
-此文之质，乃``MarkDown``之文。近日，忽觉余之尚缺一博客乎，是故，题此文也。是以集书签之素雅，动漫之风趣，亦有天籁之音相伴。可悲，余长叹余之``HTML``功力尚浅，不足以登大雅之堂，若论``CSS``及``JavaScript``，余则实属无奈。至于此，不得已题此``MarkDown``。若有来者，愿助余之题``HTML``之文，余自当感激不尽，不胜言谢
+## 二十四节气
+春：立春，雨水，惊蛰，春分，清明，谷雨  
+夏：立夏，小满，芒种，夏至，小暑，大暑  
+秋：立秋，处暑，白露，秋分，寒露，霜降  
+冻：立冬，小雪，大雪，冬至，小寒，大寒
+
+![](/markdown/pictures/19.png)
 
 ## Huge The Book
 > **bookstars**  
@@ -11,8 +17,6 @@
   - **[刘宇哲的小站](https://sssssystem.github.io)**
     + ---
   - **养老院**
-    + **[github](https://github.com/)**
-    + **[百度云](https://pan.baidu.com/)**
     + **[聚合图床](https://www.superbed.cn/)**
     + **[奶牛传输](https://cowtransfer.com/)**
     + **[石墨文档](https://shimo.im/)**
@@ -77,6 +81,16 @@ $ find / -name abc |xargs rm -rf
 ```
 
 ### vim
+``vim``的配置文件名为``vimrc``, 我上传了一个不错的``vimrc``, 如需要，可点击下方传送门  
+**[我是传送门](https://github.com/NibaZShab/NibaZShab.github.io/releases/tag/vim)**
+```sh
+• 开启十六进制模式
+$ :%!xxd
+```
+```sh
+• 关闭十六进制模式
+$ :%!xxd -r
+```
 ```sh
 • 把每一行的abc替换成cba
 $ :1,$s/abc/cba/g
