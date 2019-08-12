@@ -7,10 +7,10 @@ date: 2090-01-27 12:07:12
 ---
 
 ## 二十四节气
-春：立春，雨水，惊蛰，春分，清明，谷雨  
-夏：立夏，小满，芒种，夏至，小暑，大暑  
-秋：立秋，处暑，白露，秋分，寒露，霜降  
-冻：立冬，小雪，大雪，冬至，小寒，大寒
+ 春： 立春，雨水，惊蛰，春分，清明，谷雨  
+ 夏： 立夏，小满，芒种，夏至，小暑，大暑  
+ 秋： 立秋，处暑，白露，秋分，寒露，霜降  
+ 冬： 立冬，小雪，大雪，冬至，小寒，大寒
 
 ![](/markdown/pictures/19.png)
 
@@ -56,8 +56,8 @@ $ ㅤㅤㅤ
 ```
 ```sh
 • tar备份
-$ tar -cvf /sdcard/abc.tar /   # 备份
-$ tar -xvf /sdcard/abc.tar     # 恢复
+$ tar -cvf /sdcard/abc.tar /     # 备份
+$ tar -xvf /sdcard/abc.tar       # 恢复
 ```
 ```sh
 • apk包内资源
@@ -86,7 +86,7 @@ $ find / -name abc |xargs rm -rf
 ```
 
 ### vim
-``vim``的配置文件名为``vimrc``, 我上传了一个不错的``vimrc``, 如需要，可点击下方传送门  
+配置文件名为``vimrc``, 我传了一个不错的``vimrc``, 如需要，可点击下方传送门  
 **[我是传送门](https://github.com/NibaZShab/NibaZShab.github.io/releases/tag/vim)**
 ```sh
 • 开启十六进制模式
