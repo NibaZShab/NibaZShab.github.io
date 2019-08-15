@@ -242,6 +242,7 @@ done
 
 # 终端百度云
 这个项目的名称叫做``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原本可以做到不限速百度云下载，由于去年和百度官方的一次深切交谈，弃坑了，具体的安装方式可以去他的``github``看看  
+  
 **[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**  
   
 这里提供一份自己写的安装脚本

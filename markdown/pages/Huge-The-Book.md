@@ -93,41 +93,42 @@ find / -name abc |xargs rm -rf
 
 ## vim
 ``vim``是一个优秀的终端文本编辑器，功能非常强大，其配置文件名为``vimrc``, 这里有一份``vimrc``, 如需要，可点击下方传送门获取  
+  
 **[我是传送门](https://github.com/NibaZShab/NibaZShab.github.io/releases/tag/vim)**
 ```sh
-开启十六进制模式
+# 开启十六进制模式
 :%!xxd
 ```
 ```sh
-关闭十六进制模式
+# 关闭十六进制模式
 :%!xxd -r
 ```
 ```sh
-把每一行的abc替换成cba
+# 把每一行的abc替换成cba
 :1,$s/abc/cba/g
 ```
 ```sh
-把包含abc的行全部删除
+# 把包含abc的行全部删除
 :g/abc/d
 ```
 ```sh
-在每一行行首添加abc
+# 在每一行行首添加abc
 :%s/^/abc/
 ```
 ```sh
-在每一行行尾添加abc
+# 在每一行行尾添加abc
 :%s/$/abc/
 ```
 ```sh
-取消自动折行
+# 取消自动折行
 :set nowrap
 ```
 ```sh
-显示行号
+# 显示行号
 :set nu
 ```
 ```sh
-删除光标所在行
+# 删除光标所在行
 dd
 ```
 
