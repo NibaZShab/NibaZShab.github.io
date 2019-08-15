@@ -28,7 +28,7 @@ date: 2019-08-09 09:50:16
 * [Google Play下载地址](https://play.google.com/store/apps/details?id=com.termux)
 
 # 基本命令
-这里主要提一下``pkg``命令，简单介绍一下，如下：
+这里简单介绍一下``pkg``命令
 ```sh
 pkg search <query>            搜索包
 pkg install <package>         安装包
@@ -44,7 +44,7 @@ pkg files <package>           显示某个包的相关文件夹路径
 
 # 基本操作
 ## 从屏幕左往右划
-可以添加新的终端窗口，显示隐藏快捷键，给窗口改名
+可以添加新的终端窗口，给窗口改名，长按``keyboard``隐藏快捷键
 
 ![](/markdown/pictures/05.png)
 
@@ -225,7 +225,7 @@ time echo "scale = 10000;4 * a(1)" | bc -l
 ```
 ![](/markdown/pictures/17.png)
 
-我这里计算的是小数点后``1000``位，计算``10000``位毕竟消耗时间，懒得等
+我这里计算的是小数点后``1000``位，因为计算``10000``位比较消耗时间，博主懒得等了
 
 # 刷流量
 这是一个刷流量的指令，会一直消耗你的流量，我也不知道为啥要刷流量，有什么意义吗？
@@ -236,12 +236,12 @@ do
 wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk 
 done
 ```
-``/dev/null``是手机上的一个目录，类似于``linux黑洞``，所有指向这个路径的文件都会消失  
+``/dev/null``是手机上的一个``linux黑洞``，所有指向这个路径的文件都会消失  
   
 注：后面那个``https://dlie5.myapp.com/m.......``是一个下载链接，可以自己替换掉
 
-# 终端版百度云
-这个百度云叫``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原来是可以做到不限速下载百度云的，由于在去年百度官方与开发者进行了一番深切交谈，弃坑了，具体的安装方式可以去他的``github``看看  
+# 终端百度云
+这个项目的名称叫做``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原本可以做到不限速百度云下载，由于去年和百度官方的一次深切交谈，弃坑了，具体的安装方式可以去他的``github``看看  
 **[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**  
   
 这里提供一份自己写的安装脚本
@@ -305,6 +305,8 @@ then
     action2
 fi
 ```
+
+大致如下图所示
 
 ![](/markdown/pictures/18.png)
 
