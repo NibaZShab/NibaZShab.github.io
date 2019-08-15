@@ -5,7 +5,7 @@ date: 2019-08-09 09:50:16
 
 ![](/markdown/pictures/04.png)
 
-高级终端``Termux``是个强大的终端模拟器，这样的应用应该特别适合不喜欢图形界面的命令行爱好者
+强大的终端模拟器，适合不喜欢图形界面的命令行爱好者
 
 # 简介
 ---  
@@ -49,9 +49,37 @@ pkg files <package>           显示某个包的相关文件夹路径
 ![](/markdown/pictures/05.png)
 
 ## 自定义快捷键
-快捷键是``$HOME/.termux/``下的``termux.properties``文件，可以修改它添加更多快捷键
+添加快捷键需要修改``$HOME/.termux/``下的``termux.properties``文件，这里提供一份完整的官方快捷键
+```sh
+mkdir $HOME/.termux
+echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties
+```
 
 ![](/markdown/pictures/06.png)
+
+# 更换为国内源
+因为某些众所周知的原因，官方源非常的慢，所以需要切换为国内的源，推荐清华大学源
+
+## 官方的解决方法
+设置默认编辑器
+```sh
+export EDITOR=vi
+```
+编辑源文件
+```sh
+apt edit-sources
+```
+将原来的``https://termux.net``替换为``http://mirrors.tuna.tsinghua.edu.cn/termux``  
+  
+保存并退出
+
+## 直接编辑源文件
+官方的方法比较麻烦，这里推荐一个更简单的方法
+```sh
+vi  $PREFIX/etc/apt/sources.list
+```
+
+![](/markdown/pictures/08.png)
 
 # 目录环境结构
 ```sh
@@ -67,30 +95,6 @@ pkg files <package>           显示某个包的相关文件夹路径
 这个HOME路径看上去不太一样,为了方便,``Termux``提供了一个特殊的环境变量``PREFIX``
 
 ![](/markdown/pictures/07.png)
-
-# 更换为国内源
-因为某些众所周知的原因，官方源非常的慢，所以需要切换为国内的源，推荐清华大学源
-
-## 官方的解决方法
-设置默认编辑器
-```sh
-export EDITOR=vi
-```
-编辑源文件
-```sh
-apt edit-sources
-```
-将原来的``https://termux.net``替换为``http://mirrors.tuna.tsinghua.edu.cn/termux``
-
-![](/markdown/pictures/08.png)
-
-保存并退出
-
-## 直接编辑源文件
-官方的方法比较麻烦，这里推荐一个更简单的方法，和``linux``一样直接去编辑源文件
-```sh
-vi  $PREFIX/etc/apt/sources.list
-```
 
 # Termux优化
 首先，我们先申请一下储存权限，Android6.0以上会出现弹窗确认授权
@@ -237,11 +241,73 @@ done
 注：后面那个``https://dlie5.myapp.com/m.......``是一个下载链接，可以自己替换掉
 
 # 终端版百度云
-这个百度云叫``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原本是可以做到不限速下载百度云的，可惜在去年和百度官方进行了一番深切交流，不得不弃坑，具体的安装方式可以去他的``github``看看  
-**[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**
+这个百度云叫``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原来是可以做到不限速下载百度云的，由于在去年百度官方与开发者进行了一番深切交谈，弃坑了，具体的安装方式可以去他的``github``看看  
+**[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**  
+  
+这里提供一份自己写的安装脚本
+```bash
+#!/bin/bash
+echo "
+****************************************************
+*
+*   BaiduPCS-Go  - i ikira
+*
+*      Windows
+*      Linux / macOS
+*      Android / iOS
+*
+*   https://github.com/iikira/BaiduPCS-Go/
+*
+****************************************************
+"
+action1()
+{
+   echo "Goodbye"
+}
+action2()
+{
+   apt update && apt upgrade -y
+   apt install zip wget -y
+   termux-setup-storage
+   wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-android-21-arm64.zip
+   unzip 1.zip && rm 1.zip
+   mv BaiduPCS-Go-v3.5.6-android-21-arm64 BaiduPCS-Go
+   echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
+   chmod 777 $PREFIX/bin/bdy
+   echo "
+****************************************************
+*
+*   如需使用百度输入法的接口，则配置如下:
+*
+*     config set -appid=310646
+*     cd /apps/baidu_shurufa
+*     config set -appid=265486
+*     config set -savedir /sdcard/Download
+*
+*
+****************************************************
+
+****************************************************
+*
+*    输入 bdy 开始食用
+*
+****************************************************
+"
+}
+read -p " 
+Do you want to continue? [Y/n] " choose
+if [ $choose = "n" ]
+then
+    action1
+fi
+if [ $choose = "y" ]
+then
+    action2
+fi
+```
 
 ![](/markdown/pictures/18.png)
 
 ---
 # 完
-注：部分转自[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)
+注：文章部分内容转自[Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)

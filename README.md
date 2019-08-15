@@ -1,22 +1,78 @@
 # README
 ---
-```bash
-echo "这个东西" >> README.md
-```
-```bash
-echo "没有任何好看的" >> README.md
-```
-```bash
-echo "只需要" >> README.md
-```
-```bash
-echo "点击下方图片" >> README.md
-```
-```bash
-echo "打开新世界">> README.md
-```
 
-[![](/markdown/pictures/RAEDME.png)](https://nibazshab.github.io/about)
+```bash
+echo "立春" >> 二十四节气 • 春
+```
+```bash
+echo "雨水" >> 二十四节气 • 春
+```
+```bash
+echo "惊蛰" >> 二十四节气 • 春
+```
+```bash
+echo "春分" >> 二十四节气 • 春
+```
+```bash
+echo "清明" >> 二十四节气 • 春
+```
+```bash
+echo "谷雨" >> 二十四节气 • 春
+```
+```bash
+echo "立夏" >> 二十四节气 • 夏
+```
+```bash
+echo "小满" >> 二十四节气 • 夏
+```
+```bash
+echo "芒种" >> 二十四节气 • 夏
+```
+```bash
+echo "夏至" >> 二十四节气 • 夏
+```
+```bash
+echo "小暑" >> 二十四节气 • 夏
+```
+```bash
+echo "大暑" >> 二十四节气 • 夏
+```
+```bash
+echo "立秋" >> 二十四节气 • 秋
+```
+```bash
+echo "处暑" >> 二十四节气 • 秋
+```
+```bash
+echo "白露" >> 二十四节气 • 秋
+```
+```bash
+echo "秋分" >> 二十四节气 • 秋
+```
+```bash
+echo "寒露" >> 二十四节气 • 秋
+```
+```bash
+echo "霜降" >> 二十四节气 • 秋
+```
+```bash
+echo "立冬" >> 二十四节气 • 冬
+```
+```bash
+echo "小雪" >> 二十四节气 • 冬
+```
+```bash
+echo "大雪" >> 二十四节气 • 冬
+```
+```bash
+echo "冬至" >> 二十四节气 • 冬
+```
+```bash
+echo "小寒" >> 二十四节气 • 冬
+```
+```bash
+echo "大寒" >> 二十四节气 • 冬
+```
 
 ---
 # 完

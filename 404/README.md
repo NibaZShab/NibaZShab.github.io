@@ -1,13 +1,13 @@
 # 404 NOT FOUND
 ---
 
-## 二十四节气
+# 二十四节气
 春：  立春，雨水，惊蛰，春分，清明，谷雨  
 夏：  立夏，小满，芒种，夏至，小暑，大暑  
 秋：  立秋，处暑，白露，秋分，寒露，霜降  
 冬：  立冬，小雪，大雪，冬至，小寒，大寒
 
-## Huge The Book
+# Huge The Book
 > **bookstars**  
   - **[我的图与时钟](https://nibazshab.github.io/404/time.html)**
   - **[我的hexo博客](https://nibazshab.github.io)**
@@ -36,50 +36,58 @@
     + **[pixiv以图搜图](http://saucenao.com/)**
     + **[内网穿透](https://ngrok.com)**
 
-## Lot Of Any
+# Lot Of Any
 
-### termimal
+## termimal
 ```sh
-截屏
+# 截屏
 screencap /sdcard/abc.png
 ```
 ```sh
-空白符号
+# 空白符号
 ㅤㅤㅤ
 ```
 ```sh
-tar备份
+# tar备份
 tar -cvf /sdcard/abc.tar /        # 备份
 tar -xvf /sdcard/abc.tar -C /     # 恢复
 ```
 ```sh
-apk包内资源
+# 自身apk内资源路径
 /android_asset/
 ```
 ```sh
-挂载为可读写
+# 挂载可读写
 mount -o remount -rw /
 ```
 ```sh
-锁定文件abc
+# 锁定abc
 chattr -R +i abc     # 加锁
 chattr -R -i abc     # 解锁
 ```
 ```sh
-合并a和b为c
+# 合并a和b为c
 cat a b > c
 ```
 ```sh
-清空abc但不删除
+# linux黑洞
+/dev/null
+```
+```sh
+# 生成指定大小的空文件abc
+dd if=/dev/zero of=abc bs=1G count=0 seek=1024
+```
+```sh
+# 清空abc但不删除
 : > abc
 ```
 ```sh
-查找abc并删除
+# 查找abc并删除
 find / -name abc |xargs rm -rf
 ```
 
-### vim
-配置文件名为``vimrc``, 我传了一个不错的``vimrc``, 如需要，可点击下方传送门  
+## vim
+``vim``是一个优秀的终端文本编辑器，功能非常强大，其配置文件名为``vimrc``, 这里有一份``vimrc``, 如需要，可点击下方传送门获取  
 **[我是传送门](https://github.com/NibaZShab/NibaZShab.github.io/releases/tag/vim)**
 ```sh
 开启十六进制模式
@@ -118,64 +126,7 @@ find / -name abc |xargs rm -rf
 dd
 ```
 
-### bps-go.sh
-```bash
-#!/bin/bash
-echo "
-****************************************************
-*
-*   BaiduPCS-Go
-*
-*      Windows
-*      Linux / macOS
-*      Android / iOS
-*
-*   https://github.com/iikira/BaiduPCS-Go/
-*
-****************************************************
-"
-action1()
-{
-   echo "Goodbye"
-}
-action2()
-{
-   apt update && apt upgrade -y
-   apt install zip wget -y
-   termux-setup-storage
-   wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-android-21-arm64.zip
-   unzip 1.zip && rm 1.zip
-   mv BaiduPCS-Go-v3.5.6-android-21-arm64 BaiduPCS-Go
-   echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
-   chmod 777 $PREFIX/bin/bdy
-   echo "
-****************************************************
-*
-*   百度输入法接口的配置如下:
-*
-*     config set -appid=310646
-*     cd /apps/baidu_shurufa
-*     config set -appid=265486
-*     config set -savedir /sdcard/Download
-*
-*   输入 bdy 即可食用
-*
-****************************************************
-"
-}
-read -p " 
-Do you want to continue? [Y/n] " choose
-if [ $choose = "n" ]
-then
-    action1
-fi
-if [ $choose = "y" ]
-then
-    action2
-fi
-```
-
-### anime
+# anime
 ```
 在下坂本，有何贵干
 工作细胞
@@ -201,14 +152,14 @@ GJ部
 平凡职业造就世界最强
 ```
 
-### read
+# read
 下面的是一个非常棒的电纸书阅读器的界面的颜色配置。
 
 | 背景 | 文本 | 
 | :---: | :---: | 
 | ![](/markdown/pictures/01.png) | ![](/markdown/pictures/02.png) |
 
-### music
+# music
 ![](/markdown/pictures/03.png)
 
 ---
