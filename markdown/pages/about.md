@@ -11,8 +11,9 @@ date: 2019-08-14 11:45:08
 - 酷安 -> NAME:NibaZShab
 - Github -> NAME:NibaZShab
 - 哔哩哔哩 -> UID:171382681
-- 芸村音乐 -> NAME:泥巴最啥必
-- tg电报 -> 很少用
+- 芸村音乐 -> NAME:NibaZShab
+- tg电报 -> 偶尔用用
+- 脸书 -> 被封了
 - 邮箱 -> nibazshab@gmail.com
 
 ---

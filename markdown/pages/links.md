@@ -1,8 +1,6 @@
 ---
 title: 友链
 date: 2019-08-14 12:03:59
-reward: false
-copyright: false
 ---
 
 怎么可能有顺序呢，当然全部都是随机排序的啦
