@@ -1,0 +1,13 @@
+友链样式
+
+<div class="friends">
+
+<a class="a-friend" target="_blank"  href="https://nibazshab.github.io">
+<img class="blog-avatar" src="https://nibazshab.github.io/images/head.png" data-tag="bdshare">
+<div class="text-container">
+<div class="name">小公主的博客</div>
+<div class="description">善万物之得时，感吾生之行休。</div>
+</div>
+</a>
+
+</div>

@@ -9,10 +9,10 @@
 
 # Huge The Book
 > **bookstars**  
-  - **[我的图与时钟](https://nibazshab.github.io/404/time.html)**
-  - **[我的hexo博客](https://nibazshab.github.io)**
-  - **[我的旧垃圾堆](https://github.com/NibaZShab/NibaZShab.github.io/releases)**
-  - **[刘宇哲的小站](https://sssssystem.github.io)**
+  - **[静谧之钟](https://nibazshab.github.io/404/time.html)**
+  - **[厨余垃圾](https://github.com/NibaZShab/mirror)**
+  - **[废品破烂](https://github.com/NibaZShab/NibaZShab.github.io/releases)**
+  - **[涪陵榨菜](https://sssssystem.github.io)**
     + ---
   - **养老院**
     + **[聚合图床](https://www.superbed.cn/)**
