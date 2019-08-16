@@ -251,7 +251,7 @@ done
 echo "
 ****************************************************
 *
-*   BaiduPCS-Go  - i ikira
+*   BaiduPCS-Go  - iikira
 *
 *      Windows
 *      Linux / macOS
