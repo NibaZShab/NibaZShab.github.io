@@ -18,5 +18,7 @@ date: 2019-08-14 11:45:08
 
 ---
 
-> 转载本站文章，请注明出处，模板如下:
-文章转载于 -> **[NibaZShab - 小公主的博客](https://nibazshab.github.io/)**
+转载本站文章，请注明出处，如下图所示：
+
+>  
+注：文章转载于 -> **[NibaZShab - 小公主的博客](https://nibazshab.github.io/)**
