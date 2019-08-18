@@ -1,8 +1,4 @@
----
-title: Huge The Book
-date: 2090-01-27 12:07:12
----
-
+---\ntitle: Huge The Book\ndate: 2090-01-27 12:07:12\n---\n
 # 404 NOT FOUND
 ---
 
@@ -156,6 +152,7 @@ Alice or Alice
 辉夜大小姐想让我告白
 GJ部
 平凡职业造就世界最强
+齐木楠雄的灾难
 ```
 
 # read
