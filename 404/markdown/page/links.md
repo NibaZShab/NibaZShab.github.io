@@ -8,7 +8,7 @@ date: 2019-08-14 12:03:59
 <div class="friends">
 
 <a class="a-friend" target="_blank"  href="https://nibazshab.github.io">
-<img class="blog-avatar" src="https://nibazshab.github.io/404/image/head.png" data-tag="bdshare">
+<img class="blog-avatar" src="/404/image/head.png" data-tag="bdshare">
 <div class="text-container">
 <div class="name">小公主的博客</div>
 <div class="description">善万物之得时，感吾生之行休。</div>
