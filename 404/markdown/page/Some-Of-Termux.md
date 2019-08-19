@@ -8,16 +8,16 @@ date: 2019-08-09 09:50:16
 强大的终端模拟器，适合不喜欢图形界面的命令行爱好者
 
 # 简介
----  
+---
 
-``Termux``是一个``Android``下一个高级的终端模拟器，开源且不需要``root``,支持``apt``管理软件包，十分方便安装软件包,完美支持``Python``,``PHP``,``Ruby``,``Go``,``Nodejs``,``MySQL``等 
-  
-• 享受``bash``和``zsh``  
-• 使用``nano``和``vim``编辑文件  
-• 通过``ssh``访问服务器  
-• 使用``gcc``和``clang``编译代码  
-• 使用``python``控制台来作为口袋计算器 
-• 使用``git``和``subversion``检查项目  
+``Termux``是一个``Android``下一个高级的终端模拟器，开源且不需要``root``,支持``apt``管理软件包，十分方便安装软件包,完美支持``Python``,``PHP``,``Ruby``,``Go``,``Nodejs``,``MySQL``等
+
+• 享受``bash``和``zsh``
+• 使用``nano``和``vim``编辑文件
+• 通过``ssh``访问服务器
+• 使用``gcc``和``clang``编译代码
+• 使用``python``控制台来作为口袋计算器
+• 使用``git``和``subversion``检查项目
 • 使用``frotz``运行基于文本的游戏
 
 ## 下载地址
@@ -69,8 +69,8 @@ export EDITOR=vi
 ```sh
 apt edit-sources
 ```
-将原来的``https://termux.net``替换为``http://mirrors.tuna.tsinghua.edu.cn/termux``  
-  
+将原来的``https://termux.net``替换为``http://mirrors.tuna.tsinghua.edu.cn/termux``
+
 保存并退出
 
 ## 直接编辑源文件
@@ -119,7 +119,7 @@ ln -s /data/data/com.termux/files/home/storage/shared/picture Pictures
 
 ![](/404/markdown/picture/11.png)
 
-当我们用了一段时间的``Termux``之后，也许会想要自定义一下启动问候语，这时候就可以这样  
+当我们用了一段时间的``Termux``之后，也许会想要自定义一下启动问候语，这时候就可以这样
 编辑问候语文件直接修改：
 ```sh
 vim $PREFIX/etc/motd
@@ -236,15 +236,15 @@ do
 wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk 
 done
 ```
-``/dev/null``是手机上的一个``linux黑洞``，所有指向这个路径的文件都会消失  
-  
+``/dev/null``是手机上的一个``linux黑洞``，所有指向这个路径的文件都会消失
+
 注：后面那个``https://dlie5.myapp.com/m.......``是一个下载链接，可以自己替换掉
 
 # 终端百度云
-这个项目的名称叫做``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原本可以做到不限速百度云下载，由于去年和百度官方的一次深切交谈，弃坑了，具体的安装方式可以去他的``github``看看  
-  
-**[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**  
-  
+这个项目的名称叫做``BaiduPCS-Go``, 是一个仿``linux``的``shell``命令处理的终端版百度云，原本可以做到不限速百度云下载，由于去年和百度官方的一次深切交谈，弃坑了，具体的安装方式可以去他的``github``看看
+
+**[我是传送门](https://github.com/iikira/BaiduPCS-Go/blob/master/README.md)**
+
 这里提供一份自己写的安装脚本
 ```bash
 #!/bin/bash
@@ -306,7 +306,6 @@ then
     action2
 fi
 ```
-
 大致如下图所示
 
 ![](/404/markdown/picture/18.png)
