@@ -1,8 +1,3 @@
----
-title: Huge The Book
-date: 2090-01-27 12:07:12
----
-
 # 404 NOT FOUND
 ---
 
