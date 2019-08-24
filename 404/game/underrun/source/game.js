@@ -1,12 +1,12 @@
 
-var udef, // global undefined
+var udef,
 _math = Math,
   _document = document,
   _temp,
   
   keys = {37: 0, 38: 0, 39: 0, 40: 0},
   key_up = 38, key_down = 40, key_left = 37, key_right = 39, key_shoot = 512,
-  key_convert = {65: 37, 87: 38, 68: 39, 83: 40}, // convert AWDS to left up down right
+  key_convert = {65: 37, 87: 38, 68: 39, 83: 40},
 mouse_x = 0, mouse_y = 0,
   
   time_elapsed,
@@ -53,7 +53,7 @@ function load_level(id, callback) {
     cpus_rebooted = 0;
     
     _temp = _document.createElement('canvas');
-    _temp.width = _temp.height = level_width; // assume square levels
+    _temp.width = _temp.height = level_width;
     _temp = _temp.getContext('2d')
     _temp.drawImage(this, 0, 0);
     _temp =_temp.getImageData(0, 0, level_width, level_height).data;
@@ -61,7 +61,6 @@ function load_level(id, callback) {
     for (var y = 0, index = 0; y < level_height; y++) {
       for (var x = 0; x < level_width; x++, index++) {
         
-        // reduce to 12 bit color to accurately match
         var color_key =
         ((_temp[index*4]>>4) << 8) +
         ((_temp[index*4+1]>>4) << 4) +
@@ -69,18 +68,17 @@ function load_level(id, callback) {
         
         if (color_key !== 0) {
           var tile = level_data[index] =
-          color_key === 0x888 // wall
+          color_key === 0x888
           ? random_int(0,5) < 4 ? 8 : random_int(8, 17)
-          : array_rand([1,1,1,1,1,3,3,2,5,5,5,5,5,5,7,7,6]); // floor
+          : array_rand([1,1,1,1,1,3,3,2,5,5,5,5,5,5,7,7,6]);
           
           
-          if (tile > 7) { // walls
+          if (tile > 7) {
             push_block(x * 8, y * 8, 4, tile-1);
           }
-          else if (tile > 0) { // floor
+          else if (tile > 0) {
             push_floor(x * 8, y * 8, tile-1);
             
-            // enemies and items
             if (random_int(0, 16 - (id * 2)) == 0) {
               new entity_spider_t(x*8, 0, y*8, 5, 27);
             }
@@ -89,19 +87,16 @@ function load_level(id, callback) {
             }
           }
           
-          // cpu
           if (color_key === 0x00f) {
             level_data[index] = 8;
             new entity_cpu_t(x*8, 0, y*8, 0, 18);
             cpus_total++;
           }
           
-          // sentry
           if (color_key === 0xf00) {
             new entity_sentry_t(x*8, 0, y*8, 5, 32);
           }
           
-          // player start position (blue)
           if (color_key === 0x0f0) {
             entity_player = new entity_player_t(x*8, 0, y*8, 5, 18);
           }
@@ -109,7 +104,6 @@ function load_level(id, callback) {
       }
     }
     
-    // Remove all spiders that spawned close to the player start
     for (var i = 0; i < entities.length; i++) {
       var e = entities[i];
       if (
@@ -183,13 +177,11 @@ function game_tick() {
   
   renderer_prepare_frame();
   
-  // update and render entities
   for (var i = 0, e1, e2; i < entities.length; i++) {
     e1 = entities[i];
     if (e1._dead) { continue; }
     e1._update();
     
-    // check for collisions between entities - it's quadratic and nobody cares \o/
     for (var j = i+1; j < entities.length; j++) {
       e2 = entities[j];
       if(!(
@@ -206,17 +198,14 @@ function game_tick() {
     e1._render();
   }
   
-  // center camera on player, apply damping
   camera_x = camera_x * 0.92 - entity_player.x * 0.08;
   camera_y = camera_y * 0.92 - entity_player.y * 0.08;
   camera_z = camera_z * 0.92 - entity_player.z * 0.08;
   
-  // add camera shake
   camera_shake *= 0.9;
   camera_x += camera_shake * (_math.random()-0.5);
   camera_z += camera_shake * (_math.random()-0.5);
   
-  // health bar, render with plasma sprite
   for (var i = 0; i < entity_player.h; i++) {
     push_sprite(-camera_x - 50 + i * 4, 29-camera_y, -camera_z-30, 26);
   }
@@ -224,7 +213,6 @@ function game_tick() {
   renderer_end_frame();
   
   
-  // remove dead entities
   entities = entities.filter(function(entity) {
     return entities_to_kill.indexOf(entity) === -1;
   });

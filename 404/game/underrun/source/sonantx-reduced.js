@@ -1,45 +1,11 @@
-// Gutted for js13k and modified to use Float32 buffers directly
-// ~ Dominic Szablewski, phoboslab.org, Sep 2018
-
-//
-// Sonant-X
-//
-// Copyright (c) 2014 Nicolas Vanhoren
-//
-// Sonant-X is a fork of js-sonant by Marcus Geelnard and Jake Taylor. It is
-// still published using the same license (zlib license, see below).
-//
-// Copyright (c) 2011 Marcus Geelnard
-// Copyright (c) 2008-2009 Jake Taylor
-//
-// This software is provided 'as-is', without any express or implied
-// warranty. In no event will the authors be held liable for any damages
-// arising from the use of this software.
-//
-// Permission is granted to anyone to use this software for any purpose,
-// including commercial applications, and to alter it and redistribute it
-// freely, subject to the following restrictions:
-//
-// 1. The origin of this software must not be misrepresented; you must not
-//	claim that you wrote the original software. If you use this software
-//	in a product, an acknowledgment in the product documentation would be
-//	appreciated but is not required.
-//
-// 2. Altered source versions must be plainly marked as such, and must not be
-//	misrepresented as being the original software.
-//
-// 3. This notice may not be removed or altered from any source
-//	distribution.
-
 var sonantxr_generate_song, sonantxr_generate_sound;
 
 (function() {
-  var WAVE_SPS = 44100;					// Samples per second
-  var MAX_TIME = 33; // maximum time, in millis, that the generator can use consecutively
+  var WAVE_SPS = 44100;
+  var MAX_TIME = 33;
   
   var audioCtx = null;
-  
-  // Oscillators
+
   function osc_sin(value)
   {
     return _math.sin(value * 6.283184);
@@ -61,7 +27,6 @@ var sonantxr_generate_song, sonantxr_generate_sound;
     return v2 < 2 ? v2 - 1 : 3 - v2;
   }
   
-  // Array of oscillator functions
   var oscillators =
   [
     osc_sin,
@@ -98,7 +63,7 @@ var sonantxr_generate_song, sonantxr_generate_sound;
   
   
   function getAudioBuffer(ctx, mixBuf) {
-    var buffer = ctx.createBuffer(2, mixBuf.left.length, WAVE_SPS); // Create Mono Source Buffer from Raw Binary
+    var buffer = ctx.createBuffer(2, mixBuf.left.length, WAVE_SPS);
     buffer.getChannelData(0).set(mixBuf.left);
     buffer.getChannelData(1).set(mixBuf.right);
     return buffer;
@@ -122,12 +87,10 @@ var sonantxr_generate_song, sonantxr_generate_sound;
   SoundGenerator.prototype._genSound = function(n, chnBuf, currentpos) {
     var c1 = 0;
     var c2 = 0;
-    
-    // Precalculate frequencues
+
     var o1t = getnotefreq(n + (this.instr.osc1_oct - 8) * 12 + this.instr.osc1_det) * (1 + 0.0008 * this.instr.osc1_detune);
     var o2t = getnotefreq(n + (this.instr.osc2_oct - 8) * 12 + this.instr.osc2_det) * (1 + 0.0008 * this.instr.osc2_detune);
     
-    // State variable init
     var q = this.instr.fx_resonance / 255;
     var low = 0;
     var band = 0;
@@ -137,11 +100,9 @@ var sonantxr_generate_song, sonantxr_generate_sound;
     
     for (var j = numSamples; j >= 0; --j) {
       var k = j + currentpos;
-      
-      // LFO
+
       var lfor = this.osc_lfo(k * this.lfoFreq) * this.instr.lfo_amt / 512 + 0.5;
       
-      // Envelope
       var e = 1;
       if (j < this.attack) {
         e = j / this.attack;
@@ -150,7 +111,6 @@ var sonantxr_generate_song, sonantxr_generate_sound;
         e -= (j - this.attack - this.sustain) / this.release;
       }
       
-      // Oscillator 1
       var t = o1t;
       if (this.instr.lfo_osc1_freq) {
         t += lfor;
@@ -161,7 +121,6 @@ var sonantxr_generate_song, sonantxr_generate_sound;
       c1 += t;
       var rsample = this.osc1(c1) * this.instr.osc1_vol;
       
-      // Oscillator 2
       t = o2t;
       if (this.instr.osc2_xenv) {
         t *= e * e;
@@ -169,14 +128,12 @@ var sonantxr_generate_song, sonantxr_generate_sound;
       c2 += t;
       rsample += this.osc2(c2) * this.instr.osc2_vol;
       
-      // Noise oscillator
-      if (this.instr.noise_fader) {
+       if (this.instr.noise_fader) {
         rsample += (2*_math.random()-1) * this.instr.noise_fader * e;
       }
       
       rsample *= e / 255;
       
-      // State variable filter
       var f = this.instr.fx_freq;
       if (this.instr.lfo_fx_freq) {
         f *= lfor;
@@ -186,27 +143,24 @@ var sonantxr_generate_song, sonantxr_generate_sound;
       var high = q * (rsample - band) - low;
       band += f * high;
       switch (this.instr.fx_filter) {
-        case 1: // Hipass
+        case 1: 
           rsample = high;
           break;
-        case 2: // Lopass
+        case 2: 
           rsample = low;
           break;
-        case 3: // Bandpass
+        case 3:
           rsample = band;
           break;
-        case 4: // Notch
+        case 4:
           rsample = low + high;
           break;
         default:
       }
       
-      // Panning & master volume
       t = osc_sin(k * this.panFreq) * this.instr.fx_pan_amt / 512 + 0.5;
-      rsample *= 0.00476 * this.instr.env_master; // 39 / 8192 = 0.00476
-      
-      // Add to 16-bit channel buffer
-      // k = k * 2;
+      rsample *= 0.00476 * this.instr.env_master;
+
       if (k < chnbufLength) {
         chnBuf.left[k] += rsample * (1-t) ;
         chnBuf.right[k] += rsample * t;
@@ -229,14 +183,12 @@ var sonantxr_generate_song, sonantxr_generate_sound;
   var MusicGenerator = function(ctx, song) {
     this.ctx = ctx;
     this.song = song;
-    // Wave data configuration
-    this.waveSize = WAVE_SPS * song.songLen; // Total song size (in samples)
+    this.waveSize = WAVE_SPS * song.songLen;
   };
   
   MusicGenerator.prototype._generateTrack = function (instr, mixBuf, callBack) {
     var self = this;
     var chnBuf = generateBuffer(this.waveSize);
-    // Preload/precalc some properties/expressions (for improved performance)
     var waveSamples = self.waveSize,
       rowLen = self.song.rowLen,
       endPattern = self.song.endPattern,

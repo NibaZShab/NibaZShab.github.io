@@ -11,13 +11,12 @@ var
   max_verts = 1024 * 64,
   num_verts = 0,
   level_num_verts,
-  buffer_data = new Float32Array(max_verts*8), // allow 64k verts, 8 properties per vert
+  buffer_data = new Float32Array(max_verts*8),
 
 light_uniform,
 max_lights = 16,
   num_lights = 0,
-  light_data = new Float32Array(max_lights*7), // 32 lights, 7 properties per light
-
+  light_data = new Float32Array(max_lights*7),
 
 camera_x = 0, camera_y = 0, camera_z = 0, camera_shake = 0,
   camera_uniform,
@@ -37,16 +36,16 @@ shader_attribute_vec + "2 uv;" +
 shader_attribute_vec + "3 n;" +
 shader_uniform + "vec3 cam;" +
 shader_uniform + "float l[7*"+max_lights+"];" +
-shader_const_mat4 + "v=mat4(1,0,0,0,0,.707,.707,0,0,-.707,.707,0,0,-22.627,-22.627,1);" + // view
-shader_const_mat4 + "r=mat4(.977,0,0,0,0,1.303,0,0,0,0,-1,-1,0,0,-2,0);"+ // projection
+shader_const_mat4 + "v=mat4(1,0,0,0,0,.707,.707,0,0,-.707,.707,0,0,-22.627,-22.627,1);" +
+shader_const_mat4 + "r=mat4(.977,0,0,0,0,1.303,0,0,0,0,-1,-1,0,0,-2,0);"+
 "void main(void){" +
-"vl=vec3(0.3,0.3,0.6);" + // ambient color
+"vl=vec3(0.3,0.3,0.6);" +
 "for(int i=0; i<"+max_lights+"; i++) {"+
-"vec3 lp=vec3(l[i*7],l[i*7+1],l[i*7+2]);" + // light position
-"vl+=vec3(l[i*7+3],l[i*7+4],l[i*7+5])" + // light color *
-"*max(dot(n,normalize(lp-p)),0.)" + // diffuse *
-"*(1./(l[i*7+6]*(" + // attentuation *
-"length(lp-p)" + // distance
+"vec3 lp=vec3(l[i*7],l[i*7+1],l[i*7+2]);" +
+"vl+=vec3(l[i*7+3],l[i*7+4],l[i*7+5])" +
+"*max(dot(n,normalize(lp-p)),0.)" +
+"*(1./(l[i*7+6]*(" +
+"length(lp-p)" +
 ")));" +
 "}" +
 "vuv=uv;" +
@@ -58,32 +57,28 @@ shader_varying +
 shader_uniform + "sampler2D s;" +
 "void main(void){" +
 "vec4 t=texture2D(s,vuv);" +
-"if(t.a<.8)" + // 1) discard alpha
+"if(t.a<.8)" +
 "discard;" +
-"if(t.r>0.95&&t.g>0.25&&t.b==0.0)" + // 2) red glowing spider eyes
+"if(t.r>0.95&&t.g>0.25&&t.b==0.0)" +
 "gl_FragColor=t;" +
-"else{" +  // 3) calculate color with lights and fog
+"else{" +
 "gl_FragColor=t*vec4(vl,1.);" +
 "gl_FragColor.rgb*=smoothstep(" +
-"112.,16.," + // fog far, near
-"gl_FragCoord.z/gl_FragCoord.w" + // fog depth
+"112.,16.," +
+"gl_FragCoord.z/gl_FragCoord.w" +
 ");" +
 "}" +
-"gl_FragColor.rgb=floor(gl_FragColor.rgb*6.35)/6.35;" + // reduce colors to ~256
+"gl_FragColor.rgb=floor(gl_FragColor.rgb*6.35)/6.35;" +
 "}";
 
 
 function renderer_init() {
   
-  // Create shorthand WebGL function names
-  // var webglShortFunctionNames = {};
   for (var name in gl) {
     if (gl[name].length != udef) {
       gl[name.match(/(^..|[A-Z]|\d.|v$)/g).join('')] = gl[name];
-      // webglShortFunctionNames[name] = 'gl.'+name.match(/(^..|[A-Z]|\d.|v$)/g).join('');
     }
   }
-  // console.log(JSON.stringify(webglShortFunctionNames, null, '\t'));
   
   vertex_buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
@@ -122,7 +117,6 @@ function renderer_prepare_frame() {
   num_verts = level_num_verts;
   num_lights = 0;
   
-  // reset all lights
   light_data.fill(1);
 }
 
@@ -151,12 +145,11 @@ function push_quad(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, nx, ny, nz, t
 };
 
 function push_sprite(x, y, z, tile) {
-  // Only push sprites near to the camera
   if (
     _math.abs(-x - camera_x) < 128 &&
     _math.abs(-z - camera_z) < 128
   ) {
-    var tilt = 3+(camera_z + z)/12; // tilt sprite when closer to camera
+    var tilt = 3+(camera_z + z)/12;
     push_quad(x, y + 6, z, x + 6, y + 6, z, x, y, z + tilt, x + 6, y, z + tilt, 0, 0, 1, tile);
   }
 }
@@ -166,18 +159,16 @@ function push_floor(x, z, tile) {
 };
 
 function push_block(x, z, tile_top, tile_sites) {
-  // tall blocks for certain tiles
   var y = ~[8, 9, 17].indexOf(tile_sites) ? 16 : 8;
   
-  push_quad(x, y, z, x + 8, y, z, x, y, z + 8, x + 8, y, z + 8, 0, 1, 0, tile_top); // top
-  push_quad(x + 8, y, z, x + 8, y, z + 8, x + 8, 0, z, x + 8, 0, z + 8, 1, 0, 0, tile_sites); // right
-  push_quad(x, y, z + 8, x + 8, y, z + 8, x, 0, z + 8, x + 8, 0, z + 8, 0, 0, 1, tile_sites); // front
-  push_quad(x, y, z, x, y, z + 8, x, 0, z, x, 0, z + 8, -1, 0, 0, tile_sites); // left
+  push_quad(x, y, z, x + 8, y, z, x, y, z + 8, x + 8, y, z + 8, 0, 1, 0, tile_top);
+  push_quad(x + 8, y, z, x + 8, y, z + 8, x + 8, 0, z, x + 8, 0, z + 8, 1, 0, 0, tile_sites);
+  push_quad(x, y, z + 8, x + 8, y, z + 8, x, 0, z + 8, x + 8, 0, z + 8, 0, 0, 1, tile_sites);
+  push_quad(x, y, z, x, y, z + 8, x, 0, z, x, 0, z + 8, -1, 0, 0, tile_sites);
 };
 
 function push_light(x, y, z, r, g, b, falloff) {
-  // Only push lights near to the camera
-  var max_light_distance = (128 + 1/falloff); // cheap ass approximation
+  var max_light_distance = (128 + 1/falloff);
   if (
     num_lights < max_lights &&
     _math.abs(-x - camera_x) < max_light_distance &&
@@ -192,7 +183,6 @@ function compile_shader(shader_type, shader_source) {
   var shader = gl.createShader(shader_type);
   gl.shaderSource(shader, shader_source);
   gl.compileShader(shader);
-  // console.log(gl.getShaderInfoLog(shader));
   return shader;
 };
 

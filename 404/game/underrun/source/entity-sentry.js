@@ -17,7 +17,6 @@ class entity_sentry_t extends entity_t {
     
     t._select_target_counter -= time_elapsed;
     
-    // select new target after a while
     if (t._select_target_counter < 0) {
       if (dist < 64) {
         t._select_target_counter = _math.random() * 0.5 + 0.3;
@@ -33,7 +32,6 @@ class entity_sentry_t extends entity_t {
       }
     }
     
-    // set velocity towards target
     if (dist > 24) {
       t.ax = _math.abs(txd) > 2 ? (txd > 0 ? -48 : 48) : 0;
       t.az = _math.abs(tzd) > 2 ? (tzd > 0 ? -48 : 48) : 0;

@@ -17,14 +17,12 @@ class entity_spider_t extends entity_t {
     
     t._select_target_counter -= time_elapsed;
     
-    // select new target after a while
     if (t._select_target_counter < 0 && dist < 64) {
       t._select_target_counter = _math.random() * 0.5 + 0.3;
       t._target_x = entity_player.x;
       t._target_z = entity_player.z;
     }
     
-    // set velocity towards target
     t.ax = _math.abs(txd) > 2 ? (txd > 0 ? -160 : 160) : 0;
     t.az = _math.abs(tzd) > 2 ? (tzd > 0 ? -160 : 160) : 0;
     
@@ -41,7 +39,6 @@ class entity_spider_t extends entity_t {
   }
   
   _check(other) {
-    // slightly bounce off from other spiders to separate them
     if (other instanceof entity_spider_t) {
       var
         axis = (_math.abs(other.x - this.x) > _math.abs(other.z - this.z)
@@ -53,7 +50,6 @@ class entity_spider_t extends entity_t {
       other['v'+axis] -= amount;
     }
     
-    // hurt player
     else if (other instanceof entity_player_t) {
       this.vx *= -1.5;
       this.vz *= -1.5;

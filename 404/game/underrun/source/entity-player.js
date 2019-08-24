@@ -8,18 +8,15 @@ class entity_player_t extends entity_t {
     var t = this,
       speed = 128;
     
-    // movement
     t.ax = keys[key_left] ? -speed : keys[key_right] ? speed : 0;
     t.az = keys[key_up] ? -speed : keys[key_down] ? speed : 0;
     
-    // rotation - select appropriate sprite
     var angle = _math.atan2(
       mouse_y - (-34 + c.height * 0.8),
       mouse_x - (t.x + 6 + camera_x + c.width * 0.5)
     );
     t.s = 18 + ((angle / _math.PI * 4 + 10.5) % 8)|0;
     
-    // bobbing
     t._bob += time_elapsed * 1.75 * (_math.abs(t.vx) + _math.abs(t.vz));
     t.y = _math.sin(t._bob) * 0.25;
     

@@ -12,31 +12,26 @@ class entity_t {
     entities.push(t);
   }
   
-  // separate _init() method, because "constructor" cannot be uglyfied
   _init(init_param) {}
   
   _update() {
     var t = this,
       last_x = t.x, last_z = t.z;
     
-    // velocity
     t.vx += t.ax * time_elapsed - t.vx * _math.min(t.f * time_elapsed, 1);
     t.vy += t.ay * time_elapsed - t.vy * _math.min(t.f * time_elapsed, 1);
     t.vz += t.az * time_elapsed - t.vz * _math.min(t.f * time_elapsed, 1);
     
-    // position
     t.x += t.vx * time_elapsed;
     t.y += t.vy * time_elapsed;
     t.z += t.vz * time_elapsed;
     
-    // check wall collissions, horizontal
     if (t._collides(t.x, last_z)) {
       t._did_collide(t.x, t.y);
       t.x = last_x;
       t.vx = 0;
     }
     
-    // check wall collissions, vertical
     if (t._collides(t.x, t.z)) {
       t._did_collide(t.x, t.y);
       t.z = last_z;
@@ -45,10 +40,10 @@ class entity_t {
   }
   
   _collides(x, z) {
-    return level_data[(x >> 3) + (z >> 3) * level_width] > 7 || // top left
-    level_data[((x + 6) >> 3) + (z >> 3) * level_width] > 7 || // top right
-    level_data[((x + 6) >> 3) + ((z+4) >> 3) * level_width] > 7 || // bottom right
-    level_data[(x >> 3) + ((z+4) >> 3) * level_width] > 7; // bottom left
+    return level_data[(x >> 3) + (z >> 3) * level_width] > 7 ||
+    level_data[((x + 6) >> 3) + (z >> 3) * level_width] > 7 ||
+    level_data[((x + 6) >> 3) + ((z+4) >> 3) * level_width] > 7 ||
+    level_data[(x >> 3) + ((z+4) >> 3) * level_width] > 7;
   }
   
   _spawn_particles(amount) {
@@ -60,10 +55,8 @@ class entity_t {
     }
   }
   
-  // collision against static walls
   _did_collide() {}
   
-  // collision against other entities
   _check(other) {}
   
   _receive_damage(from, amount) {
@@ -80,7 +73,7 @@ class entity_t {
     }
   }
   
-  _render() { // render
+  _render() {
     var t = this;
     push_sprite(t.x-1, t.y, t.z, t.s);
   }

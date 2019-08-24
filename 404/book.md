@@ -35,10 +35,18 @@
     + **[web ua检测](http://service.spiritsoft.cn/ua.html)**
     + **[pixiv以图搜图](http://saucenao.com)**
     + **[内网穿透](https://ngrok.com)**
+    + **[81亿像素银河全景图](http://www.eso.org/public/images/eso1242a/zoomable)**
 
 # Lot Of Any
 
-## termimal
+## terminal
+```bash
+# for循环
+i=1
+for((; i<=100; i++)){
+echo "" >> $i
+}
+```
 ```sh
 # 截屏
 screencap /sdcard/abc.png
@@ -91,12 +99,9 @@ find / -name abc |xargs rm -rf
   
 **[我是传送门](https://github.com/NibaZShab/NibaZShab.github.io/releases/tag/vim)**
 ```sh
-# 开启十六进制模式
-:%!xxd
-```
-```sh
-# 关闭十六进制模式
-:%!xxd -r
+# 十六进制模式
+:%!xxd        # 开启
+:%!xxd -r     # 关闭
 ```
 ```sh
 # 把每一行的abc替换成cba
@@ -115,8 +120,9 @@ find / -name abc |xargs rm -rf
 :%s/$/abc/
 ```
 ```sh
-# 取消自动折行
-:set nowrap
+# 自动折行
+:set nowrap     # 开启
+:set wrap       # 关闭
 ```
 ```sh
 # 显示行号

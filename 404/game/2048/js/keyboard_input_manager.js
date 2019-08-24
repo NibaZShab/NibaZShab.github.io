@@ -2,7 +2,6 @@ function KeyboardInputManager() {
   this.events = {};
 
   if (window.navigator.msPointerEnabled) {
-    //Internet Explorer 10 style
     this.eventTouchstart    = "MSPointerDown";
     this.eventTouchmove     = "MSPointerMove";
     this.eventTouchend      = "MSPointerUp";
@@ -35,21 +34,20 @@ KeyboardInputManager.prototype.listen = function () {
   var self = this;
 
   var map = {
-    38: 0, // Up
-    39: 1, // Right
-    40: 2, // Down
-    37: 3, // Left
-    75: 0, // Vim up
-    76: 1, // Vim right
-    74: 2, // Vim down
-    72: 3, // Vim left
-    87: 0, // W
-    68: 1, // D
-    83: 2, // S
-    65: 3  // A
+    38: 0,
+    39: 1,
+    40: 2,
+    37: 3,
+    75: 0,
+    76: 1,
+    74: 2,
+    72: 3,
+    87: 0,
+    68: 1,
+    83: 2,
+    65: 3
   };
 
-  // Respond to direction keys
   document.addEventListener("keydown", function (event) {
     var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
                     event.shiftKey;
@@ -62,25 +60,22 @@ KeyboardInputManager.prototype.listen = function () {
       }
     }
 
-    // R key restarts the game
     if (!modifiers && event.which === 82) {
       self.restart.call(self, event);
     }
   });
 
-  // Respond to button presses
   this.bindButtonPress(".retry-button", this.restart);
   this.bindButtonPress(".restart-button", this.restart);
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
 
-  // Respond to swipe events
   var touchStartClientX, touchStartClientY;
   var gameContainer = document.getElementsByClassName("game-container")[0];
 
   gameContainer.addEventListener(this.eventTouchstart, function (event) {
     if ((!window.navigator.msPointerEnabled && event.touches.length > 1) ||
         event.targetTouches > 1) {
-      return; // Ignore if touching with more than 1 finger
+      return; 
     }
 
     if (window.navigator.msPointerEnabled) {
@@ -101,7 +96,7 @@ KeyboardInputManager.prototype.listen = function () {
   gameContainer.addEventListener(this.eventTouchend, function (event) {
     if ((!window.navigator.msPointerEnabled && event.touches.length > 0) ||
         event.targetTouches > 0) {
-      return; // Ignore if still touching with one or more fingers
+      return; 
     }
 
     var touchEndClientX, touchEndClientY;
@@ -121,7 +116,6 @@ KeyboardInputManager.prototype.listen = function () {
     var absDy = Math.abs(dy);
 
     if (Math.max(absDx, absDy) > 10) {
-      // (right : left) : (down : up)
       self.emit("move", absDx > absDy ? (dx > 0 ? 1 : 3) : (dy > 0 ? 2 : 0));
     }
   });
