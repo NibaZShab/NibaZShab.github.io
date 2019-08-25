@@ -41,6 +41,11 @@
 
 ## terminal
 ```bash
+# 删除abc和cba之外
+shopt -s extglob
+rm -rf !(abc|bca)
+```
+```bash
 # for循环
 i=1
 for((; i<=100; i++)){
