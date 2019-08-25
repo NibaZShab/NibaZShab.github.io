@@ -107,7 +107,7 @@ termux-setup-storage
 ## 创建储存软连接
 这里就用系统默认的``Pictures``文件夹来做个例子
 ```sh
-ln -s /data/data/com.termux/files/home/storage/shared/picture Pictures
+ln -s /sdcard/Pictures Pictures
 ```
 
 ![](/404/markdown/picture/10.png)
