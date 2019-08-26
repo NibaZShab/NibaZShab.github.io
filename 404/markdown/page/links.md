@@ -20,7 +20,7 @@ date: 2019-08-14 12:03:59
 
 ### 本站模板
 ```
-名称：小公主
+名称：小公主的博客
 链接：https://nibazshab.github.io
 图标：https://nibazshab.github.io/404/image/head.png
 简介：善万物之得时，感吾生之行休。
