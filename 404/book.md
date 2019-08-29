@@ -39,6 +39,18 @@
 # Lot Of Any
 
 ## terminal
+```py
+# 图片转base64
+import base64
+def pic2txt(picture_name):
+    with open ("%s" % picture_name, 'rb') as f:
+        b64str = base64.b64encode(f.read())
+    with open('%s.txt' % picture_name.split(".")[0], 'w+') as f:
+        f.write(str(b64str))
+        print("转化完成！")
+picture_name = input("输入图片名称:")
+pic2txt(picture_name)
+```
 ```bash
 # 删除abc和cba之外
 shopt -s extglob
