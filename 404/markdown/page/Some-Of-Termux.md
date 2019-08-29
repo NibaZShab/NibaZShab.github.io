@@ -27,6 +27,120 @@ date: 2019-08-09 09:50:16
 * [github开源地址](https://github.com/termux/termux-app)
 * [Google Play下载地址](https://play.google.com/store/apps/details?id=com.termux)
 
+
+> 这里提供一份我自己写的脚本，帮你快速配置termux
+>>  #!/bin/bash
+action1()
+{
+   mkdir $HOME/.termux
+   echo "extra-keys = [['~','ZZ','-','>','/','*','clean'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" >> $HOME/.termux/termux.properties
+}
+action2()
+{
+   apt update && apt upgrade -y
+   apt install zip wget -y
+   termux-setup-storage
+   wget -O 1.zip https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-android-21-arm64.zip
+   unzip 1.zip && rm 1.zip
+   mv BaiduPCS-Go-v3.5.6-android-21-arm64 BaiduPCS-Go
+   echo "cd ~/BaiduPCS-Go && ./BaiduPCS-Go" >> $PREFIX/bin/bdy
+   chmod 777 $PREFIX/bin/bdy
+   echo "
+***************************************
+*
+*    输入 bdy 即可食用
+*
+*
+*   如需使用百度输入法的接口，则配置:
+*
+*     config set -appid=310646
+*     cd /apps/baidu_shurufa
+*     config set -appid=265486
+*     config set -savedir /sdcard/Download
+*
+***************************************
+"
+}
+action3()
+{
+   echo "
+由于这个过于麻烦
+请前往 https://nibazshab.github.io/post/Build-With-Hexo 参考傻瓜教程"
+}
+action4()
+{
+   pkg install vim -y
+   pkg install python -y
+   pkg install aria2 -y
+   pkg install wget -y
+}
+action5()
+{
+   echo "# The main termux repository:
+deb http://mirrors.tuna.tsinghua.edu.cn/termux  stable main" > $PREFIX/etc/apt/sources.list
+}
+action6()
+{
+   mkdir /sdcard/$
+   ln -s /sdcard/$ 2
+   echo "
+已在sd卡目录下创建了$文件夹，并连接到了这里的2文件夹，进入2文件夹就相当于进入了/sdcard/$文件夹"
+}
+read -p " 
+***************************************
+*
+*    这是一个快速配置termux的东东
+*
+* 我jo的吧，用处不大，虽然是我自己写的
+*
+*            不过问题不大
+*
+*   由于技术限制，只能一次一次的搞
+*
+*                                －－by NibaZShab
+*
+***************************************
+***************************************
+*
+*   输入1，配置底部快捷键
+*
+*   输入2，安装终端版百度云
+*
+*   输入3，部署hexo博客
+*
+*   输入4，安装vim，python，aria2，wget
+*
+*   输入5，切换清华软件源
+*
+*   输入6，创建软连接
+*
+***************************************
+你的选择是？ [1/2/3/4/5/6]  " choose
+if [ $choose = "1" ]
+then
+    action1
+fi
+if [ $choose = "2" ]
+then
+    action2
+fi
+if [ $choose = "3" ]
+then
+    action3
+fi
+if [ $choose = "4" ]
+then
+    action4
+fi
+if [ $choose = "5" ]
+then
+    action5
+fi
+if [ $choose = "6" ]
+then
+    action6
+fi
+
 # 基本命令
 这里简单介绍一下``pkg``命令
 ```sh
