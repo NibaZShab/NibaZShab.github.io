@@ -10,16 +10,15 @@
 # Huge The Book
 > **bookstars**
   - **[静谧之钟](https://nibazshab.github.io/404/clock/)**
-  - **[厨余垃圾](https://github.com/NibaZShab/mirror/)**
-  - **[废品破烂](https://github.com/NibaZShab/NibaZShab.github.io/releases/)**
+  - **[镜像垃圾](https://github.com/NibaZShab/mirror/)**
   - **[涪陵榨菜](https://sssssystem.github.io)**
+  - **[破烂云盘](http://ftp6318587.host112.sanfengyun.cn/?/)**
     + ---
   - **养老院**
     + **[聚合图床](https://www.superbed.cn)**
     + **[奶牛传输](https://cowtransfer.com)**
     + **[石墨文档](https://shimo.im)**
   - **不可名状**
-    + **[好萌动漫](https://nicemoe.at)**
     + **[熊猫书签exhentai](https://expanda.org)**
     + **[恋爱游戏网](https://www.lianaiyx.com)**
     + **[gal资源站](https://www.nyagal.com)**
@@ -46,7 +45,7 @@ shopt -s extglob
 rm -rf !(abc|bca)
 ```
 ```bash
-# for循环
+# for循环100次
 i=1
 for((; i<=100; i++)){
 echo "" >> $i
@@ -87,7 +86,7 @@ cat a b > c
 /dev/null
 ```
 ```sh
-# 生成指定大小的空文件abc
+# 生成1024g空文件abc
 dd if=/dev/zero of=abc bs=1G count=0 seek=1024
 ```
 ```sh
