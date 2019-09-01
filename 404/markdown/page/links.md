@@ -7,11 +7,11 @@ date: 2019-08-14 12:03:59
 
 <div class="friends">
 
-<a class="a-friend" target="_blank"  href="https://nibazshab.github.io/404/qianmo/">
-<img class="blog-avatar" src="/404/image/head.png" data-tag="bdshare">
+<a class="a-friend" target="_blank"  href="https://sssssystem.github.io">
+<img class="blog-avatar" src="https://ae01.alicdn.com/kf/H7703af2e60384f3caf135f586114224cK.jpg" data-tag="bdshare">
 <div class="text-container">
-<div class="name">新的世界</div>
-<div class="description" style="width:185px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">就此打开新世界的大门。</div>
+<div class="name">涪陵榨菜</div>
+<div class="description" style="width:185px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">我吃的起涪陵榨菜啦。</div>
 </div>
 </a>
 
