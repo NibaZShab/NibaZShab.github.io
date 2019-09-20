@@ -29,6 +29,7 @@
     + **[loadbt](https://www.loadbt.com/files/)**
     + **[bt搜索聚合](https://hao.su/909/)**
     + **[tracker](https://github.com/ngosang/trackerslist)**
+    + **[tracker2](http://www.tkser.tk/)**
   - **邮箱**
     + **[企鹅邮箱](https://w.mail.qq.com)**
     + **[临时邮箱](https://10minutemail.net/m/?lang=zh-cn)**
