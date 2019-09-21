@@ -42,25 +42,25 @@ case $xuan in
 	unzip 07.zip
 	rm 07.zip
 	chmod 777 启动
-	echo "进度 [100%]"
+	echo -e "进度 [100%]"
 	main
 	;;
 02)
 	mkdir .termux
-	echo "extra-keys = [['>','-',',','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" >> $HOME/.termux/termux.properties
-	echo "进度 [100%]\n请重启 termux"
+	echo -e "extra-keys = [['>','-',',','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" >> $HOME/.termux/termux.properties
+	echo -e "进度 [100%]\n请重启 termux"
 	main
 	;;
 03)
 	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 	apt update && apt upgrade
-	echo "进度 [100%]\n请重启 termux"
+	echo -e "进度 [100%]\n请重启 termux"
 	main
 	;;
 04)
-	echo "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
+	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
-	echo "进度 [100%]"
+	echo -e "进度 [100%]"
 	main
 	;;
 05)
@@ -116,7 +116,7 @@ case $xuan in
 	cp ~/404/$/markdown/book.md .
 	chmod 777 book.md
 	npm install hexo-deployer-git --save
-	echo "进度 [100%]\n读取ssh密钥 cat ~/.ssh/id_rsa.pub\n检测ssh连接 ssh -T git@github.com"
+	echo -e "进度 [100%]\n读取ssh密钥 cat ~/.ssh/id_rsa.pub\n检测ssh连接 ssh -T git@github.com"
 	main
 	;;
 06)
@@ -128,6 +128,8 @@ case $xuan in
 	main
 	;;
 07)
+	clear
+	logo
 	van
 	;;
 08)
@@ -144,27 +146,27 @@ case $xuan in
 	chmod 777 installjava
 	./installjava
 	rm -rf termux-sudo
-	echo "进度 [100%]"
+	echo -e "进度 [100%]"
 	main
 	;;
 09)
 	pkg install aria2
-	echo "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
+	echo -e "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
 	chmod 777 启动aria2
-	echo "进度 [100%]"
+	echo -e "进度 [100%]"
 	main
 	;;
 00)
 	exit
 	;;
 *)
-	echo "＃你正确输入了一个错误序号！"
+	clear
+	logo
+	echo -e "\n\n\n＃你正确输入了一个错误序号！"
 	main
 esac
 }
 function van(){
-clear
-logo
 echo -e "
 \n
 001)  跑火车游戏
@@ -176,12 +178,12 @@ read -p "＃你选择的序号是：" vang
 case $vang in
 001)
 	apt install sl -y
-	echo "输入 sl 开始"
+	echo -e "输入 sl 开始"
 	van
 	;;
 002)
 	pkg in nyancat -y
-	echo "输入 nyancat 开始"
+	echo -e "输入 nyancat 开始"
 	van
 	;;
 000)
@@ -190,7 +192,9 @@ case $vang in
 	main
 	;;
 *)
-	echo "＃你正确输入了一个错误序号！"
+	clear
+	logo
+	echo -e "\n\n\n＃你正确输入了一个错误序号！"
 	van
 	;;
 esac
