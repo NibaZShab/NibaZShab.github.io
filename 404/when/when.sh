@@ -2,10 +2,7 @@
 clear
 function logo(){
 echo -e "
-
-
-
-
+\n\n\n\n\n\n
             h
              h
              h
@@ -16,25 +13,26 @@ echo -e "
     w        h   hh    eee    n   n  n
              h                     n
              h
-
 "
 }
 function main(){
 echo -e "
-
-1) 安装命令行版百度云
-2) 修复底部小键盘
-3) 切换清华源
-4) 安装linux发行版
-5) 安装hexo博客
-6) 刷流量
-7) 好van的东西
-0) 退出
---------------------------------------------------
+\n
+01)  安装命令行版百度云
+02)  修复底部小键盘
+03)  切换清华源
+04)  安装linux发行版
+05)  安装hexo博客
+06)  刷流量/测网速
+07)  好van的东西
+08)  安装jdk
+09)  安装aria2下载工具
+00)  退出
+---------------------------------------------
 "
-read -p "＄你选择的序号是：" xuan
+read -p "＃你选择的序号是：" xuan
 case $xuan in
-1)
+01)
 	pkg install unzip -y
 	pkg install vim -y
 	pkg install wget -y
@@ -47,25 +45,25 @@ case $xuan in
 	echo "进度 [100%]"
 	main
 	;;
-2)
+02)
 	mkdir .termux
 	echo "extra-keys = [['>','-',',','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" >> $HOME/.termux/termux.properties
 	echo "进度 [100%]\n请重启 termux"
 	main
 	;;
-3)
+03)
 	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 	apt update && apt upgrade
 	echo "进度 [100%]\n请重启 termux"
 	main
 	;;
-4)
+04)
 	echo "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
 	echo "进度 [100%]"
 	main
 	;;
-5)
+05)
 	pkg install unzip -y
 	pkg install wget -y
 	pkg install vim -y
@@ -121,7 +119,7 @@ case $xuan in
 	echo "进度 [100%]\n读取ssh密钥 cat ~/.ssh/id_rsa.pub\n检测ssh连接 ssh -T git@github.com"
 	main
 	;;
-6)
+06)
 	i=0
 	while [ $((i++)) -le 999 ]
 	do
@@ -129,14 +127,38 @@ case $xuan in
 	done
 	main
 	;;
-7)
+07)
 	van
 	;;
-0)
+08)
+	pkg install git -y
+	pkg install wget -y
+	git clone https://gitlab.com/st42/termux-sudo.git
+	cd termux-sudo
+	pkg install ncurses-utils
+	apt install wget [se non lo hai]
+	cat sudo > /data/data/com.termux/files/usr/bin/sudo
+	chmod 777 /data/data/com.termux/files/usr/bin/sudo
+	git clone https://github.com/Hax4us/java.git
+	cd java
+	chmod 777 installjava
+	./installjava
+	rm -rf termux-sudo
+	echo "进度 [100%]"
+	main
+	;;
+09)
+	pkg install aria2
+	echo "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
+	chmod 777 启动aria2
+	echo "进度 [100%]"
+	main
+	;;
+00)
 	exit
 	;;
 *)
-	echo "＄你正确输入了一个错误序号！"
+	echo "＃你正确输入了一个错误序号！"
 	main
 esac
 }
@@ -144,32 +166,31 @@ function van(){
 clear
 logo
 echo -e "
-
-
-11) 跑火车游戏
-12) 彩虹猫
-10) 返回
-----------------------------------------
+\n
+001)  跑火车游戏
+002)  彩虹猫
+000)  返回
+---------------------------------------------
 "
-read -p "＄你选择的序号是：" vang
+read -p "＃你选择的序号是：" vang
 case $vang in
-11)
+001)
 	apt install sl -y
 	echo "输入 sl 开始"
 	van
 	;;
-12)
+002)
 	pkg in nyancat -y
 	echo "输入 nyancat 开始"
 	van
 	;;
-10)
+000)
 	claer
 	logo
 	main
 	;;
 *)
-	echo "＄你正确输入了一个错误序号！"
+	echo "＃你正确输入了一个错误序号！"
 	van
 	;;
 esac
