@@ -25,7 +25,7 @@ echo -e "
 05)  安装hexo博客(作者的仓库)
 06)  刷流量/测网速
 07)  好van的东西
-08)  安装jdk
+08)  配置java关键
 09)  安装aria2下载工具
 00)  退出
 ---------------------------------------------
@@ -171,24 +171,19 @@ echo -e "
 \n
 001)  跑火车游戏
 002)  彩虹猫
-003)  更新
 000)  返回
 ---------------------------------------------
 "
 read -p "＃你选择的序号是：" vang
 case $vang in
 001)
-	apt install sl -y
+	pkg install sl -y
 	echo -e "输入 sl 开始"
 	van
 	;;
 002)
 	pkg in nyancat -y
 	echo -e "输入 nyancat 开始"
-	van
-	;;
-003)
-	apt update
 	van
 	;;
 000)
