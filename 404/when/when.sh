@@ -151,7 +151,7 @@ case $xuanze in
 	go
 	;;
 09)
-	pkg install aria2
+	pkg install aria2 -y
 	echo -e "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
 	chmod 777 启动aria2
 	echo -e "进度 [100%]"
