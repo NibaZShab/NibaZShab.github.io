@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~
 clear
 function logo(){
 echo -e "
@@ -15,7 +16,7 @@ echo -e "
              h
 "
 }
-function main(){
+function go(){
 echo -e "
 \n
 01)  安装命令行版百度云
@@ -30,8 +31,8 @@ echo -e "
 00)  退出
 ---------------------------------------------
 "
-read -p "＃你选择的序号是：" xuan
-case $xuan in
+read -p "[when]＃你选择的序号是：" xuanze
+case $xuanze in
 01)
 	pkg install unzip -y
 	pkg install vim -y
@@ -43,25 +44,25 @@ case $xuan in
 	rm 07.zip
 	chmod 777 启动
 	echo -e "进度 [100%]"
-	main
+	go
 	;;
 02)
 	mkdir .termux
 	echo -e "extra-keys = [['>','-',',','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" >> $HOME/.termux/termux.properties
 	echo -e "进度 [100%]\n请重启 termux"
-	main
+	go
 	;;
 03)
 	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 	apt update && apt upgrade
 	echo -e "进度 [100%]\n请重启 termux"
-	main
+	go
 	;;
 04)
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
 	echo -e "进度 [100%]"
-	main
+	go
 	;;
 05)
 	pkg install unzip -y
@@ -116,8 +117,8 @@ case $xuan in
 	cp ~/404/$/markdown/book.md .
 	chmod 777 book.md
 	npm install hexo-deployer-git --save
-	echo -e "进度 [100%]\n读取ssh密钥 cat ~/.ssh/id_rsa.pub\n检测ssh连接 ssh -T git@github.com"
-	main
+	echo -e "进度 [100%]\n读取ssh密钥 cat ~/.ssh/id_rsa.pub\n检测ssh连接 ssh -T git@github.com\n\n注:此为作者的个人仓库，请重新创建ssh密钥，连接自己的github"
+	go
 	;;
 06)
 	i=0
@@ -125,12 +126,12 @@ case $xuan in
 	do
 	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk 
 	done
-	main
+	go
 	;;
 07)
 	clear
 	logo
-	van
+	back
 	;;
 08)
 	pkg install git -y
@@ -147,14 +148,14 @@ case $xuan in
 	./installjava
 	rm -rf termux-sudo
 	echo -e "进度 [100%]"
-	main
+	go
 	;;
 09)
 	pkg install aria2
 	echo -e "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
 	chmod 777 启动aria2
 	echo -e "进度 [100%]"
-	main
+	go
 	;;
 00)
 	exit
@@ -163,10 +164,10 @@ case $xuan in
 	clear
 	logo
 	echo -e "\n\n\n＃你正确输入了一个错误序号！"
-	main
+	go
 esac
 }
-function van(){
+function back(){
 echo -e "
 \n
 001)  跑火车游戏
@@ -174,30 +175,30 @@ echo -e "
 000)  返回
 ---------------------------------------------
 "
-read -p "＃你选择的序号是：" vang
-case $vang in
+read -p "[when]＃你选择的序号是：" haixuanze
+case $haixuanze in
 001)
 	pkg install sl -y
 	echo -e "输入 sl 开始"
-	van
+	back
 	;;
 002)
 	pkg in nyancat -y
 	echo -e "输入 nyancat 开始"
-	van
+	back
 	;;
 000)
-	claer
+	clear
 	logo
-	main
+	go
 	;;
 *)
 	clear
 	logo
 	echo -e "\n\n\n＃你正确输入了一个错误序号！"
-	van
+	back
 	;;
 esac
 }
 logo
-main
+go
