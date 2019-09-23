@@ -1,5 +1,4 @@
 #!/bin/bash
-cd ~
 clear
 function logo(){
 echo -e "
@@ -17,6 +16,7 @@ echo -e "
 "
 }
 function go(){
+cd ~
 echo -e "
 \n
 01)  安装命令行版百度云
@@ -168,6 +168,7 @@ case $xuanze in
 esac
 }
 function back(){
+cd ~
 echo -e "
 \n
 001)  跑火车游戏
