@@ -161,6 +161,8 @@ case $xuanze in
 10)
 	pkg install -y wget
 	wget -O theme https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
+	echo -e "\n推荐配色值为 19\n"
+	sleep 5s
 	sh theme
 	echo -e "进度 [100%]\n请重启 termux"
 	home
@@ -181,6 +183,7 @@ echo -e "
 \n
 001)  小火车
 002)  彩虹猫
+003)  screenfetch
 000)  返回
 ---------------------------------------------
 "
@@ -194,6 +197,11 @@ case $haixuanze in
 002)
 	pkg install -y nyancat
 	echo -e "输入 nyancat 开始"
+	game
+	;;
+003)
+	pkg install -y screenfetch
+	echo -e "输入 scrrenfetch 开始"
 	game
 	;;
 000)
@@ -210,4 +218,4 @@ case $haixuanze in
 esac
 }
 logo
-game
+home
