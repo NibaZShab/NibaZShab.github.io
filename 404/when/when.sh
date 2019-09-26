@@ -15,7 +15,7 @@ echo -e "
              h
 "
 }
-function go(){
+function home(){
 cd ~
 echo -e "
 \n
@@ -26,12 +26,12 @@ echo -e "
 05)  安装hexo博客(作者的仓库)
 06)  刷流量/测网速
 07)  好van的东西
-08)  配置java关键
+08)  配置java环境
 09)  安装aria2下载工具
 00)  退出
 ---------------------------------------------
 "
-read -p "[when]＃你选择的序号是：" xuanze
+read -p "[when]# 你选择的序号是：" xuanze
 case $xuanze in
 01)
 	pkg install unzip -y
@@ -44,25 +44,25 @@ case $xuanze in
 	rm 07.zip
 	chmod 777 启动
 	echo -e "进度 [100%]"
-	go
+	home
 	;;
 02)
 	mkdir .termux
 	echo -e "extra-keys = [['>','-',',','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" >> $HOME/.termux/termux.properties
 	echo -e "进度 [100%]\n请重启 termux"
-	go
+	home
 	;;
 03)
 	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 	apt update && apt upgrade
 	echo -e "进度 [100%]\n请重启 termux"
-	go
+	home
 	;;
 04)
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
 	echo -e "进度 [100%]"
-	go
+	home
 	;;
 05)
 	pkg install unzip -y
@@ -118,7 +118,7 @@ case $xuanze in
 	chmod 777 book.md
 	npm install hexo-deployer-git --save
 	echo -e "进度 [100%]\n读取ssh密钥 cat ~/.ssh/id_rsa.pub\n检测ssh连接 ssh -T git@github.com\n\n注:此为作者的个人仓库，请重新创建ssh密钥，连接自己的github"
-	go
+	home
 	;;
 06)
 	i=0
@@ -126,12 +126,12 @@ case $xuanze in
 	do
 	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk 
 	done
-	go
+	home
 	;;
 07)
 	clear
 	logo
-	back
+	game
 	;;
 08)
 	pkg install git -y
@@ -148,14 +148,14 @@ case $xuanze in
 	./installjava
 	rm -rf termux-sudo
 	echo -e "进度 [100%]"
-	go
+	home
 	;;
 09)
 	pkg install aria2 -y
 	echo -e "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
 	chmod 777 启动aria2
 	echo -e "进度 [100%]"
-	go
+	home
 	;;
 00)
 	exit
@@ -163,43 +163,43 @@ case $xuanze in
 *)
 	clear
 	logo
-	echo -e "\n\n\n＃你正确输入了一个错误序号！"
-	go
+	echo -e "\n\n\n# 你正确输入了一个错误序号！"
+	home
 esac
 }
-function back(){
+function game(){
 cd ~
 echo -e "
 \n
-001)  跑火车游戏
+001)  小火车
 002)  彩虹猫
 000)  返回
 ---------------------------------------------
 "
-read -p "[when]＃你选择的序号是：" haixuanze
+read -p "[when]# 你选择的序号是：" haixuanze
 case $haixuanze in
 001)
 	pkg install sl -y
 	echo -e "输入 sl 开始"
-	back
+	game
 	;;
 002)
 	pkg in nyancat -y
 	echo -e "输入 nyancat 开始"
-	back
+	game
 	;;
 000)
 	clear
 	logo
-	go
+	home
 	;;
 *)
 	clear
 	logo
-	echo -e "\n\n\n＃你正确输入了一个错误序号！"
-	back
+	echo -e "\n\n\n# 你正确输入了一个错误序号！"
+	game
 	;;
 esac
 }
 logo
-go
+game

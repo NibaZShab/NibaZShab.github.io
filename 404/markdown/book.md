@@ -19,6 +19,7 @@
     + **[聚合图床](https://www.superbed.cn)**
     + **[奶牛传输](https://cowtransfer.com)**
     + **[石墨文档](https://shimo.im)**
+    + **[rsshub](https://docs.rsshub.app)**
     + **[三丰云](https://www.sanfengyun.com/control/#/freeServerList)**
     + **[ariang](http://aria2.net/)**
   - **不可名状**
