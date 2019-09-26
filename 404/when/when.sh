@@ -28,6 +28,7 @@ echo -e "
 07)  好van的东西
 08)  配置java环境
 09)  安装aria2下载工具
+10)  切换为zsh终端
 00)  退出
 ---------------------------------------------
 "
@@ -155,6 +156,13 @@ case $xuanze in
 	echo -e "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
 	chmod 777 启动aria2
 	echo -e "进度 [100%]"
+	home
+	;;
+10)
+	pkg install -y wget
+	wget -O theme https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
+	sh theme
+	echo -e "进度 [100%]\n请重启 termux"
 	home
 	;;
 00)
