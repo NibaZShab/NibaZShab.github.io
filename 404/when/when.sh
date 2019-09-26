@@ -34,9 +34,9 @@ echo -e "
 read -p "[when]# 你选择的序号是：" xuanze
 case $xuanze in
 01)
-	pkg install unzip -y
-	pkg install vim -y
-	pkg install wget -y
+	pkg install -y unzip
+	pkg install -y vim
+	pkg install -y wget
 	mkdir 百度云
 	cd 百度云
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/07/07.zip
@@ -65,19 +65,19 @@ case $xuanze in
 	home
 	;;
 05)
-	pkg install unzip -y
-	pkg install wget -y
-	pkg install vim -y
-	pkg install git -y
-	pkg install nodejs-lts -y
-	pkg install openssh -y
+	pkg install -y unzip
+	pkg install -y wget
+	pkg install -y vim
+	pkg install -y git
+	pkg install -y nodejs-lts
+	pkg install -y openssh
 	mkdir 博客
 	cd 博客
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
 	unzip 02.zip
 	rm 02.zip
-	npm install hexo-cli -g
-	npm install hexo --save
+	npm install -g hexo-cli
+	npm install --save hexo
 	mkdir 404
 	cd 404
 	hexo init
@@ -116,7 +116,7 @@ case $xuanze in
 	cd ../..
 	cp ~/404/$/markdown/book.md .
 	chmod 777 book.md
-	npm install hexo-deployer-git --save
+	npm install --save hexo-deployer-git
 	echo -e "进度 [100%]\n读取ssh密钥 cat ~/.ssh/id_rsa.pub\n检测ssh连接 ssh -T git@github.com\n\n注:此为作者的个人仓库，请重新创建ssh密钥，连接自己的github"
 	home
 	;;
@@ -124,7 +124,7 @@ case $xuanze in
 	i=0
 	while [ $((i++)) -le 999 ]
 	do
-	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk 
+	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk
 	done
 	home
 	;;
@@ -134,8 +134,8 @@ case $xuanze in
 	game
 	;;
 08)
-	pkg install git -y
-	pkg install wget -y
+	pkg install -y git
+	pkg install -y wget
 	git clone https://gitlab.com/st42/termux-sudo.git
 	cd termux-sudo
 	pkg install ncurses-utils
@@ -151,7 +151,7 @@ case $xuanze in
 	home
 	;;
 09)
-	pkg install aria2 -y
+	pkg install -y aria2
 	echo -e "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
 	chmod 777 启动aria2
 	echo -e "进度 [100%]"
@@ -179,12 +179,12 @@ echo -e "
 read -p "[when]# 你选择的序号是：" haixuanze
 case $haixuanze in
 001)
-	pkg install sl -y
+	pkg install -y sl
 	echo -e "输入 sl 开始"
 	game
 	;;
 002)
-	pkg in nyancat -y
+	pkg install -y nyancat
 	echo -e "输入 nyancat 开始"
 	game
 	;;
