@@ -19,33 +19,27 @@ function home(){
 cd ~
 echo -e "
 \n
-01)  安装命令行版百度云
+01)  好van的东西
 02)  修复底部小键盘
 03)  切换清华源
-04)  安装linux发行版
+04)  使用atilo安装linux发行版
 05)  安装hexo博客(作者的仓库)
 06)  刷流量/测网速
-07)  好van的东西
+07)  安装命令行版百度云
 08)  配置java环境
 09)  安装aria2下载工具
 10)  切换为zsh终端
+11)  安装annie下载工具
 00)  退出
 ---------------------------------------------
 "
 read -p "[when]# 你选择的序号是：" xuanze
 case $xuanze in
 01)
-	pkg install -y unzip
-	pkg install -y vim
-	pkg install -y wget
-	mkdir 百度云
-	cd 百度云
-	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/07/07.zip
-	unzip 07.zip
-	rm 07.zip
-	chmod 777 启动
-	echo -e "进度 [100%]"
-	home
+	clear
+	logo
+	sleep 1s
+	game
 	;;
 02)
 	mkdir .termux
@@ -130,9 +124,17 @@ case $xuanze in
 	home
 	;;
 07)
-	clear
-	logo
-	game
+	pkg install -y unzip
+	pkg install -y vim
+	pkg install -y wget
+	mkdir 百度云
+	cd 百度云
+	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/07/07.zip
+	unzip 07.zip
+	rm 07.zip
+	chmod 777 启动
+	echo -e "进度 [100%]"
+	home
 	;;
 08)
 	pkg install -y git
@@ -167,13 +169,23 @@ case $xuanze in
 	echo -e "进度 [100%]\n请重启 termux"
 	home
 	;;
+11)
+	pkg install -y ffmpeg
+	pkg install -y golang
+	go get github.com/iawia002/annie
+	mv go/bin/annie ../usr/bin
+	rm -rf go
+	chmod 777 ../usr/bin/annie
+	;;
 00)
+	sleep 1s
 	exit
 	;;
 *)
 	clear
 	logo
 	echo -e "\n\n\n# 你正确输入了一个错误序号！"
+	sleep 2s
 	home
 esac
 }
@@ -207,15 +219,18 @@ case $haixuanze in
 000)
 	clear
 	logo
+	sleep 1s
 	home
 	;;
 *)
 	clear
 	logo
 	echo -e "\n\n\n# 你正确输入了一个错误序号！"
+	sleep 2s
 	game
 	;;
 esac
 }
 logo
+sleep 1s
 home

@@ -47,6 +47,10 @@
 # Lot Of Any
 
 ## terminal
+```sh
+# 创建一张以当前时间为名的图片
+touch $(date +%Y.%m.%d-%H:%M:%S).png
+```
 ```py
 # 图片转base64
 import base64
