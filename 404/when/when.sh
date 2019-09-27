@@ -162,10 +162,10 @@ case $xuanze in
 	;;
 10)
 	pkg install -y wget
-	wget -O theme https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
-	echo -e "\n推荐配色值为 19\n"
-	sleep 5s
-	sh theme
+	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
+	echo -e "\n推荐配色值 → 19\n"
+	sleep 3s
+	sh install.sh
 	echo -e "进度 [100%]\n请重启 termux"
 	home
 	;;
