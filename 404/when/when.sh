@@ -3,16 +3,14 @@ clear
 function logo(){
 echo -e "
 \n\n\n\n\n\n
-            h
-             h
-             h
-         w   h        ee      n
-  w   w   w  h h h   e   e    n n n
- w w w w w   h   h  e eee   n n   n
-    w   w    h   h   e        n   n  
-    w        h   hh    eee    n   n  n
-             h                     n
-             h
+                +
+		+
+		+
+   +   +   +    +++++++    +++++++    +++++++
+   +   +   +    +     +    +     +    +     +
+   +   +   +    +     +    +++++++    +     +
+   +   +   +    +     +    +          +     +
+   +++++++++    +     +    +++++++    +     +
 "
 }
 function home(){
