@@ -176,6 +176,8 @@ case $xuanze in
 	home
 	;;
 00)
+	clear
+	cat $PREFIX/etc/motd
 	exit
 	;;
 *)
@@ -213,7 +215,7 @@ case $haixuanze in
 003)
 	sleep 0.5s
 	pkg install -y screenfetch
-	echo -e "输入 scrrenfetch 开始"
+	echo -e 输入 "screenfetch 开始"
 	game
 	;;
 000)
