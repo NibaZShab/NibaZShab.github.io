@@ -27,7 +27,6 @@ echo -e "
 08)  配置java环境
 09)  安装aria2下载工具
 10)  切换为zsh终端
-11)  安装annie下载工具
 00)  退出
 ---------------------------------------------
 "
@@ -40,24 +39,28 @@ case $xuanze in
 	game
 	;;
 02)
+	sleep 0.5s
 	mkdir .termux
 	echo -e "extra-keys = [['>','-',',','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" >> $HOME/.termux/termux.properties
 	echo -e "进度 [100%]\n请重启 termux"
 	home
 	;;
 03)
+	sleep 0.5s
 	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 	apt update && apt upgrade
 	echo -e "进度 [100%]\n请重启 termux"
 	home
 	;;
 04)
+	sleep 0.5s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
 	echo -e "进度 [100%]"
 	home
 	;;
 05)
+	sleep 0.5s
 	pkg install -y unzip
 	pkg install -y wget
 	pkg install -y vim
@@ -114,6 +117,7 @@ case $xuanze in
 	home
 	;;
 06)
+	sleep 0.5s
 	i=0
 	while [ $((i++)) -le 999 ]
 	do
@@ -122,8 +126,8 @@ case $xuanze in
 	home
 	;;
 07)
+	sleep 0.5s
 	pkg install -y unzip
-	pkg install -y vim
 	pkg install -y wget
 	mkdir 百度云
 	cd 百度云
@@ -135,6 +139,7 @@ case $xuanze in
 	home
 	;;
 08)
+	sleep 0.5s
 	pkg install -y git
 	pkg install -y wget
 	git clone https://gitlab.com/st42/termux-sudo.git
@@ -152,6 +157,7 @@ case $xuanze in
 	home
 	;;
 09)
+	sleep 0.5s
 	pkg install -y aria2
 	echo -e "am start -a android.intent.action.VIEW -d http://aria2.net\naria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c" >> 启动aria2
 	chmod 777 启动aria2
@@ -159,24 +165,17 @@ case $xuanze in
 	home
 	;;
 10)
+	sleep 0.5s
 	pkg install -y wget
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
 	echo -e "\n推荐配色值 → 19\n"
 	sleep 3s
 	sh install.sh
 	echo -e "进度 [100%]\n请重启 termux"
+	rm -rf storage
 	home
 	;;
-11)
-	pkg install -y ffmpeg
-	pkg install -y golang
-	go get github.com/iawia002/annie
-	mv go/bin/annie ../usr/bin
-	rm -rf go
-	chmod 777 ../usr/bin/annie
-	;;
 00)
-	sleep 1s
 	exit
 	;;
 *)
@@ -200,16 +199,19 @@ echo -e "
 read -p "[when]# 你选择的序号是：" haixuanze
 case $haixuanze in
 001)
+	sleep 0.5s
 	pkg install -y sl
 	echo -e "输入 sl 开始"
 	game
 	;;
 002)
+	sleep 0.5s
 	pkg install -y nyancat
 	echo -e "输入 nyancat 开始"
 	game
 	;;
 003)
+	sleep 0.5s
 	pkg install -y screenfetch
 	echo -e "输入 scrrenfetch 开始"
 	game
