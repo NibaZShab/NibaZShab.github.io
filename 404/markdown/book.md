@@ -43,6 +43,7 @@
     + **[在线win10电脑](https://demo.glyptodon.com/)**
     + **[网盘资源搬运50g/月](https://www.multcloud.com/)**
     + **[免费域名](www.freenom.com)**
+    + **tg频道搜索[](http://www.sssoou.com)**
 
 # Lot Of Any
 

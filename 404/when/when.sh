@@ -27,6 +27,7 @@ echo -e "
 08)  配置java环境
 09)  安装aria2下载工具
 10)  切换为zsh终端
+11)  配置python环境
 00)  退出
 ---------------------------------------------
 "
@@ -174,6 +175,16 @@ case $xuanze in
 	echo -e "进度 [100%]\n请重启 termux"
 	rm -rf storage
 	home
+	;;
+11)
+	sleep 0.5s
+	pkg install -y vim-python
+	pkg install -y python
+	pkg install -y python2
+	pkg install -y clang
+	pip install ipython
+	pip3 install ipython
+	echo -e "输入 ipython 进入 python2 控制台\n输入 ipython2 进入 python3 控制台"
 	;;
 00)
 	clear
