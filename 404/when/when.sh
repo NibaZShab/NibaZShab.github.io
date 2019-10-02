@@ -206,6 +206,8 @@ echo -e "
 001)  小火车
 002)  彩虹猫
 003)  screenfetch
+004)  cowsay
+005)  打开王者荣耀
 000)  返回
 ---------------------------------------------
 "
@@ -227,6 +229,17 @@ case $haixuanze in
 	sleep 0.5s
 	pkg install -y screenfetch
 	echo -e 输入 "screenfetch 开始"
+	game
+	;;
+004)
+	sleep 0.5s
+	pkg install -y cowsay
+	echo -e 输入 "cowsay 内容 开始"
+	game
+	;;
+005)
+	sleep 0.5s
+	am start -n com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity
 	game
 	;;
 000)
