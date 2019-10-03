@@ -1,4 +1,8 @@
 #!/bin/bash
+# Copyright (c) 2019 NibaZShab
+# https://github.com/NibaZShab/NibaZShab.github.io
+# https://nibazshab.github.io
+# sh -c "$(curl -fsSL https://nibazshab.github.io/404/when/install.sh)"
 clear
 function logo(){
 echo -e "
@@ -203,46 +207,46 @@ function game(){
 cd ~
 echo -e "
 \n
-001)  小火车
-002)  彩虹猫
-003)  screenfetch
-004)  cowsay
-005)  打开王者荣耀
-000)  返回
+01)  小火车
+02)  彩虹猫
+03)  screenfetch
+04)  cowsay
+05)  打开王者荣耀
+00)  返回
 ---------------------------------------------
 "
 read -p "[when]# 你选择的序号是：" haixuanze
 case $haixuanze in
-001)
+01)
 	sleep 0.5s
 	pkg install -y sl
 	echo -e "输入 sl 开始"
 	game
 	;;
-002)
+02)
 	sleep 0.5s
 	pkg install -y nyancat
 	echo -e "输入 nyancat 开始"
 	game
 	;;
-003)
+03)
 	sleep 0.5s
 	pkg install -y screenfetch
 	echo -e 输入 "screenfetch 开始"
 	game
 	;;
-004)
+04)
 	sleep 0.5s
 	pkg install -y cowsay
 	echo -e 输入 "cowsay 内容 开始"
 	game
 	;;
-005)
+05)
 	sleep 0.5s
 	am start -n com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity
 	game
 	;;
-000)
+00)
 	clear
 	logo
 	sleep 1s
