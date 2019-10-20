@@ -26,7 +26,7 @@ echo -e "
 03)  切换清华源
 04)  使用atilo安装linux发行版
 05)  安装hexo博客(作者的库)
-06)  刷流量/测网速
+06)  切换termux问候语
 07)  安装命令行版百度云
 08)  安装aria2下载工具
 09)  切换为zsh终端
@@ -129,17 +129,9 @@ case $jia in
 	;;
 06)
 	sleep 0.5s
-	if test -e $PREFIX/bin/wget
-	then
-		:
-	else
-		pkg install -y wget
-	fi
-	i=0
-	while [ $((i++)) -le 999 ]
-	do
-	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk
-	done
+	echo -e "\n\n\n\n                   Welcome to Termux!\n\n           I'm NibaZShab,thanks for use \"when\"\n\n\n\n                      代码使人头冷\n                    专业护发，用飘柔\n\n ------------------------------------------------------\n             民生各有所乐兮，余独好修以为常\n             虽体解吾犹未变兮，岂余心之可惩\n ------------------------------------------------------\n\n                    Hello  my  World\n\n\n" > $PREFIX/etc/motd
+	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m请重启 termux\033[0m"
+	home
 	;;
 07)
 	sleep 0.5s
@@ -234,11 +226,13 @@ echo -e "
 04)  neofetch
 05)  奶牛说话
 06)  打开王者荣耀
+07)  刷流量
+08)  欧皇测试游戏
 00)  返回
 ---------------------------------------------
 "
-read -p "[when]# 你选择的序号是：" haovande
-case $haovande in
+read -p "[when]# 你选择的序号是：" vande
+case $vande in
 01)
 	sleep 0.5s
 	pkg install -y sl
@@ -273,6 +267,28 @@ case $haovande in
 	sleep 0.5s
 	am start -n com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity
 	exit
+	;;
+07)
+	sleep 0.5s
+	if test -e $PREFIX/bin/wget
+	then
+		:
+	else
+		pkg install -y wget
+	fi
+	i=0
+	while [ $((i++)) -le 999 ]
+	do
+	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk
+	done
+	;;
+08)
+	sleep 0.5s
+	pkg install -y wget
+	wget -O $HOME/van https://nibazshab.github.io/404/when/van.sh
+	chmod 777 $HOME/van
+	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m输入 ./van 开始\033[0m"
+	game
 	;;
 00)
 	clear
@@ -347,3 +363,4 @@ esac
 logo
 sleep 1s
 home
+exit
