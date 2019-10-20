@@ -81,9 +81,9 @@ case $jia in
 	rm -rf $HOME/博客
 	mkdir -p $HOME/博客	
 	wget -O $HOME/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
+	cd $HOME/博客
 	unzip $HOME/博客/02.zip
 	rm -rf $HOME/博客/02.zip
-	cd $HOME/博客
 	npm install -g hexo-cli
 	npm install --save hexo
 	mkdir -p $HOME/博客/404
@@ -99,6 +99,8 @@ case $jia in
 	git config --global user.email "nibazshab@gmail.com"
 	git init
 	git remote add origin git@github.com:NibaZShab/NibaZShab.github.io.git
+	echo -e "\n\033[36;43;1m接下来请一路回车即可\033[0m"
+	sleep 2s
 	ssh-keygen -t rsa -C "nibazshab@gmail.com"
 	cd $HOME/博客
 	git clone https://github.com/NibaZShab/NibaZShab.github.io.git
@@ -146,13 +148,15 @@ case $jia in
 	cd $HOME
 	git clone https://github.com/iikira/BaiduPCS-Go.git
 	cd $HOME/BaiduPCS-Go
-	GOOS=android GOARCH=arm64 go build -o 百度云 main.go
-	mv -f 百度云 $HOME
+	echo -e "\033[36;43;1m编译时间较长，请耐心等待\033[0m"
+	sleep 2s
+	GOOS=android GOARCH=arm64 go build -o bdy main.go
+	mv -f bdy $HOME
 	cd $HOME
 	rm -rf $HOME/BaiduPCS-Go
 	chmod -Rf 777 $HOME/go
 	rm -rf $HOME/go
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m输入 ./百度云 开始\033[0m"
+	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m输入 ./bdy 开始\033[0m"
 	home
 	;;
 08)
@@ -162,7 +166,7 @@ case $jia in
 	cd /sdcard/Download
 	rm -rf /sdcard/Download/aria2
 	mkdir -p /sdcard/Download/aria2
-	echo -e "" >> /sdcard/Download/aria2/aria2.session
+	touch /sdcard/Download/aria2/aria2.session
 	cd $HOME
 	wget -O $PREFIX/etc/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
 	rm -rf $HOME/aria2
@@ -176,7 +180,7 @@ case $jia in
 	pkg install -y wget
 	rm -rf $HOME/install.sh
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
-	echo -e "\033[36;43;1m\n推荐配色值 → 19\n\033[0m"
+	echo -e "\033[36;43;1m\n推荐配色值 → 19 19\033[0m\n"
 	sleep 3s
 	sh install.sh
 	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m请重启 termux\033[0m"
