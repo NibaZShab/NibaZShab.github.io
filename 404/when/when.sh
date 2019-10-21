@@ -4,8 +4,11 @@
 # https://nibazshab.github.io
 # sh -c "$(curl -fsSL https://nibazshab.github.io/404/when/install.sh)"
 clear
+colorlogo="\033[31m"
+colorhint="\033[36;43;1m"
+colorend="\033[0m"
 function logo(){
-echo -e "\033[31m
+echo -e "$colorlogo
 \n\n\n\n\n\n
                 +
 		+
@@ -15,7 +18,7 @@ echo -e "\033[31m
    +   +   +    +     +    +++++++    +     +
    +   +   +    +     +    +          +     +
    +++++++++    +     +    +++++++    +     +
-\033[0m"
+ $colorend"
 }
 function home(){
 cd $HOME
@@ -51,33 +54,33 @@ case $jia in
 	else
 		mkdir -p $HOME/.termux
 	fi
-	echo -e "extra-keys = [['>','-',',','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m请重启 termux\033[0m"
+	echo -e "extra-keys = [['$','>','-','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
 	home
 	;;
 03)
 	sleep 0.5s
 	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
-	echo -e "\033[36;43;1m如果卡进度条，则退出重开termux，并运行 dpkg --configure -a 修复\033[0m"
+	echo -e "$colorhint 如果卡进度条，则退出重开termux，并运行 dpkg --configure -a 修复 $colorend"
 	sleep 3s
 	apt update && apt upgrade
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m请重启 termux\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
 	home
 	;;
 04)
 	sleep 0.5s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
-	echo -e "\033[36;43;1m进度 [100%]\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend"
 	home
 	;;
 05)
 	sleep 0.5s
-	pkg install -y unzip
-	pkg install -y git
-	pkg install -y nodejs-lts
-	pkg install -y openssh
-	pkg install -y wget
+	pkg in -y unzip
+	pkg in -y git
+	pkg in -y nodejs-lts
+	pkg in -y openssh
+	pkg in -y wget
 	rm -rf $HOME/博客
 	mkdir -p $HOME/博客	
 	wget -O $HOME/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
@@ -99,7 +102,7 @@ case $jia in
 	git config --global user.email "nibazshab@gmail.com"
 	git init
 	git remote add origin git@github.com:NibaZShab/NibaZShab.github.io.git
-	echo -e "\n\033[36;43;1m接下来请一路回车即可\033[0m"
+	echo -e "\n $colorhint 接下来请一路回车即可 $colorend"
 	sleep 2s
 	ssh-keygen -t rsa -C "nibazshab@gmail.com"
 	cd $HOME/博客
@@ -124,23 +127,23 @@ case $jia in
 	cp $HOME/404/$/markdown/book.md $HOME/博客/404
 	chmod 777 $HOME/博客/404/book.md
 	npm install --save hexo-deployer-git
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub\033[0m\n\033[36;43;1m检测ssh连接状况请输入 ssh -T git@github.com\033[0m\n\n\033[36;43;1m注: 此为作者个人的博客，部分文件和操作逻辑较为难以理解\033[0m\n\033[36;43;1m建议前往 https://nibazshab.github.io/post/04\033[0m\n\033[36;43;1m可按照小白教程搭建自己的博客\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend \n\n $colorhint 注: 此为作者个人的博客，部分文件和操作逻辑较为难以理解 $colorend \n $colorhint 建议前往 https://nibazshab.github.io/post/04 $colorend \n $colorhint 可按照小白教程搭建自己的博客 $colorend"
 	home
 	;;
 06)
 	sleep 0.5s
 	echo -e "\n\n\n\n                   Welcome to Termux!\n\n           I'm NibaZShab,thanks for use \"when\"\n\n\n\n                      代码使人头冷\n                    专业护发，用飘柔\n\n ------------------------------------------------------\n             民生各有所乐兮，余独好修以为常\n             虽体解吾犹未变兮，岂余心之可惩\n ------------------------------------------------------\n\n                    Hello  my  World\n\n\n" > $PREFIX/etc/motd
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m请重启 termux\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend \n $colorhint 如显示出问题，请双指捏合屏幕调整终端大小 $colorend"
 	home
 	;;
 07)
 	sleep 0.5s
-	pkg install -y golang
-	pkg install -y git
+	pkg in -y golang
+	pkg in -y git
 	cd $HOME
 	git clone https://github.com/iikira/BaiduPCS-Go.git
 	cd $HOME/BaiduPCS-Go
-	echo -e "\033[36;43;1m编译时间较长，请耐心等待\033[0m"
+	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
 	sleep 2s
 	GOOS=android GOARCH=arm64 go build -o bdy main.go
 	mv -f bdy $HOME
@@ -148,13 +151,13 @@ case $jia in
 	rm -rf $HOME/BaiduPCS-Go
 	chmod -Rf 777 $HOME/go
 	rm -rf $HOME/go
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m输入 ./bdy 开始\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ./bdy 开始 $colorend"
 	home
 	;;
 08)
 	sleep 0.5s
-	pkg install -y aria2
-	pkg install -y wget
+	pkg in -y aria2
+	pkg in -y wget
 	cd /sdcard/Download
 	rm -rf /sdcard/Download/aria2
 	mkdir -p /sdcard/Download/aria2
@@ -164,18 +167,18 @@ case $jia in
 	rm -rf $HOME/aria2
 	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$PREFIX/etc/aria2.conf" >> $HOME/aria2
 	chmod 777 $HOME/aria2
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m输入 ./aria2 开始\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ./aria2 开始 $colorend"
 	home
 	;;
 09)
 	sleep 0.5s
-	pkg install -y wget
+	pkg in -y wget
 	rm -rf $HOME/install.sh
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
-	echo -e "\033[36;43;1m\n推荐配色值 → 19 19\033[0m\n"
+	echo -e "$colorhint \n推荐配色值 → 19 19 $colorend \n"
 	sleep 3s
 	sh install.sh
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m请重启 termux\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
 	rm -rf storage
 	home
 	;;
@@ -191,7 +194,7 @@ case $jia in
 	then
 		:
 	else
-		pkg install -y curl
+		pkg in -y curl
 		echo -e "必要程序已添加"
 	fi
 	read -p "请输入要转换的网址：" wz
@@ -228,6 +231,7 @@ echo -e "
 06)  打开王者荣耀
 07)  刷流量
 08)  欧皇测试游戏
+09)  贪吃蛇
 00)  返回
 ---------------------------------------------
 "
@@ -235,32 +239,32 @@ read -p "[when]# 你选择的序号是：" vande
 case $vande in
 01)
 	sleep 0.5s
-	pkg install -y sl
-	echo -e "\033[36;43;1m进度[100%]\033[0m\n\033[36;43;1m输入 sl 开始\033[0m"
+	pkg in -y sl
+	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 sl 开始 $colorend"
 	game
 	;;
 02)
 	sleep 0.5s
-	pkg install -y nyancat
-	echo -e "\033[36;43;1m进度[100%]\033[0m\n\033[36;43;1m输入 nyancat 开始\033[0m"
+	pkg in -y nyancat
+	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 nyancat 开始 $colorend"
 	game
 	;;
 03)
 	sleep 0.5s
-	pkg install -y screenfetch
-	echo -e "\033[36;43;1m进度[100%]\033[0m\n\033[36;43;1m输入 screenfetch 开始\033[0m"
+	pkg in -y screenfetch
+	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 screenfetch 开始 $colorend"
 	game
 	;;
 04)
 	sleep 0.5s
-	pkg install -y neofetch
-	echo -e "\033[36;43;1m进度[100%]\033[0m\n\033[36;43;1m输入 neofetch 开始\033[0m"
+	pkg in -y neofetch
+	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 neofetch 开始 $colorend"
 	game
 	;;
 05)
 	sleep 0.5s
-	pkg install -y cowsay
-	echo -e "\033[36;43;1m进度[100%]\033[0m\n\033[36;43;1m输入 cowsay 要说的话 开始\033[0m"
+	pkg in -y cowsay
+	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 cowsay 要说的话 开始 $colorend"
 	game
 	;;
 06)
@@ -274,7 +278,7 @@ case $vande in
 	then
 		:
 	else
-		pkg install -y wget
+		pkg in -y wget
 	fi
 	i=0
 	while [ $((i++)) -le 999 ]
@@ -284,10 +288,16 @@ case $vande in
 	;;
 08)
 	sleep 0.5s
-	pkg install -y wget
+	pkg in -y wget
 	wget -O $HOME/van https://nibazshab.github.io/404/when/van.sh
 	chmod 777 $HOME/van
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m输入 ./van 开始\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ./van 开始 $colorend"
+	game
+	;;
+09)
+	sleep 0.5s
+	pkg in -y nsnake
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 nsnake 开始 $colorend \n $colorhint 如无法运行，请双指捏合屏幕调整终端大小 $colorend"
 	game
 	;;
 00)
@@ -320,29 +330,29 @@ read -p "[when]# 你选择的序号是：" huanjing
 case $huanjing in
 01)
 	sleep 0.5s
-	pkg install -y python
-	echo -e "\033[36;43;1m进度 [100%]\033[0m\n\033[36;43;1m输入 python 进入python环境\033[0m"
+	pkg in -y python
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 python 进入python环境 $colorend"
 	work
 	;;
 02)
 	sleep 0.5s
-	pkg install -y wget
+	pkg in -y wget
 	wget -O $HOME/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
 	dpkg -i $HOME/jdk.deb
 	rm -rf $HOME/jdk.deb
-	echo -e "\033[36;43;1m进度 [100%]\033[0m"
+	echo -e "$colorhint 进度 [100%] $colorend"
 	work
 	;;
 03)
 	sleep 0.5s
-	pkg install -y golang
-	echo -e "\033[36;43;1m进度 [100%]\033[0m"
+	pkg in -y golang
+	echo -e "$colorhint 进度 [100%] $colorend"
 	work
 	;;
 04)
 	sleep 0.5s
-	pkg install -y clang
-	echo -e "\033[36;43;1m进度 [100%]\033[0m"
+	pkg in -y clang
+	echo -e "$colorhint 进度 [100%] $colorend"
 	work
 	;;
 00)
