@@ -8,19 +8,28 @@ colorlogo="\033[31m"
 colorhint="\033[36;43;1m"
 colorend="\033[0m"
 function logo(){
-echo -e "$colorlogo
-\n\n\n\n\n\n
-                +
-		+
-		+
-   +   +   +    +++++++    +++++++    +++++++
-   +   +   +    +     +    +     +    +     +
-   +   +   +    +     +    +++++++    +     +
-   +   +   +    +     +    +          +     +
-   +++++++++    +     +    +++++++    +     +
- $colorend"
+echo -e "$colorlogo"
+echo -e "\n\n\n\n\n\n"
+sleep 0.04s
+echo -e "                +"
+sleep 0.04s
+echo -e "                +"
+sleep 0.04s
+echo -e "                +"
+sleep 0.04s
+echo -e "   +   +   +    +++++++    +++++++    +++++++"
+sleep 0.04s
+echo -e "   +   +   +    +     +    +     +    +     +"
+sleep 0.04s
+echo -e "   +   +   +    +     +    +++++++    +     +"
+sleep 0.04s
+echo -e "   +   +   +    +     +    +          +     +"
+sleep 0.04s
+echo -e "   +++++++++    +     +    +++++++    +     +"
+sleep 0.04s
+echo -e " $colorend"
 }
-function home(){
+function home0(){
 cd $HOME
 echo -e "
 \n
@@ -38,12 +47,15 @@ echo -e "
 00)  退出
 ---------------------------------------------
 "
+}
+function home(){
 read -p "[when]# 你选择的序号是：" jia
 case $jia in
 01)
 	clear
 	logo
 	sleep 1s
+	game0
 	game
 	;;
 02)
@@ -54,8 +66,9 @@ case $jia in
 	else
 		mkdir -p $HOME/.termux
 	fi
-	echo -e "extra-keys = [['$','>','-','\"','.','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
+	echo -e "extra-keys = [['$','>','-','\"','~','/','*'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
+	home0
 	home
 	;;
 03)
@@ -65,6 +78,7 @@ case $jia in
 	sleep 3s
 	apt update && apt upgrade
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
+	home0
 	home
 	;;
 04)
@@ -72,6 +86,7 @@ case $jia in
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
 	echo -e "$colorhint 进度 [100%] $colorend"
+	home0
 	home
 	;;
 05)
@@ -82,7 +97,7 @@ case $jia in
 	pkg in -y openssh
 	pkg in -y wget
 	rm -rf $HOME/博客
-	mkdir -p $HOME/博客	
+	mkdir -p $HOME/博客
 	wget -O $HOME/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
 	cd $HOME/博客
 	unzip $HOME/博客/02.zip
@@ -128,12 +143,14 @@ case $jia in
 	chmod 777 $HOME/博客/404/book.md
 	npm install --save hexo-deployer-git
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend \n\n $colorhint 注: 此为作者个人的博客，部分文件和操作逻辑较为难以理解 $colorend \n $colorhint 建议前往 https://nibazshab.github.io/post/04 $colorend \n $colorhint 可按照小白教程搭建自己的博客 $colorend"
+	home0
 	home
 	;;
 06)
 	sleep 0.5s
 	echo -e "\n\n\n\n                   Welcome to Termux!\n\n           I'm NibaZShab,thanks for use \"when\"\n\n\n\n                      代码使人头冷\n                    专业护发，用飘柔\n\n ------------------------------------------------------\n             民生各有所乐兮，余独好修以为常\n             虽体解吾犹未变兮，岂余心之可惩\n ------------------------------------------------------\n\n                    Hello  my  World\n\n\n" > $PREFIX/etc/motd
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend \n $colorhint 如显示出问题，请双指捏合屏幕调整终端大小 $colorend"
+	home0
 	home
 	;;
 07)
@@ -151,7 +168,8 @@ case $jia in
 	rm -rf $HOME/BaiduPCS-Go
 	chmod -Rf 777 $HOME/go
 	rm -rf $HOME/go
-	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ./bdy 开始 $colorend"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/bdy 开始 $colorend"
+	home0
 	home
 	;;
 08)
@@ -167,7 +185,8 @@ case $jia in
 	rm -rf $HOME/aria2
 	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$PREFIX/etc/aria2.conf" >> $HOME/aria2
 	chmod 777 $HOME/aria2
-	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ./aria2 开始 $colorend"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/aria2 开始 $colorend"
+	home0
 	home
 	;;
 09)
@@ -177,15 +196,17 @@ case $jia in
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
 	echo -e "$colorhint \n推荐配色值 → 19 19 $colorend \n"
 	sleep 3s
-	sh install.sh
+	sh $HOME/install.sh
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
-	rm -rf storage
+	rm -rf $HOME/storage
+	home0
 	home
 	;;
 10)
 	clear
 	logo
 	sleep 1s
+	work0
 	work
 	;;
 11)
@@ -203,6 +224,7 @@ case $jia in
 	echo -e "该网址的二维码如下："
 	echo "$wz" |curl -F-=\<- qrenco.de
 	sleep 4s
+	home0
 	home
 	;;
 00)
@@ -211,15 +233,13 @@ case $jia in
 	exit
 	;;
 *)
-	clear
-	logo
-	echo -e "\n\n\n[when]# 你正确输入了一个错误序号！"
-	sleep 2s
+	echo -e "[when]# 你正确输入了一个错误序号！"
+	sleep 1s
 	home
 	;;
 esac
 }
-function game(){
+function game0(){
 cd $HOME
 echo -e "
 \n
@@ -235,41 +255,48 @@ echo -e "
 00)  返回
 ---------------------------------------------
 "
+}
+function game(){
 read -p "[when]# 你选择的序号是：" vande
 case $vande in
 01)
 	sleep 0.5s
 	pkg in -y sl
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 sl 开始 $colorend"
+	game0
 	game
 	;;
 02)
 	sleep 0.5s
 	pkg in -y nyancat
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 nyancat 开始 $colorend"
+	game0
 	game
 	;;
 03)
 	sleep 0.5s
 	pkg in -y screenfetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 screenfetch 开始 $colorend"
+	game0
 	game
 	;;
 04)
 	sleep 0.5s
 	pkg in -y neofetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 neofetch 开始 $colorend"
+	game0
 	game
 	;;
 05)
 	sleep 0.5s
 	pkg in -y cowsay
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 cowsay 要说的话 开始 $colorend"
+	game0
 	game
 	;;
 06)
 	sleep 0.5s
-	am start -n com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity
+	am start -n com.tencent.tmgp.game0/com.tencent.tmgp.game0.game0Activity
 	exit
 	;;
 07)
@@ -283,7 +310,7 @@ case $vande in
 	i=0
 	while [ $((i++)) -le 999 ]
 	do
-	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/sgame/2017_com.tencent.tmgp.sgame_h8218_1.43.1.15_fc9dc4.apk
+	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/game0/2017_com.tencent.tmgp.game0_h8218_1.43.1.15_fc9dc4.apk
 	done
 	;;
 08)
@@ -291,31 +318,32 @@ case $vande in
 	pkg in -y wget
 	wget -O $HOME/van https://nibazshab.github.io/404/when/van.sh
 	chmod 777 $HOME/van
-	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ./van 开始 $colorend"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/van 开始 $colorend"
+	game0
 	game
 	;;
 09)
 	sleep 0.5s
 	pkg in -y nsnake
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 nsnake 开始 $colorend \n $colorhint 如无法运行，请双指捏合屏幕调整终端大小 $colorend"
+	game0
 	game
 	;;
 00)
 	clear
 	logo
 	sleep 1s
+	home0
 	home
 	;;
 *)
-	clear
-	logo
-	echo -e "\n\n\n[when]# 你正确输入了一个错误序号！"
-	sleep 2s
+	echo -e "[when]# 你正确输入了一个错误序号！"
+	sleep 1s
 	game
 	;;
 esac
 }
-function work(){
+function work0(){
 cd $HOME
 echo -e "
 \n
@@ -326,12 +354,15 @@ echo -e "
 00)  返回
 ---------------------------------------------
 "
+}
+function work(){
 read -p "[when]# 你选择的序号是：" huanjing
 case $huanjing in
 01)
 	sleep 0.5s
 	pkg in -y python
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 python 进入python环境 $colorend"
+	work0
 	work
 	;;
 02)
@@ -341,36 +372,39 @@ case $huanjing in
 	dpkg -i $HOME/jdk.deb
 	rm -rf $HOME/jdk.deb
 	echo -e "$colorhint 进度 [100%] $colorend"
+	work0
 	work
 	;;
 03)
 	sleep 0.5s
 	pkg in -y golang
 	echo -e "$colorhint 进度 [100%] $colorend"
+	work0
 	work
 	;;
 04)
 	sleep 0.5s
 	pkg in -y clang
 	echo -e "$colorhint 进度 [100%] $colorend"
+	work0
 	work
 	;;
 00)
 	clear
 	logo
 	sleep 1s
+	home0
 	home
 	;;
 *)
-	clear
-	logo
-	echo -e "\n\n\n[when]# 你正确输入了一个错误序号！"
-	sleep 2s
+	echo -e "[when]# 你正确输入了一个错误序号！"
+	sleep 1s
 	work
 	;;
 esac
 }
 logo
 sleep 1s
+home0
 home
 exit

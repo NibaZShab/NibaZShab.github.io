@@ -42,6 +42,7 @@
     + **[免费域名](http://www.freenom.com)**
     + **[tg频道搜索](http://www.sssoou.com)**
     + **[rsshub](https://docs.rsshub.app)**
+    + **[植物大战僵尸下载站](http://pvz4.lonelystar.org/download.htm)**
 
 # Lot Of Any
 
