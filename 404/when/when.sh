@@ -26,27 +26,41 @@ sleep 0.04s
 echo -e "   +   +   +    +     +    +          +     +"
 sleep 0.04s
 echo -e "   +++++++++    +     +    +++++++    +     +"
-sleep 0.04s
 echo -e " $colorend"
 }
+function run(){
+	home0
+	home1
+}
 function home0(){
-cd $home1
-echo -e "
-\n
-01)  好van的东西
-02)  修复底部小键盘
-03)  切换清华源
-04)  使用atilo安装linux发行版
-05)  安装hexo博客(作者的库)
-06)  切换termux问候语
-07)  安装命令行版百度云
-08)  安装aria2下载工具
-09)  切换为zsh终端
-10)  配置python或java环境
-11)  网址转二维码
-00)  退出
----------------------------------------------
-"
+cd $HOME
+echo -e "\n\n"
+echo -e "01)  好van的东西"
+sleep 0.04s
+echo -e "02)  修复底部小键盘"
+sleep 0.04s
+echo -e "03)  切换清华源"
+sleep 0.04s
+echo -e "04)  使用atilo安装linux发行版"
+sleep 0.04s
+echo -e "05)  安装hexo博客(作者的库)"
+sleep 0.04s
+echo -e "06)  切换termux问候语"
+sleep 0.04s
+echo -e "07)  安装命令行版百度云"
+sleep 0.04s
+echo -e "08)  安装aria2或axel下载工具"
+sleep 0.04s
+echo -e "09)  切换为zsh终端"
+sleep 0.04s
+echo -e "10)  配置各种编程环境"
+sleep 0.04s
+echo -e "11)  网址转二维码"
+sleep 0.04s
+echo -e "00)  退出"
+sleep 0.04s
+echo -e "---------------------------------------------"
+echo -e ""
 }
 function home1(){
 read -p "[when]# 你选择的序号是：" home
@@ -54,19 +68,19 @@ case $home in
 01)
 	clear
 	logo
-	sleep 1s
+	sleep 0.04s
 	game0
 	game1
 	;;
 02)
 	sleep 0.5s
-	if test -e $home1/.termux
+	if test -e $HOME/.termux
 	then
 		:
 	else
-		mkdir -p $home1/.termux
+		mkdir -p $HOME/.termux
 	fi
-	echo -e "extra-keys = [['$','>','-','\"','~','/','*'],['ESC','(','home1','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $home1/.termux/termux.properties
+	echo -e "extra-keys = [['$','>','-','\"','~','/','*'],['ESC','(','home1','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
 	home0
 	home1
@@ -96,23 +110,23 @@ case $home in
 	pkg in -y nodejs-lts
 	pkg in -y openssh
 	pkg in -y wget
-	rm -rf $home1/博客
-	mkdir -p $home1/博客
-	wget -O $home1/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
-	cd $home1/博客
-	unzip $home1/博客/02.zip
-	rm -rf $home1/博客/02.zip
+	rm -rf $HOME/博客
+	mkdir -p $HOME/博客
+	wget -O $HOME/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
+	cd $HOME/博客
+	unzip $HOME/博客/02.zip
+	rm -rf $HOME/博客/02.zip
 	npm install -g hexo-cli
 	npm install --save hexo
-	mkdir -p $home1/博客/404
-	cd $home1/博客/404
+	mkdir -p $HOME/博客/404
+	cd $HOME/博客/404
 	hexo init
-	rm -rf $home1/博客/404/_config.yml
-	mv -f $home1/博客/_config.yml $home1/博客/404
-	mv -f $home1/博客/up.sh $home1/博客/404
-	chmod 777 $home1/博客/404/up.sh
-	mv -f $home1/博客/inside $home1/博客/404/themes
-	cd $home1/博客/404
+	rm -rf $HOME/博客/404/_config.yml
+	mv -f $HOME/博客/_config.yml $HOME/博客/404
+	mv -f $HOME/博客/up.sh $HOME/博客/404
+	chmod 777 $HOME/博客/404/up.sh
+	mv -f $HOME/博客/inside $HOME/博客/404/themes
+	cd $HOME/博客/404
 	git config --global user.name "NibaZShab"
 	git config --global user.email "nibazshab@gmail.com"
 	git init
@@ -120,7 +134,7 @@ case $home in
 	echo -e "\n $colorhint 接下来请一路回车即可 $colorend"
 	sleep 2s
 	ssh-keygen -t rsa -C "nibazshab@gmail.com"
-	cd $home1/博客
+	cd $HOME/博客
 	git clone https://github.com/NibaZShab/NibaZShab.github.io.git
 	if test -e /sdcard/$
 	then
@@ -128,21 +142,21 @@ case $home in
 	else
 		mkdir -p /sdcard/$
 	fi
-	cd $home1
-	ln -s /sdcard/$ $home1/404
-	cd $home1/博客/NibaZShab.github.io
-	mv -f $home1/博客/NibaZShab.github.io/404 $home1/404/$
-	rm -rf $home1/博客/NibaZShab.github.io
-	mkdir -p $home1/博客/404/source/about
-	mkdir -p $home1/博客/404/source/links
-	rm -rf $home1/博客/404/source/_posts/*
-	cp $home1/404/$/markdown/page/* $home1/博客/404/source/_posts
-	cp $home1/404/$/markdown/about.md $home1/博客/404/source/about/index.md
-	cp $home1/404/$/markdown/links.md $home1/博客/404/source/links/index.md
-	cp $home1/404/$/markdown/book.md $home1/博客/404
-	chmod 777 $home1/博客/404/book.md
+	cd $HOME
+	ln -s /sdcard/$ $HOME/404
+	cd $HOME/博客/NibaZShab.github.io
+	mv -f $HOME/博客/NibaZShab.github.io/404 $HOME/404/$
+	rm -rf $HOME/博客/NibaZShab.github.io
+	mkdir -p $HOME/博客/404/source/about
+	mkdir -p $HOME/博客/404/source/links
+	rm -rf $HOME/博客/404/source/_posts/*
+	cp $HOME/404/$/markdown/page/* $HOME/博客/404/source/_posts
+	cp $HOME/404/$/markdown/about.md $HOME/博客/404/source/about/index.md
+	cp $HOME/404/$/markdown/links.md $HOME/博客/404/source/links/index.md
+	cp $HOME/404/$/markdown/book.md $HOME/博客/404
+	chmod 777 $HOME/博客/404/book.md
 	npm install --save hexo-deployer-git
-	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 读取ssh密钥请输入 cat $home1/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend \n\n $colorhint 注: 此为作者个人的博客，部分文件和操作逻辑较为难以理解 $colorend \n $colorhint 建议前往 https://nibazshab.github.io/post/04 $colorend \n $colorhint 可按照小白教程搭建自己的博客 $colorend"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend \n\n $colorhint 注: 此为作者个人的博客，部分文件和操作逻辑较为难以理解 $colorend \n $colorhint 建议前往 https://nibazshab.github.io/post/04 $colorend \n $colorhint 可按照小白教程搭建自己的博客 $colorend"
 	home0
 	home1
 	;;
@@ -157,55 +171,78 @@ case $home in
 	sleep 0.5s
 	pkg in -y golang
 	pkg in -y git
-	cd $home1
+	cd $HOME
 	git clone https://github.com/iikira/BaiduPCS-Go.git
-	cd $home1/BaiduPCS-Go
+	cd $HOME/BaiduPCS-Go
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
 	sleep 2s
 	GOOS=android GOARCH=arm64 go build -o bdy main.go
-	mv -f bdy $home1
-	cd $home1
-	rm -rf $home1/BaiduPCS-Go
-	chmod -Rf 777 $home1/go
-	rm -rf $home1/go
+	mv -f bdy $HOME
+	cd $HOME
+	rm -rf $HOME/BaiduPCS-Go
+	chmod -Rf 777 $HOME/go
+	rm -rf $HOME/go
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/bdy 开始 $colorend"
 	home0
 	home1
 	;;
 08)
 	sleep 0.5s
-	pkg in -y aria2
-	pkg in -y wget
-	cd /sdcard/Download
-	rm -rf /sdcard/Download/aria2
-	mkdir -p /sdcard/Download/aria2
-	touch /sdcard/Download/aria2/aria2.session
-	cd $home1
-	wget -O $PREFIX/etc/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
-	rm -rf $home1/aria2
-	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$PREFIX/etc/aria2.conf" >> $home1/aria2
-	chmod 777 $home1/aria2
-	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/aria2 开始 $colorend"
-	home0
-	home1
+	echo -e "\n安装aria2输入 1     安装axel输入 2\n"
+	read -p "[when]# 你选择的序号是：" a
+	case $a in
+	1)
+		sleep 0.5s
+		pkg in -y aria2
+		pkg in -y wget
+		cd /sdcard/Download
+		rm -rf /sdcard/Download/aria2
+		mkdir -p /sdcard/Download/aria2
+		touch /sdcard/Download/aria2/aria2.session
+		cd $HOME
+		wget -O $PREFIX/etc/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
+		rm -rf $HOME/aria2
+		echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$PREFIX/etc/aria2.conf" >> $HOME/aria2
+		chmod 777 $HOME/aria2
+		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/aria2 开始 $colorend"
+		home0
+		home1
+		;;
+	2)
+		sleep 0.5s
+		pkg in -y axel
+		rm -rf $HOME/axelh
+		echo -e "下载百度云方法：前往 https://www.baidusu.com 获取下载链接，然后输入 axel -n 256 -o /sdcard/Download/文件名 下载链接" >> $HOME/axelh
+		chmod 777 $HOME/axelh
+		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/axelh 查看下载百度云教程 $colorend"
+		home0
+		home1
+		;;
+	*)
+		echo -e "[when]# 你正确输入了一个错误序号！"
+		sleep 1s
+		home0
+		home1
+		;;
+	esac
 	;;
 09)
 	sleep 0.5s
 	pkg in -y wget
-	rm -rf $home1/install.sh
+	rm -rf $HOME/install.sh
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
 	echo -e "$colorhint \n推荐配色值 → 19 19 $colorend \n"
 	sleep 3s
-	sh $home1/install.sh
+	sh $HOME/install.sh
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
-	rm -rf $home1/storage
+	rm -rf $HOME/storage
 	home0
 	home1
 	;;
 10)
 	clear
 	logo
-	sleep 1s
+	sleep 0.04s
 	work0
 	work1
 	;;
@@ -240,21 +277,30 @@ case $home in
 esac
 }
 function game0(){
-cd $home1
-echo -e "
-\n
-01)  小火车
-02)  彩虹猫
-03)  screenfetch
-04)  neofetch
-05)  奶牛说话
-06)  打开王者荣耀
-07)  刷流量
-08)  欧皇测试游戏
-09)  贪吃蛇
-00)  返回
----------------------------------------------
-"
+cd $HOME
+echo -e "\n\n"
+echo -e "01)  小火车"
+sleep 0.04s
+echo -e "02)  彩虹猫"
+sleep 0.04s
+echo -e "03)  screenfetch"
+sleep 0.04s
+echo -e "04)  neofetch"
+sleep 0.04s
+echo -e "05)  奶牛说话"
+sleep 0.04s
+echo -e "06)  打开王者荣耀"
+sleep 0.04s
+echo -e "07)  刷流量"
+sleep 0.04s
+echo -e "08)  欧皇测试游戏"
+sleep 0.04s
+echo -e "09)  贪吃蛇"
+sleep 0.04s
+echo -e "00)  返回"
+sleep 0.04s
+echo -e "---------------------------------------------"
+echo -e ""
 }
 function game1(){
 read -p "[when]# 你选择的序号是：" game
@@ -316,8 +362,8 @@ case $game in
 08)
 	sleep 0.5s
 	pkg in -y wget
-	wget -O $home1/van https://nibazshab.github.io/404/when/van.sh
-	chmod 777 $home1/van
+	wget -O $HOME/van https://nibazshab.github.io/404/when/van.sh
+	chmod 777 $HOME/van
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/van 开始 $colorend"
 	game0
 	game1
@@ -332,7 +378,7 @@ case $game in
 00)
 	clear
 	logo
-	sleep 1s
+	sleep 0.04s
 	home0
 	home1
 	;;
@@ -344,16 +390,20 @@ case $game in
 esac
 }
 function work0(){
-cd $home1
-echo -e "
-\n
-01)  python
-02)  java
-03)  go
-04)  c/c++
-00)  返回
----------------------------------------------
-"
+cd $HOME
+echo -e "\n\n"
+echo -e "01)  python"
+sleep 0.04s
+echo -e "02)  java"
+sleep 0.04s
+echo -e "03)  go"
+sleep 0.04s
+echo -e "04)  c/c++"
+sleep 0.04s
+echo -e "00)  返回"
+sleep 0.04s
+echo -e "---------------------------------------------"
+echo -e ""
 }
 function work1(){
 read -p "[when]# 你选择的序号是：" work
@@ -368,9 +418,9 @@ case $work in
 02)
 	sleep 0.5s
 	pkg in -y wget
-	wget -O $home1/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
-	dpkg -i $home1/jdk.deb
-	rm -rf $home1/jdk.deb
+	wget -O $HOME/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
+	dpkg -i $HOME/jdk.deb
+	rm -rf $HOME/jdk.deb
 	echo -e "$colorhint 进度 [100%] $colorend"
 	work0
 	work1
@@ -392,7 +442,7 @@ case $work in
 00)
 	clear
 	logo
-	sleep 1s
+	sleep 0.04s
 	home0
 	home1
 	;;
@@ -404,7 +454,6 @@ case $work in
 esac
 }
 logo
-sleep 1s
-home0
-home1
+sleep 0.04s
+run
 exit
