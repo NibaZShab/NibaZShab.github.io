@@ -53,7 +53,7 @@ echo -e "08)  安装aria2或axel下载工具"
 sleep 0.04s
 echo -e "09)  切换为zsh终端"
 sleep 0.04s
-echo -e "10)  配置各种编程环境"
+echo -e "10)  配置各种编程语言环境"
 sleep 0.04s
 echo -e "11)  网址转二维码"
 sleep 0.04s
@@ -74,13 +74,13 @@ case $home in
 	;;
 02)
 	sleep 0.5s
-	if test -e $HOME/.termux
+	if test -d $HOME/.termux
 	then
 		:
 	else
 		mkdir -p $HOME/.termux
 	fi
-	echo -e "extra-keys = [['$','>','-','\"','~','/','*'],['ESC','(','home1','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
+	echo -e "extra-keys = [['TAB','>','-','~','/','*','$'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
 	home0
 	home1
@@ -98,7 +98,7 @@ case $home in
 04)
 	sleep 0.5s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
-	pkg in atilo-cn
+	pkg in -y atilo-cn
 	echo -e "$colorhint 进度 [100%] $colorend"
 	home0
 	home1
@@ -136,7 +136,7 @@ case $home in
 	ssh-keygen -t rsa -C "nibazshab@gmail.com"
 	cd $HOME/博客
 	git clone https://github.com/NibaZShab/NibaZShab.github.io.git
-	if test -e /sdcard/$
+	if test -d /sdcard/$
 	then
 		:
 	else
@@ -195,14 +195,27 @@ case $home in
 		sleep 0.5s
 		pkg in -y aria2
 		pkg in -y wget
-		cd /sdcard/Download
-		rm -rf /sdcard/Download/aria2
-		mkdir -p /sdcard/Download/aria2
-		touch /sdcard/Download/aria2/aria2.session
-		cd $HOME
-		wget -O $PREFIX/etc/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
-		rm -rf $HOME/aria2
-		echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$PREFIX/etc/aria2.conf" >> $HOME/aria2
+		if test -d /sdcard/Download/aria2
+		then
+			if test -e /sdcard/Download/aria2/aria2.session
+			then
+				:
+			else
+				touch /sdcard/Download/aria2/aria2.session
+			fi
+		else
+			mkdir -p /sdcard/Download/aria2
+			touch /sdcard/Download/aria2/aria2.session
+		fi
+		if test -d $HOME/.config
+		then
+			rm -rf $HOME/.config/aria2
+		else
+			:
+		fi
+		mkdir -p $HOME/.config/aria2
+		wget -O $HOME/.config/aira2/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
+		echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf" > $HOME/aria2
 		chmod 777 $HOME/aria2
 		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/aria2 开始 $colorend"
 		home0
@@ -211,8 +224,7 @@ case $home in
 	2)
 		sleep 0.5s
 		pkg in -y axel
-		rm -rf $HOME/axelh
-		echo -e "下载百度云方法：前往 https://www.baidusu.com 获取下载链接，然后输入 axel -n 256 -o /sdcard/Download/文件名 下载链接" >> $HOME/axelh
+		echo -e "下载百度云方法：前往 https://www.baidusu.com 获取下载链接，然后输入 axel -n 256 -o /sdcard/Download/文件名 下载链接" > $HOME/axelh
 		chmod 777 $HOME/axelh
 		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/axelh 查看下载百度云教程 $colorend"
 		home0
