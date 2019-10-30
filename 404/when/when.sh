@@ -278,7 +278,8 @@ case $home in
 	home1
 	;;
 00)
-	echo -e "\n\n\n\n\n"
+	clear
+	cat $PREFIX/etc/motd
 	exit
 	;;
 *)
