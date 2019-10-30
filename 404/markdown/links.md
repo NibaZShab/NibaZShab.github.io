@@ -15,12 +15,4 @@ date: 2019-08-14 12:03:59
 </div>
 </a>
 
-<a class="a-friend" target="_blank"  href="https://arlic.xyz">
-<img class="blog-avatar" src="https://ae01.alicdn.com/kf/H7f51acdddd4145a28d7935eb3d9958b1G.jpg" data-tag="bdshare">
-<div class="text-container">
-<div class="name">Arilc的博客</div>
-<div class="description" style="width:185px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">一位酷友的个人博客。</div>
-</div>
-</a>
-
 </div>

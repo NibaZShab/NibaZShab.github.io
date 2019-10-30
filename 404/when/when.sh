@@ -51,7 +51,7 @@ echo -e "07)  安装命令行版百度云"
 sleep 0.04s
 echo -e "08)  安装aria2或axel下载工具"
 sleep 0.04s
-echo -e "09)  切换为zsh终端"
+echo -e "09)  美化，切换为zsh终端"
 sleep 0.04s
 echo -e "10)  配置各种编程语言环境"
 sleep 0.04s
@@ -60,13 +60,14 @@ sleep 0.04s
 echo -e "00)  退出"
 sleep 0.04s
 echo -e "---------------------------------------------"
+sleep 0.04s
 echo -e ""
 }
 function home1(){
 read -p "[when]# 你选择的序号是：" home
 case $home in
 01)
-	clear
+	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
 	game0
@@ -99,7 +100,7 @@ case $home in
 	sleep 0.5s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in -y atilo-cn
-	echo -e "$colorhint 进度 [100%] $colorend"
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 atilo 查看使用方法 $colorend"
 	home0
 	home1
 	;;
@@ -252,7 +253,7 @@ case $home in
 	home1
 	;;
 10)
-	clear
+	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
 	work0
@@ -277,8 +278,7 @@ case $home in
 	home1
 	;;
 00)
-	clear
-	cat $PREFIX/etc/motd
+	echo -e "\n\n\n\n\n"
 	exit
 	;;
 *)
@@ -312,6 +312,7 @@ sleep 0.04s
 echo -e "00)  返回"
 sleep 0.04s
 echo -e "---------------------------------------------"
+sleep 0.04s
 echo -e ""
 }
 function game1(){
@@ -388,7 +389,7 @@ case $game in
 	game1
 	;;
 00)
-	clear
+	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
 	home0
@@ -415,6 +416,7 @@ sleep 0.04s
 echo -e "00)  返回"
 sleep 0.04s
 echo -e "---------------------------------------------"
+sleep 0.04s
 echo -e ""
 }
 function work1(){
@@ -452,7 +454,7 @@ case $work in
 	work1
 	;;
 00)
-	clear
+	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
 	home0
