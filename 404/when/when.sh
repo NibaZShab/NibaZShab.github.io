@@ -257,11 +257,11 @@ case $home in
 		pkg in -y curl
 		echo -e "必要程序已添加"
 	fi
-	read -p "请输入要转换的网址：" wz
+	read -p "请输入要转换的网址：" b
 	echo -e "转换中......"
 	sleep 0.7s
 	echo -e "该网址的二维码如下："
-	echo "$wz" |curl -F-=\<- qrenco.de
+	echo "$b" |curl -F-=\<- qrenco.de
 	sleep 4s
 	home0 ; home1
 	;;
