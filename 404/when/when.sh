@@ -11,26 +11,25 @@ function logo(){
 echo -e "$colorlogo"
 echo -e "\n\n\n\n\n\n"
 sleep 0.04s
-echo -e "                +"
+echo -e "               +"
 sleep 0.04s
-echo -e "                +"
+echo -e "               +"
 sleep 0.04s
-echo -e "                +"
+echo -e "               +"
 sleep 0.04s
-echo -e "   +   +   +    +++++++    +++++++    +++++++"
+echo -e "  +   +   +    +++++++    +++++++    +++++++"
 sleep 0.04s
-echo -e "   +   +   +    +     +    +     +    +     +"
+echo -e "  +   +   +    +     +    +     +    +     +"
 sleep 0.04s
-echo -e "   +   +   +    +     +    +++++++    +     +"
+echo -e "  +   +   +    +     +    +++++++    +     +"
 sleep 0.04s
-echo -e "   +   +   +    +     +    +          +     +"
+echo -e "  +   +   +    +     +    +          +     +"
 sleep 0.04s
-echo -e "   +++++++++    +     +    +++++++    +     +"
+echo -e "  +++++++++    +     +    +++++++    +     +"
 echo -e " $colorend"
 }
-function run(){
-	home0
-	home1
+function island(){
+	home0 ; home1
 }
 function home0(){
 cd $HOME
@@ -39,7 +38,7 @@ echo -e "01)  好van的东西"
 sleep 0.04s
 echo -e "02)  修复底部小键盘"
 sleep 0.04s
-echo -e "03)  切换清华源"
+echo -e "03)  切换清华源(暂不可用)"
 sleep 0.04s
 echo -e "04)  使用atilo安装linux发行版"
 sleep 0.04s
@@ -51,7 +50,7 @@ echo -e "07)  安装命令行版百度云"
 sleep 0.04s
 echo -e "08)  安装aria2或axel下载工具"
 sleep 0.04s
-echo -e "09)  美化，切换为zsh终端"
+echo -e "09)  美化终端(zsh)"
 sleep 0.04s
 echo -e "10)  配置各种编程语言环境"
 sleep 0.04s
@@ -70,8 +69,7 @@ case $home in
 	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
-	game0
-	game1
+	game0 ; game1
 	;;
 02)
 	sleep 0.5s
@@ -83,26 +81,25 @@ case $home in
 	fi
 	echo -e "extra-keys = [['TAB','>','-','~','/','*','$'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
-	home0
-	home1
+	home0 ; home1
 	;;
 03)
-	sleep 0.5s
-	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
-	echo -e "$colorhint 如果卡进度条，则退出重开termux，并运行 dpkg --configure -a 修复 $colorend"
+#	sleep 0.5s
+#	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
+#	echo -e "$colorhint 如果卡进度条，则退出重开termux，并运行 dpkg --configure -a 修复 $colorend"
+#	sleep 3s
+#	apt update && apt upgrade
+#	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
+	echo -e "都说了清华源暂不可用了......."
 	sleep 3s
-	apt update && apt upgrade
-	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
-	home0
-	home1
+	home0 ; home1
 	;;
 04)
 	sleep 0.5s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
 	pkg in -y atilo-cn
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 atilo 查看使用方法 $colorend"
-	home0
-	home1
+	home0 ; home1
 	;;
 05)
 	sleep 0.5s
@@ -158,15 +155,13 @@ case $home in
 	chmod 777 $HOME/博客/404/book.md
 	npm install --save hexo-deployer-git
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend \n\n $colorhint 注: 此为作者个人的博客，部分文件和操作逻辑较为难以理解 $colorend \n $colorhint 建议前往 https://nibazshab.github.io/post/04 $colorend \n $colorhint 可按照小白教程搭建自己的博客 $colorend"
-	home0
-	home1
+	home0 ; home1
 	;;
 06)
 	sleep 0.5s
 	echo -e "\n\n\n\n                   Welcome to Termux!\n\n           I'm NibaZShab,thanks for use \"when\"\n\n\n\n                      代码使人头冷\n                    专业护发，用飘柔\n\n ------------------------------------------------------\n             民生各有所乐兮，余独好修以为常\n             虽体解吾犹未变兮，岂余心之可惩\n ------------------------------------------------------\n\n                    Hello  my  World\n\n\n" > $PREFIX/etc/motd
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend \n $colorhint 如显示出问题，请双指捏合屏幕调整终端大小 $colorend"
-	home0
-	home1
+	home0 ; home1
 	;;
 07)
 	sleep 0.5s
@@ -184,8 +179,7 @@ case $home in
 	chmod -Rf 777 $HOME/go
 	rm -rf $HOME/go
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/bdy 开始 $colorend"
-	home0
-	home1
+	home0 ; home1
 	;;
 08)
 	sleep 0.5s
@@ -219,8 +213,7 @@ case $home in
 		echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf" > $HOME/aria2
 		chmod 777 $HOME/aria2
 		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/aria2 开始 $colorend"
-		home0
-		home1
+		home0 ; home1
 		;;
 	2)
 		sleep 0.5s
@@ -228,14 +221,12 @@ case $home in
 		echo -e "下载百度云方法：前往 https://www.baidusu.com 获取下载链接，然后输入 axel -n 256 -o /sdcard/Download/文件名 下载链接" > $HOME/axelh
 		chmod 777 $HOME/axelh
 		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/axelh 查看下载百度云教程 $colorend"
-		home0
-		home1
+		home0 ; home1
 		;;
 	*)
 		echo -e "[when]# 你正确输入了一个错误序号！"
 		sleep 1s
-		home0
-		home1
+		home0 ; home1
 		;;
 	esac
 	;;
@@ -244,20 +235,18 @@ case $home in
 	pkg in -y wget
 	rm -rf $HOME/install.sh
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
-	echo -e "$colorhint \n推荐配色值 → 19 19 $colorend \n"
+	echo -e "\n $colorhint 推荐配色值 → 19 19 $colorend \n"
 	sleep 3s
 	sh $HOME/install.sh
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
 	rm -rf $HOME/storage
-	home0
-	home1
+	home0 ; home1
 	;;
 10)
 	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
-	work0
-	work1
+	work0 ; work1
 	;;
 11)
 	sleep 0.5s
@@ -274,8 +263,7 @@ case $home in
 	echo -e "该网址的二维码如下："
 	echo "$wz" |curl -F-=\<- qrenco.de
 	sleep 4s
-	home0
-	home1
+	home0 ; home1
 	;;
 00)
 	clear
@@ -323,36 +311,31 @@ case $game in
 	sleep 0.5s
 	pkg in -y sl
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 sl 开始 $colorend"
-	game0
-	game1
+	game0 ; game1
 	;;
 02)
 	sleep 0.5s
 	pkg in -y nyancat
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 nyancat 开始 $colorend"
-	game0
-	game1
+	game0 ; game1
 	;;
 03)
 	sleep 0.5s
 	pkg in -y screenfetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 screenfetch 开始 $colorend"
-	game0
-	game1
+	game0 ; game1
 	;;
 04)
 	sleep 0.5s
 	pkg in -y neofetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 neofetch 开始 $colorend"
-	game0
-	game1
+	game0 ; game1
 	;;
 05)
 	sleep 0.5s
 	pkg in -y cowsay
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 cowsay 要说的话 开始 $colorend"
-	game0
-	game1
+	game0 ; game1
 	;;
 06)
 	sleep 0.5s
@@ -379,22 +362,19 @@ case $game in
 	wget -O $HOME/van https://nibazshab.github.io/404/when/van.sh
 	chmod 777 $HOME/van
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/van 开始 $colorend"
-	game0
-	game1
+	game0 ; game1
 	;;
 09)
 	sleep 0.5s
 	pkg in -y nsnake
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 nsnake 开始 $colorend \n $colorhint 如无法运行，请双指捏合屏幕调整终端大小 $colorend"
-	game0
-	game1
+	game0 ; game1
 	;;
 00)
 	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
-	home0
-	home1
+	home0 ; home1
 	;;
 *)
 	echo -e "[when]# 你正确输入了一个错误序号！"
@@ -414,6 +394,8 @@ echo -e "03)  go"
 sleep 0.04s
 echo -e "04)  c/c++"
 sleep 0.04s
+echo -e "05)  php"
+sleep 0.04s
 echo -e "00)  返回"
 sleep 0.04s
 echo -e "---------------------------------------------"
@@ -427,8 +409,7 @@ case $work in
 	sleep 0.5s
 	pkg in -y python
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 python 进入python环境 $colorend"
-	work0
-	work1
+	work0 ; work1
 	;;
 02)
 	sleep 0.5s
@@ -437,29 +418,31 @@ case $work in
 	dpkg -i $HOME/jdk.deb
 	rm -rf $HOME/jdk.deb
 	echo -e "$colorhint 进度 [100%] $colorend"
-	work0
-	work1
+	work0 ; work1
 	;;
 03)
 	sleep 0.5s
 	pkg in -y golang
 	echo -e "$colorhint 进度 [100%] $colorend"
-	work0
-	work1
+	work0 ; work1
 	;;
 04)
 	sleep 0.5s
 	pkg in -y clang
 	echo -e "$colorhint 进度 [100%] $colorend"
-	work0
-	work1
+	work0 ; work1
+	;;
+05)
+	sleep 0.5s
+	pkg in -y php
+	echo -e "$colorhint 进度 [100%] $colorend"
+	work0 ; work1
 	;;
 00)
 	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.04s
-	home0
-	home1
+	home0 ; home1
 	;;
 *)
 	echo -e "[when]# 你正确输入了一个错误序号！"
@@ -470,5 +453,5 @@ esac
 }
 logo
 sleep 0.04s
-run
+island
 exit

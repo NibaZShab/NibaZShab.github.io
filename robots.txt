@@ -1,0 +1,6 @@
+# https://nibazshab.github.io robots.txt -- just crawl it.
+
+User-agent: *
+Disallow: /404/clock/photo/
+Disallow: /404/image/
+Disallow: /404/markdown/picture/
