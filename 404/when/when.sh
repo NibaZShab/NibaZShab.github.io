@@ -28,9 +28,7 @@ sleep 0.04s
 echo -e "  +++++++++    +     +    +++++++    +     +"
 echo -e " $colorend"
 }
-function island(){
-	home0 ; home1
-}
+function island(){ home0 ; home1 ; }
 function home0(){
 cd $HOME
 echo -e "\n\n"
@@ -56,6 +54,8 @@ echo -e "10)  配置各种编程语言环境"
 sleep 0.04s
 echo -e "11)  网址转二维码"
 sleep 0.04s
+echo -e "99)  充值成为svip用户"
+sleep 0.04s
 echo -e "00)  退出"
 sleep 0.04s
 echo -e "---------------------------------------------"
@@ -73,11 +73,11 @@ case $home in
 	;;
 02)
 	sleep 0.5s
-	if test -d $HOME/.termux
+	if test -d $HOME/.termux/
 	then
 		:
 	else
-		mkdir -p $HOME/.termux
+		mkdir -p $HOME/.termux/
 	fi
 	echo -e "extra-keys = [['TAB','>','-','~','/','*','$'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
@@ -108,23 +108,23 @@ case $home in
 	pkg in -y nodejs-lts
 	pkg in -y openssh
 	pkg in -y wget
-	rm -rf $HOME/博客
-	mkdir -p $HOME/博客
+	rm -rf $HOME/博客/
+	mkdir -p $HOME/博客/
 	wget -O $HOME/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
-	cd $HOME/博客
+	cd $HOME/博客/
 	unzip $HOME/博客/02.zip
 	rm -rf $HOME/博客/02.zip
 	npm install -g hexo-cli
 	npm install --save hexo
-	mkdir -p $HOME/博客/404
-	cd $HOME/博客/404
+	mkdir -p $HOME/博客/404/
+	cd $HOME/博客/404/
 	hexo init
 	rm -rf $HOME/博客/404/_config.yml
-	mv -f $HOME/博客/_config.yml $HOME/博客/404
-	mv -f $HOME/博客/up.sh $HOME/博客/404
+	mv -f $HOME/博客/_config.yml $HOME/博客/404/
+	mv -f $HOME/博客/up.sh $HOME/博客/404/
 	chmod 777 $HOME/博客/404/up.sh
-	mv -f $HOME/博客/inside $HOME/博客/404/themes
-	cd $HOME/博客/404
+	mv -f $HOME/博客/inside $HOME/博客/404/themes/
+	cd $HOME/博客/404/
 	git config --global user.name "NibaZShab"
 	git config --global user.email "nibazshab@gmail.com"
 	git init
@@ -132,26 +132,26 @@ case $home in
 	echo -e "\n $colorhint 接下来请一路回车即可 $colorend"
 	sleep 2s
 	ssh-keygen -t rsa -C "nibazshab@gmail.com"
-	cd $HOME/博客
+	cd $HOME/博客/
 	git clone https://github.com/NibaZShab/NibaZShab.github.io.git
-	if test -d /sdcard/$
+	if test -d /sdcard/$/
 	then
 		:
 	else
-		mkdir -p /sdcard/$
+		mkdir -p /sdcard/$/
 	fi
 	cd $HOME
-	ln -s /sdcard/$ $HOME/404
-	cd $HOME/博客/NibaZShab.github.io
-	mv -f $HOME/博客/NibaZShab.github.io/404 $HOME/404/$
-	rm -rf $HOME/博客/NibaZShab.github.io
-	mkdir -p $HOME/博客/404/source/about
-	mkdir -p $HOME/博客/404/source/links
+	ln -s /sdcard/$/ $HOME/404/
+	cd $HOME/博客/NibaZShab.github.io/
+	mv -f $HOME/博客/NibaZShab.github.io/404/ $HOME/404/$/
+	rm -rf $HOME/博客/NibaZShab.github.io/
+	mkdir -p $HOME/博客/404/source/about/
+	mkdir -p $HOME/博客/404/source/links/
 	rm -rf $HOME/博客/404/source/_posts/*
-	cp $HOME/404/$/markdown/page/* $HOME/博客/404/source/_posts
-	cp $HOME/404/$/markdown/about.md $HOME/博客/404/source/about/index.md
-	cp $HOME/404/$/markdown/links.md $HOME/博客/404/source/links/index.md
-	cp $HOME/404/$/markdown/book.md $HOME/博客/404
+	cp -rf $HOME/404/$/markdown/page/* $HOME/博客/404/source/_posts/
+	cp -rf $HOME/404/$/markdown/about.md $HOME/博客/404/source/about/index.md
+	cp -rf $HOME/404/$/markdown/links.md $HOME/博客/404/source/links/index.md
+	cp -rf $HOME/404/$/markdown/book.md $HOME/博客/404/
 	chmod 777 $HOME/博客/404/book.md
 	npm install --save hexo-deployer-git
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend \n\n $colorhint 注: 此为作者个人的博客，部分文件和操作逻辑较为难以理解 $colorend \n $colorhint 建议前往 https://nibazshab.github.io/post/04 $colorend \n $colorhint 可按照小白教程搭建自己的博客 $colorend"
@@ -169,15 +169,15 @@ case $home in
 	pkg in -y git
 	cd $HOME
 	git clone https://github.com/iikira/BaiduPCS-Go.git
-	cd $HOME/BaiduPCS-Go
+	cd $HOME/BaiduPCS-Go/
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
 	sleep 2s
 	GOOS=android GOARCH=arm64 go build -o bdy main.go
 	mv -f bdy $HOME
 	cd $HOME
-	rm -rf $HOME/BaiduPCS-Go
-	chmod -Rf 777 $HOME/go
-	rm -rf $HOME/go
+	rm -rf $HOME/BaiduPCS-Go/
+	chmod -Rf 777 $HOME/go/
+	rm -rf $HOME/go/
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/bdy 开始 $colorend"
 	home0 ; home1
 	;;
@@ -190,7 +190,7 @@ case $home in
 		sleep 0.5s
 		pkg in -y aria2
 		pkg in -y wget
-		if test -d /sdcard/Download/aria2
+		if test -d /sdcard/Download/aria2/
 		then
 			if test -e /sdcard/Download/aria2/aria2.session
 			then
@@ -199,19 +199,19 @@ case $home in
 				touch /sdcard/Download/aria2/aria2.session
 			fi
 		else
-			mkdir -p /sdcard/Download/aria2
+			mkdir -p /sdcard/Download/aria2/
 			touch /sdcard/Download/aria2/aria2.session
 		fi
-		if test -d $HOME/.config
+		if test -d $HOME/.config/
 		then
-			rm -rf $HOME/.config/aria2
+			rm -rf $HOME/.config/aria2/
 		else
 			:
 		fi
-		mkdir -p $HOME/.config/aria2
+		mkdir -p $HOME/.config/aria2/
 		wget -O $HOME/.config/aira2/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
 		echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf" > $HOME/aria2
-		chmod 777 $HOME/aria2
+		chmod 777 $HOME/aria2/
 		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/aria2 开始 $colorend"
 		home0 ; home1
 		;;
@@ -239,7 +239,7 @@ case $home in
 	sleep 3s
 	sh $HOME/install.sh
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
-	rm -rf $HOME/storage
+	rm -rf $HOME/storage/
 	home0 ; home1
 	;;
 10)
@@ -264,6 +264,23 @@ case $home in
 	echo "$b" |curl -F-=\<- qrenco.de
 	sleep 4s
 	home0 ; home1
+	;;
+99)
+	read -p "[when]# 请输入充值的软妹币额度：" c
+	case $c in
+		[0-9]*)
+			read -p "[when]# 请输入支付密码："
+			echo -e "[when]# 正在链接服务器......"
+			sleep 1s
+			echo -e "[when]# 恭喜！已成功充入 $c 软妹币！"
+			sleep 0.2s
+			echo -e "[when]# 已升级为 svip 版！"
+			;;
+		*)
+			sleep 1s
+			echo -e "[when]# 服务器错误，你的软妹币全没啦！"
+			;;
+		esac
 	;;
 00)
 	clear
