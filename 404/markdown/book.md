@@ -9,9 +9,9 @@
 
 # Huge The Book
 > **bookstars**
-  - **[沙雕图](https://nibazshab.github.io/404/clock/)**
-  - **[垃圾站](https://github.com/NibaZShab/mirror/)**
-  - **[没意义](httls://nibazshab.github.io/404/clock/index2.html)**
+  - **[沙雕图库](https://nibazshab.github.io/404/clock/)**
+  - **[垃圾回收](https://github.com/NibaZShab/mirror/)**
+  - **[毫无意义](httls://nibazshab.github.io/404/clock/index2.html)**
 
 ---
 >  
@@ -44,6 +44,9 @@
     + **[tg频道搜索](http://www.sssoou.com)**
     + **[rsshub](https://docs.rsshub.app)**
     + **[植物大战僵尸下载站](http://pvz4.lonelystar.org/download.htm)**
+    + **[linux命令查询](https://ipcmen.com)**
+    + **(虚拟主机)[https://app.infinityfree.net]**
+    + **(三丰云)[https://www.sanfengyun.com]**
 
 # Lot Of Any
 

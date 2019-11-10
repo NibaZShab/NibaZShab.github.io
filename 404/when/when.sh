@@ -3,6 +3,7 @@
 # https://github.com/NibaZShab/NibaZShab.github.io
 # https://nibazshab.github.io
 # sh -c "$(curl -fsSL https://nibazshab.github.io/404/when/install.sh)"
+# apt update && apt upgrade
 clear
 colorlogo="\033[31m"
 colorhint="\033[36;43;1m"
@@ -10,6 +11,8 @@ colorend="\033[0m"
 function logo(){
 echo -e "$colorlogo"
 echo -e "\n\n\n\n\n\n"
+sleep 0.04s
+echo -e "               +"
 sleep 0.04s
 echo -e "               +"
 sleep 0.04s
@@ -97,17 +100,17 @@ case $home in
 04)
 	sleep 0.5s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
-	pkg in -y atilo-cn
+	apt-get install -y atilo-cn
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 atilo 查看使用方法 $colorend"
 	home0 ; home1
 	;;
 05)
 	sleep 0.5s
-	pkg in -y unzip
-	pkg in -y git
-	pkg in -y nodejs-lts
-	pkg in -y openssh
-	pkg in -y wget
+	apt-get install -y unzip
+	apt-get install -y git
+	apt-get install -y nodejs-lts
+	apt-get install -y openssh
+	apt-get install -y wget
 	rm -rf $HOME/博客/
 	mkdir -p $HOME/博客/
 	wget -O $HOME/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
@@ -165,8 +168,8 @@ case $home in
 	;;
 07)
 	sleep 0.5s
-	pkg in -y golang
-	pkg in -y git
+	apt-get install -y golang
+	apt-get install -y git
 	cd $HOME
 	git clone https://github.com/iikira/BaiduPCS-Go.git
 	cd $HOME/BaiduPCS-Go/
@@ -188,8 +191,8 @@ case $home in
 	case $a in
 	1)
 		sleep 0.5s
-		pkg in -y aria2
-		pkg in -y wget
+		apt-get install -y aria2
+		apt-get install -y wget
 		if test -d /sdcard/Download/aria2/
 		then
 			if test -e /sdcard/Download/aria2/aria2.session
@@ -217,7 +220,7 @@ case $home in
 		;;
 	2)
 		sleep 0.5s
-		pkg in -y axel
+		apt-get install -y axel
 		echo -e "下载百度云方法：前往 https://www.baidusu.com 获取下载链接，然后输入 axel -n 256 -o /sdcard/Download/文件名 下载链接" > $HOME/axelh
 		chmod 777 $HOME/axelh
 		echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/axelh 查看下载百度云教程 $colorend"
@@ -232,7 +235,7 @@ case $home in
 	;;
 09)
 	sleep 0.5s
-	pkg in -y wget
+	apt-get install -y wget
 	rm -rf $HOME/install.sh
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
 	echo -e "\n $colorhint 推荐配色值 → 19 19 $colorend \n"
@@ -254,7 +257,7 @@ case $home in
 	then
 		:
 	else
-		pkg in -y curl
+		apt-get install -y curl
 		echo -e "必要程序已添加"
 	fi
 	read -p "请输入要转换的网址：" b
@@ -315,6 +318,10 @@ echo -e "08)  欧皇测试游戏"
 sleep 0.04s
 echo -e "09)  贪吃蛇"
 sleep 0.04s
+echo -e "10)  终端纯文本浏览器"
+sleep 0.04s
+echo -e "11)  音乐播放器"
+sleep 0.04s
 echo -e "00)  返回"
 sleep 0.04s
 echo -e "---------------------------------------------"
@@ -326,31 +333,31 @@ read -p "[when]# 你选择的序号是：" game
 case $game in
 01)
 	sleep 0.5s
-	pkg in -y sl
+	apt-get install -y sl
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 sl 开始 $colorend"
 	game0 ; game1
 	;;
 02)
 	sleep 0.5s
-	pkg in -y nyancat
+	apt-get install -y nyancat
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 nyancat 开始 $colorend"
 	game0 ; game1
 	;;
 03)
 	sleep 0.5s
-	pkg in -y screenfetch
+	apt-get install -y screenfetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 screenfetch 开始 $colorend"
 	game0 ; game1
 	;;
 04)
 	sleep 0.5s
-	pkg in -y neofetch
+	apt-get install -y neofetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 neofetch 开始 $colorend"
 	game0 ; game1
 	;;
 05)
 	sleep 0.5s
-	pkg in -y cowsay
+	apt-get install -y cowsay
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 cowsay 要说的话 开始 $colorend"
 	game0 ; game1
 	;;
@@ -365,17 +372,17 @@ case $game in
 	then
 		:
 	else
-		pkg in -y wget
+		apt-get install -y wget
 	fi
 	i=0
 	while [ $((i++)) -le 999 ]
 	do
-	wget -O /dev/null http://dlied5.myapp.com/myapp/1104466820/game0/2017_com.tencent.tmgp.game0_h8218_1.43.1.15_fc9dc4.apk
+		wget -O /dev/null https://g37.gdl.netease.com/onmyoji_setup_9.7.0.zip
 	done
 	;;
 08)
 	sleep 0.5s
-	pkg in -y wget
+	apt-get install -y wget
 	wget -O $HOME/van https://nibazshab.github.io/404/when/van.sh
 	chmod 777 $HOME/van
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 ~/van 开始 $colorend"
@@ -383,9 +390,21 @@ case $game in
 	;;
 09)
 	sleep 0.5s
-	pkg in -y nsnake
+	apt-get install -y nsnake
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 nsnake 开始 $colorend \n $colorhint 如无法运行，请双指捏合屏幕调整终端大小 $colorend"
 	game0 ; game1
+	;;
+10)
+	sleep 0.5s
+	apt-get install -y w3m
+	apt-get install -y elinks
+	apt-get install -y lynx
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 三个浏览器分别为 w3m, elinks, lynx  使用方法请自行百度 $colorend"
+	;;
+11)
+	sleep
+	apt-get install -y mpv
+	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 使用方法：mpv 音乐链接"
 	;;
 00)
 	echo -e "\n\n\n\n\n"
@@ -424,13 +443,13 @@ read -p "[when]# 你选择的序号是：" work
 case $work in
 01)
 	sleep 0.5s
-	pkg in -y python
+	apt-get install -y python
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 python 进入python环境 $colorend"
 	work0 ; work1
 	;;
 02)
 	sleep 0.5s
-	pkg in -y wget
+	apt-get install -y wget
 	wget -O $HOME/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
 	dpkg -i $HOME/jdk.deb
 	rm -rf $HOME/jdk.deb
@@ -439,19 +458,19 @@ case $work in
 	;;
 03)
 	sleep 0.5s
-	pkg in -y golang
+	apt-get install -y golang
 	echo -e "$colorhint 进度 [100%] $colorend"
 	work0 ; work1
 	;;
 04)
 	sleep 0.5s
-	pkg in -y clang
+	apt-get install -y clang
 	echo -e "$colorhint 进度 [100%] $colorend"
 	work0 ; work1
 	;;
 05)
 	sleep 0.5s
-	pkg in -y php
+	apt-get install -y php
 	echo -e "$colorhint 进度 [100%] $colorend"
 	work0 ; work1
 	;;
