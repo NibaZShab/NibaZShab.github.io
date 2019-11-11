@@ -291,7 +291,7 @@ case $home in
 	case $c in
 	[0-9]*)
 		read -p "[when]# 请输入支付密码："
-		echo -e "[when]# 正在链接服务器......"
+		echo -e "[when]# 连接服务器中..."
 		sleep 1s
 		echo -e "[when]# 恭喜！已成功充入 $c 软妹币！"
 		sleep 0.2s
@@ -299,7 +299,11 @@ case $home in
 		;;
 	*)
 		sleep 1s
-		echo -e "[when]# 服务器错误，你的软妹币全没啦！"
+		echo -e "[when]# 服务器请求错误！"
+		sleep 0.2s
+		echo -e "[when]# 发起入侵..."
+		sleep 0.2s
+		echo -e "[when]# 入侵成功！你的软妹币我全都拿走啦！"
 		;;
 	esac
 	;;
