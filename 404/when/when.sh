@@ -91,7 +91,7 @@ case $home in
 #	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 #	echo -e "$colorhint 如果卡进度条，则退出重开termux，并运行 dpkg --configure -a 修复 $colorend"
 #	sleep 3s
-#	apt update && apt upgrade
+#	apt update && apt upgrade -y
 #	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 请重启 termux $colorend"
 	echo -e "都说了清华源暂不可用了......."
 	sleep 3s
@@ -100,12 +100,14 @@ case $home in
 04)
 	sleep 0.5s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
+	apt update && apt upgrade -y
 	apt-get install -y atilo-cn
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 atilo 查看使用方法 $colorend"
 	home0 ; home1
 	;;
 05)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y unzip
 	apt-get install -y git
 	apt-get install -y nodejs-lts
@@ -168,6 +170,7 @@ case $home in
 	;;
 07)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y golang
 	apt-get install -y git
 	cd $HOME
@@ -191,6 +194,7 @@ case $home in
 	case $a in
 	1)
 		sleep 0.5s
+		apt update && apt upgrade -y
 		apt-get install -y aria2
 		apt-get install -y wget
 		if test -d /sdcard/Download/aria2/
@@ -220,6 +224,7 @@ case $home in
 		;;
 	2)
 		sleep 0.5s
+		apt update && apt upgrade -y
 		apt-get install -y axel
 		echo -e "echo \"下载百度云方法：前往 https://www.baidusu.com 获取下载链接，然后输入 axel -n 256 -o /sdcard/Download/文件名 下载链接\"" > $HOME/axelh
 		chmod 777 $HOME/axelh
@@ -228,6 +233,7 @@ case $home in
 		;;
 	3)
 		sleep 0.5s
+		apt update && apt upgrade -y
 		apt-get install -y golang
 		apt-get install -y git
 		cd $HOME
@@ -253,6 +259,7 @@ case $home in
 	;;
 09)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y wget
 	rm -rf $HOME/install.sh
 	wget https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh
@@ -275,6 +282,7 @@ case $home in
 	then
 		:
 	else
+		apt update && apt upgrade -y
 		apt-get install -y curl
 		echo -e "必要程序已添加"
 	fi
@@ -360,30 +368,35 @@ read -p "[when]# 你选择的序号是：" game
 case $game in
 01)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y sl
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 sl 开始 $colorend"
 	game0 ; game1
 	;;
 02)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y nyancat
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 nyancat 开始 $colorend"
 	game0 ; game1
 	;;
 03)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y screenfetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 screenfetch 开始 $colorend"
 	game0 ; game1
 	;;
 04)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y neofetch
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 neofetch 开始 $colorend"
 	game0 ; game1
 	;;
 05)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y cowsay
 	echo -e "$colorhint 进度[100%] $colorend \n $colorhint 输入 cowsay 要说的话 开始 $colorend"
 	game0 ; game1
@@ -399,6 +412,7 @@ case $game in
 	then
 		:
 	else
+		apt update && apt upgrade -y
 		apt-get install -y wget
 	fi
 	i=0
@@ -409,6 +423,7 @@ case $game in
 	;;
 08)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y wget
 	wget -O $HOME/van https://nibazshab.github.io/404/when/van.sh
 	chmod 777 $HOME/van
@@ -417,12 +432,14 @@ case $game in
 	;;
 09)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y nsnake
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 nsnake 开始 $colorend \n $colorhint 如无法运行，请双指捏合屏幕调整终端大小 $colorend"
 	game0 ; game1
 	;;
 10)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y w3m
 	apt-get install -y elinks
 	apt-get install -y lynx
@@ -431,6 +448,7 @@ case $game in
 	;;
 11)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y mpv
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 使用方法：mpv 音乐链接"
 	game0 ; game1
@@ -477,12 +495,14 @@ read -p "[when]# 你选择的序号是：" work
 case $work in
 01)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y python
 	echo -e "$colorhint 进度 [100%] $colorend \n $colorhint 输入 python 进入python环境 $colorend"
 	work0 ; work1
 	;;
 02)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y wget
 	wget -O $HOME/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
 	dpkg -i $HOME/jdk.deb
@@ -492,18 +512,21 @@ case $work in
 	;;
 03)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y golang
 	echo -e "$colorhint 进度 [100%] $colorend"
 	work0 ; work1
 	;;
 04)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y clang
 	echo -e "$colorhint 进度 [100%] $colorend"
 	work0 ; work1
 	;;
 05)
 	sleep 0.5s
+	apt update && apt upgrade -y
 	apt-get install -y php
 	echo -e "$colorhint 进度 [100%] $colorend"
 	work0 ; work1
