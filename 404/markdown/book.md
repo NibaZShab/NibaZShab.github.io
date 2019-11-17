@@ -52,12 +52,17 @@
 
 ## terminal
 ```sh
-# 判断存在并执行指令
-if test -e abc
+# 测试abc是否存在
+test abc
+```
+```sh
+# 判断输入的值
+read -p "请输入值" num
+if [ $num = 1 ]
 then
-	echo "文件存在"
+	echo "输入的是 1"
 else
-	echo "文件不存在"
+	echo "输入的不是 1"
 fi
 ```
 ```sh
@@ -101,7 +106,7 @@ rm -rf !(abc|bca)
 # for循环100次
 i=1
 for((; i<=100; i++)){
-echo "" >> $i
+echo "内容" >> $i
 }
 ```
 ```sh
