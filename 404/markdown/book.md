@@ -45,12 +45,17 @@
     + **[rsshub](https://docs.rsshub.app)**
     + **[植物大战僵尸下载站](http://pvz4.lonelystar.org/download.htm)**
     + **[linux命令查询](https://ipcmen.com)**
-    + **(虚拟主机)[https://app.infinityfree.net]**
-    + **(三丰云)[https://www.sanfengyun.com]**
+    + **[虚拟主机](https://app.infinityfree.net)**
+    + **[三丰云])https://www.sanfengyun.com)**
+    + **[作图网站](https://m.chuangkit.com)**
 
 # Lot Of Any
 
 ## terminal
+```sh
+# 判断系统架构
+echo $(uname -m)
+```
 ```sh
 # 测试abc是否存在
 test abc
