@@ -312,6 +312,8 @@ echo -e "6 )  命令行版百度云"
 sleep 0.025s
 echo -e "7 )  安装adb和fastboot"
 sleep 0.025s
+echo -e "8 )  安装hexo博客"
+sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
 sleep 0.025s
@@ -410,7 +412,11 @@ case $library in
 	rm -rf $HOME/go/
 	library0 ; library1 ;;
 7 )
-	# →_→
+	echo -e "还没弄好"
+	library0 ; library1 ;;
+8 )
+	sleep 1s
+	echo -e "太麻烦了，请查看教程，然后自行安装\n教程地址：https://nibazshab.github.io/post/04"
 	library0 ; library1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
@@ -436,6 +442,8 @@ sleep 0.025s
 echo -e "\n\n\n"
 sleep 0.025s
 echo -e "1 )  安装本地hexo博客并连接github仓库"
+sleep 0.025s
+echo -e "2 )  clean 和 记录"
 sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
@@ -493,6 +501,13 @@ case $hide in
 	chmod +x $HOME/博客/404/book.md
 	npm install --save hexo-deployer-git
 	echo -e "$colorhint 读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend"
+	hide0 ; hide1 ;;
+2 )
+	sleep 1s
+	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/404/2.sh" > $PREFIX/bin/clean
+	echo -e "#!/bin/bash\nvi ~/博客/404/source/_posts/06.md" > $PREFIX/bin/记录
+	chmod +x $PREFIX/bin/clean
+	chmod +x $PREFIX/bin/记录
 	hide0 ; hide1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
