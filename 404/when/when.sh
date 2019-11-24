@@ -416,7 +416,8 @@ case $library in
 	library0 ; library1 ;;
 8 )
 	sleep 1s
-	echo -e "太麻烦了，请查看教程，然后自行安装\n教程地址：https://nibazshab.github.io/post/04"
+	hint ; echo -e "太麻烦了，请查看教程，然后自行安装\n教程地址：https://nibazshab.github.io/post/04" ; hint
+	sleep 3s
 	library0 ; library1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
