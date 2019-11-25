@@ -67,7 +67,7 @@ case $home in
 	sleep 3s
 	sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux stable main@' $PREFIX/etc/apt/sources.list
 	apt update && apt upgrade -y
-	home0 ; hmoe1 ;;
+	home0 ; home1 ;;
 2 )
 	sleep 1s
 	if test -d $HOME/.termux/ ; then
@@ -76,11 +76,11 @@ case $home in
 		mkdir -p $HOME/.termux/
 	fi
 	echo -e "extra-keys = [['TAB','>','-','~','/','*','$'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
-	home0 ; hmoe1 ;;
+	home0 ; home1 ;;
 3 )
 	sleep 1s
 	echo -e "\n\n\n\n                   Welcome to Termux!\n\n           I'm NibaZShab,thanks for use \"when\"\n\n\n\n                        我爱学习\n              I       LOVE       STUDY\n\n  ----------------------------------------------------\n             民生各有所乐兮，余 独好修以为常\n             虽体解吾犹未变兮，岂余心之可惩\n  ----------------------------------------------------\n\n                    Hello  my  World\n\n\n" > $PREFIX/etc/motd
-	home0 ; hmoe1 ;;
+	home0 ; home1 ;;
 4 )
 	sleep 1s
 	pkg in -y wget unzip fish
@@ -93,7 +93,7 @@ case $home in
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/10/10.zip
 	unzip 10.zip
 	echo -e "function fish_greeting\nend" >> $PREFIX/etc/fish
-	home0 ; hmoe1 ;;
+	home0 ; home1 ;;
 5 )
 	echo -e "\n\n\n\n\n"
 	logo
