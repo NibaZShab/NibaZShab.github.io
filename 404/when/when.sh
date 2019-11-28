@@ -357,7 +357,7 @@ case $library in
 	sleep 3s
 	pkg in -y golang git
 	cd $HOME
-	git clon-e https://github.com/iawia002/annie.git
+	git clone https://github.com/iawia002/annie.git
 	cd $HOME/annie/
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
 	sleep 2s
