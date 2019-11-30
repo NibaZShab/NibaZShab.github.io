@@ -164,6 +164,10 @@ echo -e "8 )  贪吃蛇"
 sleep 0.025s
 echo -e "9 )  音乐播放器"
 sleep 0.025s
+echo -e "10 )  moo"
+sleep 0.025s
+echo -e "11 )  本机ip查询"
+sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
 sleep 0.025s
@@ -222,11 +226,26 @@ case $game in
 	sleep 3s
 	pkg in -y nsnake
 	game0 ; game1 ;;
-99 )
+9 )
 	sleep 1s
 	hint ; echo -e "名称：mpv\n使用方法：请自行百度" ; hint
 	sleep 3s
 	pkg in -y mpv
+	game0 ; game1 ;;
+10 )
+	sleep 1s
+	apt-get moo
+	sleep 3s
+	game0 ; game1 ;;
+11 )
+	sleep 1s
+	if test -e $PREFIX/bin/curl ; then
+		:
+	else
+		pkg in -y curl
+	fi
+	ip -br -c addr ; curl myip.ipip.net
+	sleep 3s
 	game0 ; game1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
@@ -310,9 +329,9 @@ echo -e "5 )  aria2下载器"
 sleep 0.025s
 echo -e "6 )  命令行版百度云"
 sleep 0.025s
-echo -e "7 )  安装adb和fastboot"
+echo -e "7 )  adb和fastboot"
 sleep 0.025s
-echo -e "8 )  安装hexo博客"
+echo -e "8 )  hexo博客"
 sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
@@ -392,7 +411,7 @@ case $library in
 	mkdir -p $HOME/.config/aria2/
 	wget -O $HOME/.config/aira2/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
 	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf\"" > $HOME/aria2
-	chmod +x $HOME/aria2m
+	chmod +x $HOME/aria2
 	library0 ; library1 ;;
 6 )
 	sleep 1s
@@ -412,11 +431,19 @@ case $library in
 	rm -rf $HOME/go/
 	library0 ; library1 ;;
 7 )
-	echo -e "还没弄好"
+	sleep 1s
+	pkg in -y unzip wget
+	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/11/11.zip
+	unzip 11.zip
+	rm -rf 11.zip
+	mv -f $HOME/adb $PREFIX/bin/
+	mv -f $HOME/fastboot $PREFIX/bin/
+	chmod +x $PREFIX/bin/adb
+	chmod +x $PREFIX/bin/fastboot
 	library0 ; library1 ;;
 8 )
 	sleep 1s
-	hint ; echo -e "太麻烦了，请查看教程，然后自行安装\n教程地址：https://nibazshab.github.io/post/04" ; hint
+	hint ; echo -e "请阅读小白教程，自行完成博客的搭建\n教程地址：https://nibazshab.github.io/post/04" ; hint
 	sleep 3s
 	library0 ; library1 ;;
 0 )
@@ -432,13 +459,13 @@ esac
 }
 function hide0 (){
 echo -e "\n\n"
-echo -e "\n～>  你发现了一块 新大陆！"
+echo -e "～>  你发现了一块 新大陆！"
 sleep 0.025s
-echo -e "\n～>  这是 被隐藏 的角落"
+echo -e "～>  这是 被隐藏 的角落"
 sleep 0.025s
-echo -e "\n～>  此处的选项都是 NibaZShab 自用的"
+echo -e "～>  此处的选项都是 NibaZShab 自用的"
 sleep 0.025s
-echo -e "\n～>  如有不懂，找他也没用"
+echo -e "～>  如有不懂，找他也没用"
 sleep 0.025s
 echo -e "\n\n\n"
 sleep 0.025s
