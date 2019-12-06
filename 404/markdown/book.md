@@ -43,10 +43,17 @@
     + **[rsshub](https://docs.rsshub.app)**
     + **[虚拟主机](https://app.infinityfree.net)**
     + **[三丰云](https://www.sanfengyun.com)**
+    + **[deb制作](https://www.downeyboy.com/2019/05/29/mk_deb_pack_series_1/)**
 
 # Lot Of Any
 
 ## terminal
+```bash
+# 保存当前终端
+printf "\e[?1049h"
+# 恢复终端
+printf "\e[?1049l"
+```
 ```sh
 # 判断系统架构
 echo $(uname -m)

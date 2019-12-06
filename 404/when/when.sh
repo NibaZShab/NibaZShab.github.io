@@ -38,7 +38,7 @@ echo -e "1 )  更换清华源"
 sleep 0.025s
 echo -e "2 )  修复底部小键盘"
 sleep 0.025s
-echo -e "3 )  改变termux问候语"
+echo -e "3 )  获取储存权限"
 sleep 0.025s
 echo -e "4 )  使用fish终端"
 sleep 0.025s
@@ -46,7 +46,7 @@ echo -e "5 )  好玩的东东"
 sleep 0.025s
 echo -e "6 )  编程环境配置"
 sleep 0.025s
-echo -e "7 )  一些很棒的大宝贝"
+echo -e "7 )  超级大宝贝儿们"
 sleep 0.025
 echo -e ""
 echo -e "                             99 )  充软妹币"
@@ -58,7 +58,7 @@ sleep 0.025s
 echo -e ""
 }
 function home1 (){
-cd $HOME
+cd ~
 read -p "[when] ~> 你选择的序号是：" home
 case $home in
 1 )
@@ -70,26 +70,25 @@ case $home in
 	home0 ; home1 ;;
 2 )
 	sleep 1s
-	if test -d $HOME/.termux/ ; then
+	if test -d ~/.termux/ ; then
 		:
 	else
-		mkdir -p $HOME/.termux/
+		mkdir -p ~/.termux/
 	fi
-	echo -e "extra-keys = [['TAB','>','-','~','/','*','$'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > $HOME/.termux/termux.properties
+	echo -e "extra-keys = [['TAB','>','-','~','/','*','$'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > ~/.termux/termux.properties
 	home0 ; home1 ;;
 3 )
-	sleep 1s
-	echo -e "\n\n\n\n                   Welcome to Termux!\n\n           I'm NibaZShab,thanks for use \"when\"\n\n\n\n                        我爱学习\n              I       LOVE       STUDY\n\n  ----------------------------------------------------\n             民生各有所乐兮，余 独好修以为常\n             虽体解吾犹未变兮，岂余心之可惩\n  ----------------------------------------------------\n\n                    Hello  my  World\n\n\n" > $PREFIX/etc/motd
+	termux-setup-storage
 	home0 ; home1 ;;
 4 )
 	sleep 1s
 	pkg in -y wget unzip fish
-	if test -d $HOME/.termux/ ; then
+	if test -d ~/.termux/ ; then
 		:
 	else
-		mkdir mkdir -p $HOME/.termux/
+		mkdir mkdir -p ~/.termux/
 	fi
-	cd $HOME/.termux/
+	cd ~/.termux/
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/10/10.zip
 	unzip 10.zip
 	echo -e "function fish_greeting\nend" >> $PREFIX/etc/fish
@@ -138,6 +137,8 @@ case $home in
 	clear
 	cat $PREFIX/etc/motd
 	exit ;;
+00 )
+	exit ;;
 * )
 	echo -e "[when] ~> 该选项超脱了天地之外！"
 	sleep 1s
@@ -156,7 +157,7 @@ echo -e "4 )  screenfetch"
 sleep 0.025s
 echo -e "5 )  neofetch"
 sleep 0.025s
-echo -e "6 )  打开王者荣耀"
+echo -e "6 )   "
 sleep 0.025s
 echo -e "7 )  彩虹猫"
 sleep 0.025s
@@ -168,6 +169,8 @@ echo -e "10 )  moo"
 sleep 0.025s
 echo -e "11 )  本机ip查询"
 sleep 0.025s
+echo -e "12 )  更换termux问候语"
+sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
 sleep 0.025s
@@ -176,7 +179,7 @@ sleep 0.025s
 echo -e ""
 }
 function game1 (){
-cd $HOME
+cd ~
 read -p "[when]# 你选择的序号是：" game
 case $game in
 1 )
@@ -212,7 +215,7 @@ case $game in
 	pkg in -y neofetch
 	game0 ; game1 ;;
 6 )
-	am start -n com.tencent.tmgp.game0/com.tencent.tmgp.game0.game0Activity
+	echo "什么都没发生"
 	exit ;;
 7 )
 	sleep 1s
@@ -247,11 +250,17 @@ case $game in
 	ip -br -c addr ; curl myip.ipip.net
 	sleep 3s
 	game0 ; game1 ;;
+12 )
+	sleep 1s
+	echo -e "\n\n\n\n\n  ----------------------------------------------------\n\n             民生各有所乐兮，余独好修以为常\n             虽体解吾犹未变兮，岂余心之可惩\n\n\n               　　　／　　　 ／   | \n                　　 Γ￣￣￣￣ |  | \n                　　 |[]::　　 |   | \n                　　 |＿＿_＿＿|　|\n                　　 |[]::　　 |　 | \n                　　 |＿＿_＿＿|　| \n                ｶﾞﾗｯ |＿＿_＿＿|　 | \n                 .彡／(´･ω･)　／|　| \n                   　Γ￣￣￣￣ |　|／ \n                    Ｌ＿＿＿＿_|／\n\n\n" > $PREFIX/etc/motd
+	game0 ; game1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.025s
 	home0 ; home1 ;;
+00 )
+	exit ;;
 * )
 	echo -e "[when] ~> 该选项超脱了天地之外！"
 	sleep 1s
@@ -278,7 +287,7 @@ sleep 0.025s
 echo -e ""
 }
 function work1 (){
-cd $HOME
+cd ~
 read -p "[when] ~> 你选择的序号是：" work
 case $work in
 1 )
@@ -288,9 +297,9 @@ case $work in
 2 )
 	sleep 1s
 	pkg in -y wget
-	wget -O $HOME/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
-	dpkg -i $HOME/jdk.deb
-	rm -rf $HOME/jdk.deb
+	wget -O ~/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
+	dpkg -i ~/jdk.deb
+	rm -rf ~/jdk.deb
 	work0 ;  work1 ;;
 3 )
 	sleep 1s
@@ -309,6 +318,8 @@ case $work in
 	logo
 	sleep 0.025s
 	home0 ; home1 ;;
+00 )
+	exit ;;
 * )
 	echo -e "[when] ~> 该选项超脱了天地之外！"
 	sleep 1s
@@ -341,7 +352,7 @@ sleep 0.025s
 echo -e ""
 }
 function library1 (){
-cd $HOME
+cd ~
 read -p "[when] ~> 你选择的序号是：" library
 case $library in
 1 )
@@ -375,17 +386,17 @@ case $library in
 	hint ; echo -e "编译指令感谢 coolapk@萌系生物研究员 提供\n项目地址：https://github.com/iawia002/annie" ; hint
 	sleep 3s
 	pkg in -y golang git
-	cd $HOME
+	cd ~
 	git clone https://github.com/iawia002/annie.git
-	cd $HOME/annie/
+	cd ~/annie/
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
 	sleep 2s
 	GOOS=android GOARCH=arm64 go build -o annie main.go
 	mv -f annie $PREFIX/bin/
-	cd $HOME
-	rm -rf $HOME/annie
-	chmod -Rf 777 $HOME/go/
-	rm -rf $HOME/go/
+	cd ~
+	rm -rf ~/annie
+	chmod -Rf 777 ~/go/
+	rm -rf ~/go/
 	library0 ; library1 ;;
 5 )
 	sleep 1s
@@ -403,32 +414,32 @@ case $library in
 		mkdir -p /sdcard/Download/aria2/
 		touch /sdcard/Download/aria2/aria2.session
 	fi
-	if test -d $HOME/.config/ ; then
-		rm -rf $HOME/.config/aria2/
+	if test -d ~/.config/ ; then
+		rm -rf ~/.config/aria2/
 	else
 		:
 	fi
-	mkdir -p $HOME/.config/aria2/
-	wget -O $HOME/.config/aira2/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
-	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf\"" > $HOME/aria2
-	chmod +x $HOME/aria2
+	mkdir -p ~/.config/aria2/
+	wget -O ~/.config/aira2/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
+	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=~/.config/aria2/aria2.conf\"" > ~/aria2
+	chmod +x ~/aria2
 	library0 ; library1 ;;
 6 )
 	sleep 1s
 	hint ; echo -e "使用方法：输入 ~/bdy\n文件下载在 /sdcard/Download/\n项目地址：https://github.com/iikira/BaiduPCS-Go" ; hint
 	sleep 3s
 	pkg in -y golang git
-	cd $HOME
+	cd ~
 	git clone https://github.com/iikira/BaiduPCS-Go.git
-	cd $HOME/BaiduPCS-Go/
+	cd ~/BaiduPCS-Go/
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
 	sleep 2s
 	GOOS=android GOARCH=arm64 go build -o bdy main.go
-	mv -f bdy $HOME
-	cd $HOME
-	rm -rf $HOME/BaiduPCS-Go/
-	chmod -Rf 777 $HOME/go/
-	rm -rf $HOME/go/
+	mv -f bdy ~
+	cd ~
+	rm -rf ~/BaiduPCS-Go/
+	chmod -Rf 777 ~/go/
+	rm -rf ~/go/
 	library0 ; library1 ;;
 7 )
 	sleep 1s
@@ -436,8 +447,8 @@ case $library in
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/11/11.zip
 	unzip 11.zip
 	rm -rf 11.zip
-	mv -f $HOME/adb $PREFIX/bin/
-	mv -f $HOME/fastboot $PREFIX/bin/
+	mv -f ~/adb $PREFIX/bin/
+	mv -f ~/fastboot $PREFIX/bin/
 	chmod +x $PREFIX/bin/adb
 	chmod +x $PREFIX/bin/fastboot
 	library0 ; library1 ;;
@@ -451,6 +462,8 @@ case $library in
 	logo
 	sleep 0.025s
 	home0 ; home1 ;;
+00 )
+	exit ;;
 * )
 	echo -e "[when] ~> 该选项超脱了天地之外！"
 	sleep 1s
@@ -466,12 +479,14 @@ sleep 0.025s
 echo -e "～>  此处的选项都是 NibaZShab 自用的"
 sleep 0.025s
 echo -e "～>  如有不懂，找他也没用"
-sleep 0.025s
 echo -e "\n\n\n"
+echo -e "1 )  hexo博客 连接github"
 sleep 0.025s
-echo -e "1 )  安装本地hexo博客并连接github仓库"
+echo -e "2 )  clean 记录"
 sleep 0.025s
-echo -e "2 )  clean 和 记录"
+echo -e "3 )  /sdcard/$/ -> ~/0/"
+sleep 0.025s
+echo -e "4 )  编译when.deb"
 sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
@@ -479,69 +494,78 @@ sleep 0.025s
 echo ""
 }
 function hide1 (){
-cd $HOME
+cd ~
 read -p "[when] ~> 你选择的序号是：" hide
 case $hide in
 1 )
 	sleep 1s
 	pkg in -y unzip git nodejs-lts openssh wget
-	rm -rf $HOME/博客/
-	mkdir -p $HOME/博客/
-	wget -O $HOME/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
-	cd $HOME/博客/
-	unzip $HOME/博客/02.zip
-	rm -rf $HOME/博客/02.zip
+	rm -rf ~/博客/
+	mkdir -p ~/博客/
+	wget -O ~/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
+	cd ~/博客/
+	unzip ~/博客/02.zip
+	rm -rf ~/博客/02.zip
 	npm install -g hexo-cli
 	npm install --save hexo
-	mkdir -p $HOME/博客/404/
-	cd $HOME/博客/404/
+	mkdir -p ~/博客/0/
+	cd ~/博客/0/
 	hexo init
-	rm -rf $HOME/博客/404/_config.yml
-	mv -f $HOME/博客/_config.yml $HOME/博客/404/
-	mv -f $HOME/博客/up.sh $HOME/博客/404/
-	chmod +x $HOME/博客/404/up.sh
-	mv -f $HOME/博客/inside $HOME/博客/404/themes/
-	cd $HOME/博客/404/
+	rm -rf ~/博客/0/_config.yml
+	mv -f ~/博客/_config.yml ~/博客/0/
+	mv -f ~/博客/up.sh ~/博客/0/
+	chmod +x ~/博客/0/up.sh
+	mv -f ~/博客/inside ~/博客/0/themes/
+	cd ~/博客/0/
 	git config --global user.name "NibaZShab"
 	git config --global user.email "nibazshab@gmail.com"
 	git init
 	git remote add origin git@github.com:NibaZShab/NibaZShab.github.io.git
 	ssh-keygen -t rsa -C "nibazshab@gmail.com"
-	cd $HOME/博客/
+	cd ~/博客/
 	git clone https://github.com/NibaZShab/NibaZShab.github.io.git
 	if test -d /sdcard/$/ ; then
 		:
 	else
 		mkdir -p /sdcard/$/
 	fi
-	cd $HOME
-	ln -s /sdcard/$/ $HOME/404/
-	cd $HOME/博客/NibaZShab.github.io/
-	mv -f $HOME/博客/NibaZShab.github.io/404/ $HOME/404/$/
-	rm -rf $HOME/博客/NibaZShab.github.io/
-	mkdir -p $HOME/博客/404/source/about/
-	mkdir -p $HOME/博客/404/source/links/
-	rm -rf $HOME/博客/404/source/_posts/*
-	cp -rf $HOME/404/$/markdown/page/* $HOME/博客/404/source/_posts/
-	cp -rf $HOME/404/$/markdown/about.md $HOME/博客/404/source/about/index.md
-	cp -rf $HOME/404/$/markdown/links.md $HOME/博客/404/source/links/index.md
-	cp -rf $HOME/404/$/markdown/book.md $HOME/博客/404/
-	chmod +x $HOME/博客/404/book.md
+	cd ~
+	ln -s /sdcard/$/ ~/0/
+	cd ~/博客/NibaZShab.github.io/
+	mv -f ~/博客/NibaZShab.github.io/404/ ~/0/$/
+	rm -rf ~/博客/NibaZShab.github.io/
+	mkdir -p ~/博客/0/source/about/
+	mkdir -p ~/博客/0/source/links/
+	rm -rf ~/博客/0/source/_posts/*
+	cp -rf ~/0/$/markdown/page/* ~/博客/0/source/_posts/
+	cp -rf ~/0/$/markdown/about.md ~/博客/0/source/about/index.md
+	cp -rf ~/0/$/markdown/links.md ~/博客/0/source/links/index.md
+	cp -rf ~/0/$/markdown/book.md ~/博客/0/
+	chmod +x ~/博客/0/book.md
 	npm install --save hexo-deployer-git
-	echo -e "$colorhint 读取ssh密钥请输入 cat $HOME/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend"
+	echo -e "$colorhint 读取ssh密钥请输入 cat ~/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend"
 	hide0 ; hide1 ;;
 2 )
 	sleep 1s
-	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/404/2.sh" > $PREFIX/bin/clean
-	echo -e "#!/bin/bash\nvi ~/博客/404/source/_posts/06.md" > $PREFIX/bin/记录
+	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh\ncat ~/when > ~/whendeb/data/data/com.termux/files/usr/bin/when" > $PREFIX/bin/clean
+	echo -e "#!/bin/bash\nvi ~/博客/0/source/_posts/06.md" > $PREFIX/bin/记录
 	chmod +x $PREFIX/bin/clean
 	chmod +x $PREFIX/bin/记录
 	hide0 ; hide1 ;;
+3 )
+	sleep 1s
+	ln -s /sdcard/$/ ~/0
+	hide0 ; hide1 ;;
+4 )
+	dpkg-deb -b whendeb/ whendeb/when.deb
+	exit ;;
 0 )
 	echo -e "\n\n\n\n\n"
 	logo
 	sleep 0.025s
 	home0 ; home1 ;;
+00 )
+	exit ;;
 * )
 	echo -e "[when] ~> 该选项超脱了天地之外！"
 	sleep 1s
