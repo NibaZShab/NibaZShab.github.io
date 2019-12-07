@@ -371,7 +371,7 @@ case $library in
 	hint ; echo -e "项目地址：https://github.com/YadominJinta/atilo" ; hint
 	sleep 3s
 	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
-	pkg in -y atilo-cn
+	pkg in atilo-cn
 	atilo
 	library0 ; library1 ;;
 3 )
@@ -557,7 +557,7 @@ case $hide in
 	ln -s /sdcard/$/ ~/0
 	hide0 ; hide1 ;;
 4 )
-	dpkg-deb -b whendeb/ whendeb/when.deb
+	dpkg-deb -b ~/whendeb/ ~/whendeb/when.deb
 	exit ;;
 0 )
 	echo -e "\n\n\n\n\n"
