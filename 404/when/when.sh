@@ -344,6 +344,8 @@ echo -e "7 )  adb和fastboot"
 sleep 0.025s
 echo -e "8 )  hexo博客"
 sleep 0.025s
+echo -e "9 )  bilibili挂机脚本"
+sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
 sleep 0.025s
@@ -370,7 +372,7 @@ case $library in
 	sleep 1s
 	hint ; echo -e "项目地址：https://github.com/YadominJinta/atilo" ; hint
 	sleep 3s
-	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux    extras" >> $PREFIX/etc/apt/sources.list
+	echo -e "deb [trusted=yes] https://yadominjinta.github.io/files/ termux extras" >> $PREFIX/etc/apt/sources.list
 	pkg in atilo-cn
 	atilo
 	library0 ; library1 ;;
@@ -386,7 +388,6 @@ case $library in
 	hint ; echo -e "编译指令感谢 coolapk@萌系生物研究员 提供\n项目地址：https://github.com/iawia002/annie" ; hint
 	sleep 3s
 	pkg in -y golang git
-	cd ~
 	git clone https://github.com/iawia002/annie.git
 	cd ~/annie/
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
@@ -426,10 +427,9 @@ case $library in
 	library0 ; library1 ;;
 6 )
 	sleep 1s
-	hint ; echo -e "使用方法：输入 ~/bdy\n文件下载在 /sdcard/Download/\n项目地址：https://github.com/iikira/BaiduPCS-Go" ; hint
+	hint ; echo -e "使用方法：输入 ~/bdy\n百度云文件下载于 /sdcard/Download/\n项目地址：https://github.com/iikira/BaiduPCS-Go" ; hint
 	sleep 3s
 	pkg in -y golang git
-	cd ~
 	git clone https://github.com/iikira/BaiduPCS-Go.git
 	cd ~/BaiduPCS-Go/
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
@@ -456,6 +456,23 @@ case $library in
 	sleep 1s
 	hint ; echo -e "请阅读小白教程，自行完成博客的搭建\n教程地址：https://nibazshab.github.io/post/04" ; hint
 	sleep 3s
+	library0 ; library1 ;;
+9 )
+	sleep 1s
+	hint ; echo -e "使用方法：输入 ~/bilibili\n项目地址：https://github.com/lkeme/BiliHelper" ; hint
+	sleep 3s
+	pkg in -y curl php git
+	git clone https://github.com/lkeme/BiliHelper.git
+	mv ~/BiliHelper/conf/user.conf.example ~/BiliHelper/conf/user.conf
+	curl -sS https://getcomposer.org/installer | php
+	mv ~/composer.phar ~/BiliHelper/
+	cd ~/BiliHelper/
+	php composer.phar install
+	cd ~
+	hint ; echo -e "输入 vi ~/BiliHelper/conf/user.conf 填上自己的b站账号和密码即可" ; hint
+	sleep 3s
+	echo -e "php ~/BiliHelper/index.php" > ~/bilibili
+	chmod +x ~/bilibili
 	library0 ; library1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
@@ -486,7 +503,7 @@ echo -e "2 )  clean 记录"
 sleep 0.025s
 echo -e "3 )  /sdcard/$/ -> ~/0/"
 sleep 0.025s
-echo -e "4 )  编译when.deb"
+echo -e "4 )  编译deb包 生成源"
 sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
@@ -558,6 +575,8 @@ case $hide in
 	hide0 ; hide1 ;;
 4 )
 	dpkg-deb -b ~/whendeb/ ~/whendeb/when.deb
+	termux-apt-repo ~/whendeb/ ~/whendeb/sourc/
+	cp -rf ~/whendeb/sourc/ ~/0/$/
 	exit ;;
 0 )
 	echo -e "\n\n\n\n\n"

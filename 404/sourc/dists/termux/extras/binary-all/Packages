@@ -1,0 +1,16 @@
+Package: when
+Version: 2.1
+Maintainer: NibaZShab nibazshab@gmail.com
+Installed-Size: 15 kb
+Size: 5296
+Homepage: https://nibazshab.github.io
+Priority: optional
+Architecture: all
+Description: toolbox for termux
+Filename: dists/termux/extras/binary-all/when.deb
+Size: 11920
+MD5Sum: 7ed7526a3f56c63765f437cebef42d58
+SHA1: d87d095de37688eea77bd06d949fb71512407d1a
+SHA256: a4a339842aa37ef33f05f08fef0f4bcc0d30398cb1b9f95094c21d01db2f79ba
+SHA512: bbead277c9bff7f429d170a475fe80e48feb3dace1cc27c433733858c712f7d69941a07d722746c91d3ff4539ff642b031b5722a0432467723d1d919360c60fa
+
