@@ -564,7 +564,7 @@ case $hide in
 	hide0 ; hide1 ;;
 2 )
 	sleep 1s
-	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh\ncat ~/when > ~/whendeb/data/data/com.termux/files/usr/bin/when" > $PREFIX/bin/clean
+	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh\ncat ~/when > ~/开发/deb/data/data/com.termux/files/usr/bin/when" > $PREFIX/bin/clean
 	echo -e "#!/bin/bash\nvi ~/博客/0/source/_posts/06.md" > $PREFIX/bin/记录
 	chmod +x $PREFIX/bin/clean
 	chmod +x $PREFIX/bin/记录
