@@ -574,9 +574,9 @@ case $hide in
 	ln -s /sdcard/$/ ~/0
 	hide0 ; hide1 ;;
 4 )
-	dpkg-deb -b ~/whendeb/ ~/whendeb/when.deb
-	termux-apt-repo ~/whendeb/ ~/whendeb/sourc/
-	cp -rf ~/whendeb/sourc/ ~/0/$/
+	dpkg-deb -b ~/开发/deb/ ~/开发/when.deb
+	termux-apt-repo ~/开发/ ~/开发/sourc/
+	cp -rf ~/开发/sourc/ ~/0/$/
 	exit ;;
 0 )
 	echo -e "\n\n\n\n\n"
