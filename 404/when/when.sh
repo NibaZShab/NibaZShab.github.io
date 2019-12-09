@@ -180,7 +180,7 @@ echo -e ""
 }
 function game1 (){
 cd ~
-read -p "[when]# 你选择的序号是：" game
+read -p "[when] ~> 你选择的序号是：" game
 case $game in
 1 )
 	sleep 1s
@@ -443,6 +443,8 @@ case $library in
 	library0 ; library1 ;;
 7 )
 	sleep 1s
+	hint ; echo -e "感谢 Coolapk@GoFly闻雪" ; hint
+	sleep 3s
 	pkg in -y unzip wget
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/11/11.zip
 	unzip 11.zip
