@@ -422,7 +422,7 @@ case $library in
 	fi
 	mkdir -p ~/.config/aria2/
 	wget -O ~/.config/aria2/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
-	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=~/.config/aria2/aria2.conf" > ~/aria2
+	echo -e "echo \"rpc-key: 123456\"\nsleep 2s\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf" > ~/aria2
 	chmod +x ~/aria2
 	library0 ; library1 ;;
 6 )
