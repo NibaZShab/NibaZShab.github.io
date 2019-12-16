@@ -91,7 +91,9 @@ case $home in
 	cd ~/.termux/
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/10/10.zip
 	unzip 10.zip
+	rm -rf 10.zip
 	echo -e "function fish_greeting\nend" >> $PREFIX/etc/fish
+	chsh -s fish
 	home0 ; home1 ;;
 5 )
 	echo -e "\n\n\n\n\n"
@@ -225,7 +227,7 @@ case $game in
 	game0 ; game1 ;;
 8 )
 	sleep 1s
-	hint ; echo -e "使用方法：输入 nsnake" ; hint
+	hint ; echo -e "使用方法：输入 nsnake\n如提示 80x24 ，请双指捏合屏幕，放大终端" ; hint
 	sleep 3s
 	pkg in -y nsnake
 	game0 ; game1 ;;
@@ -279,6 +281,12 @@ echo -e "4 )  c/c++"
 sleep 0.025s
 echo -e "5 )  php"
 sleep 0.025s
+echo -e "6 )  nodejs"
+sleep 0.025s
+echo -e "7 )  pip 清华源"
+sleep 0.025s
+echo -e "8 )  npm 淘宝源"
+sleep 0.025s
 echo -e ""
 echo -e "                              0 )  返回"
 sleep 0.025s
@@ -297,9 +305,9 @@ case $work in
 2 )
 	sleep 1s
 	pkg in -y wget
-	wget -O ~/jdk.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
-	dpkg -i ~/jdk.deb
-	rm -rf ~/jdk.deb
+	wget -O ~/JDK.deb https://github.com/NibaZShab/NibaZShab.github.io/releases/download/08/08.deb
+	dpkg -i ~/JDK.deb
+	rm -rf ~/JDK.deb
 	work0 ;  work1 ;;
 3 )
 	sleep 1s
@@ -312,6 +320,31 @@ case $work in
 5 )
 	sleep 1s
 	pkg in -y php
+	work0 ; work1 ;;
+6 )
+	sleep 1s
+	pkg in -y nodejs
+	work0 ; work1 ;;
+7 )
+	sleep 1s
+	if test -e $PREFIX/bin/pip ; then
+		hint ; echo -e "恢复官方源：rm -rf ~/.pip/" ; hint
+		sleep 3s
+		mkdir -p ~/.pip/
+		echo -e "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple\n[install]\ntrusted-host=mirrors.aliyun.com" > ~/.pip/pip.conf
+	else
+		echo -e "请先安装 python 环境"
+	fi
+	work0 ; work1 ;;
+8 )
+	sleep 1s
+	if test -e $PREFIX/bin/npm ; then
+		hint ; echo -e "恢复官方源：npm config set registry https://registry.npmjs.org/" ; hint
+		sleep 3s
+		npm config set registry https://registry.npm.taobao.org
+	else
+		echo -e "请先安装 nodejs 环境"
+	fi
 	work0 ; work1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
@@ -465,9 +498,9 @@ case $library in
 	sleep 3s
 	pkg in -y curl php git
 	git clone https://github.com/lkeme/BiliHelper.git
-	mv ~/BiliHelper/conf/user.conf.example ~/BiliHelper/conf/user.conf
+	mv -f ~/BiliHelper/conf/user.conf.example ~/BiliHelper/conf/user.conf
 	curl -sS https://getcomposer.org/installer | php
-	mv ~/composer.phar ~/BiliHelper/
+	mv -f ~/composer.phar ~/BiliHelper/
 	cd ~/BiliHelper/
 	php composer.phar install
 	cd ~
