@@ -28,6 +28,7 @@
     + **[bt搜索聚合](https://hao.su/909)**
     + **[tracker](https://github.com/ngosang/trackerslist)**
     + **[tracker2](http://www.tkser.tk)**
+    + **[iacg博客](https://iacg.rip)**
   - **邮箱**
     + **[企鹅邮箱](https://w.mail.qq.com)**
     + **[临时邮箱](https://10minutemail.net/m/?lang=zh-cn)**
@@ -238,7 +239,6 @@ dd
 > 小林家的龙女仆
 > 游戏人生
 > 在下坂本，有何贵干
-> 从零开始的异世界生活
 > 我不是说过能力要平均值的吗
 > 碧蓝航线
 > 关于我转生成史莱姆这件事
