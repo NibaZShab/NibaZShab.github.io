@@ -1,9 +1,10 @@
 #!/bin/bash
 # Copyright (c) 2019 NibaZShab
-# https://github.com/NibaZShab/NibaZShab.github.io
 # https://nibazshab.github.io
+# https://github.com/NibaZShab/NibaZShab.github.io
+# echo "deb [trusted=yes] https://nibazshab.github.io/404/sourc/ termux extras" >> $PREFIX/etc/apt/sources.list ; pkg in when
+# pkg in -y curl ; sh -c "$(curl -fsSL https://nibazshab.github.io/404/when/install.sh)"
 # hide page 520
-# sh -c "$(curl -fsSL https://nibazshab.github.io/404/when/install.sh)"
 clear
 colorhint="\033[36;43;1m"
 colorend="\033[0m"
