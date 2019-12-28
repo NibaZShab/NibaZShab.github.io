@@ -19,6 +19,7 @@
     + **[聚合图床](https://www.superbed.cn)**
     + **[石墨文档](https://shimo.im)**
     + **[ariang](http://aria2.net)**
+    + **[知轩藏书](http://www.zxcs.me/)**
   - **不可名状**
     + **[熊猫书签exhentai](https://expanda.org)**
     + **[恋爱游戏网](https://www.lianaiyx.com)**
@@ -33,18 +34,15 @@
     + **[企鹅邮箱](https://w.mail.qq.com)**
     + **[临时邮箱](https://10minutemail.net/m/?lang=zh-cn)**
   - **没什么用**
-    + **[网页傻瓜式生成](http://sc.ilysc.cn)**
     + **[腾讯微Q关闭推送广告](https://privacy.qq.com/yszc-m.htm)**
     + **[web ua检测](http://service.spiritsoft.cn/ua.html)**
     + **[pixiv以图搜图](http://saucenao.com)**
     + **[81亿像素银河全景图](http://www.eso.org/public/images/eso1242a/zoomable)**
     + **[网盘资源搬运50g/月](https://www.multcloud.com)**
     + **[免费域名](http://www.freenom.com)**
-    + **[tg频道搜索](http://www.sssoou.com)**
     + **[rsshub](https://docs.rsshub.app)**
     + **[虚拟主机](https://app.infinityfree.net)**
     + **[三丰云](https://www.sanfengyun.com)**
-    + **[deb制作](https://www.downeyboy.com/2019/05/29/mk_deb_pack_series_1/)**
 
 # Lot Of Any
 

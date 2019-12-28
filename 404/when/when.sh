@@ -77,6 +77,7 @@ case $home in
 		mkdir -p ~/.termux/
 	fi
 	echo -e "extra-keys = [['TAB','>','-','~','/','*','$'],['ESC','(','HOME','UP','END',')','PGUP'],['CTRL','[','LEFT','DOWN','RIGHT',']','PGDN']]" > ~/.termux/termux.properties
+	termux-reload-settings
 	home0 ; home1 ;;
 3 )
 	termux-setup-storage
@@ -95,6 +96,7 @@ case $home in
 	rm -rf 10.zip
 	echo -e "function fish_greeting\nend" >> $PREFIX/etc/fish
 	chsh -s fish
+	termux-reload-settings
 	home0 ; home1 ;;
 5 )
 	echo -e "\n\n\n\n\n"
@@ -421,7 +423,7 @@ case $library in
 	sleep 1s
 	hint ; echo -e "编译指令感谢 coolapk@萌系生物研究员 提供\n项目地址：https://github.com/iawia002/annie" ; hint
 	sleep 3s
-	pkg in -y golang git
+	pkg in -y golang git ffmpeg
 	git clone https://github.com/iawia002/annie.git
 	cd ~/annie/
 	echo -e "$colorhint 编译时间较长，请耐心等待 $colorend"
