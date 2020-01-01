@@ -19,7 +19,6 @@
     + **[聚合图床](https://www.superbed.cn)**
     + **[石墨文档](https://shimo.im)**
     + **[ariang](http://aria2.net)**
-    + **[知轩藏书](http://www.zxcs.me/)**
   - **不可名状**
     + **[熊猫书签exhentai](https://expanda.org)**
     + **[恋爱游戏网](https://www.lianaiyx.com)**
@@ -43,6 +42,9 @@
     + **[rsshub](https://docs.rsshub.app)**
     + **[虚拟主机](https://app.infinityfree.net)**
     + **[三丰云](https://www.sanfengyun.com)**
+    + **[知轩藏书](http://www.zxcs.me/)**
+    + **[爱下电子书](https://m.aixdzs.com/)**
+
 
 # Lot Of Any
 
