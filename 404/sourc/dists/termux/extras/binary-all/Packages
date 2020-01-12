@@ -1,16 +1,16 @@
 Package: when
 Version: 4.4.4
 Maintainer: NibaZShab nibazshab@gmail.com
-Installed-Size: 15 kb
+Installed-Size: 13.26 kb
 Size: 5118
 Homepage: https://nibazshab.github.io
 Priority: optional
 Architecture: all
 Description: toolbox for termux
 Filename: dists/termux/extras/binary-all/when.deb
-Size: 5116
-MD5Sum: 18d584ae4b18688549ca916f6e2f8558
-SHA1: 927ab25949d962f7fbe0f854011274157ca9f072
-SHA256: 3e847447392562a609236eb42de233e039fa655e0e125f4c1973bdf0bd567186
-SHA512: d0fad4740c8c610a4f675521f7d49dbf91ea89442de47856c61b140c9a85e7c21e94a1e4ae573c0434c46bc8c9f8075ee95af7f97301776731a5c0c652037d96
+Size: 5232
+MD5Sum: ca20156e3565fc351458c21b345bb91d
+SHA1: 223aa492e4f7f82052bf4e18792474c06d305fa2
+SHA256: 28c4e9798fb761e23b858a146cff5e98d2f9d9d89511a19732a5ec5650b6d1ea
+SHA512: fc7a372cca92ad1832617e9ea3e746c8d27ec46ef29a75d98617489945b7f2c6f172e284f248c03f9119202829046f52ba866f4835567c30aeb7e13dee137cb8
 
