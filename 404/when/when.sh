@@ -1,9 +1,7 @@
 #!/bin/bash
 # Copyright (c) 2019 NibaZShab
 # https://nibazshab.github.io
-# https://github.com/NibaZShab/NibaZShab.github.io
-# echo "deb [trusted=yes] https://nibazshab.github.io/404/sourc/ termux extras" >> $PREFIX/etc/apt/sources.list ; pkg in when
-# pkg in -y curl ; sh -c "$(curl -fsSL https://nibazshab.github.io/404/when/install.sh)"
+# https://github.com/NibaZShab/NibaZShab.github.io/wiki/when
 # hide page 520
 clear
 colorhint="\033[36;43;1m"
@@ -43,7 +41,7 @@ echo -e "3 )  获取储存权限"
 sleep 0.025
 echo -e "4 )  使用fish终端"
 sleep 0.025
-echo -e "5 )  好康的东东"
+echo -e "5 )  好van的"
 sleep 0.025
 echo -e "6 )  编程环境配置"
 sleep 0.025
@@ -130,7 +128,7 @@ case $home in
 		sleep 0.2s
 		echo -e "[when] ~> 正在进攻..."
 		sleep 0.2s
-		echo -e "[when] ~> 入侵成功！你的软妹币全被我偷走啦！" ;;
+		echo -e "[when] ~> 入侵成功！你的软妹币我全拿走咯！" ;;
 	esac
 	exit ;;
 520 )
@@ -618,14 +616,12 @@ case $hide in
 	echo -e "$colorhint 读取ssh密钥请输入 cat ~/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend"
 	hide0 ; hide1 ;;
 2 )
-	sleep 1
 	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh\ncat ~/when > ~/开发/deb/data/data/com.termux/files/usr/bin/when" > $PREFIX/bin/clean
 	echo -e "#!/bin/bash\nvi ~/博客/0/source/_posts/06.md" > $PREFIX/bin/记录
 	chmod +x $PREFIX/bin/clean
 	chmod +x $PREFIX/bin/记录
 	hide0 ; hide1 ;;
 3 )
-	sleep 1
 	ln -s /sdcard/$/ ~/0
 	hide0 ; hide1 ;;
 4 )
