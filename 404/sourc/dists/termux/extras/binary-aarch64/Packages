@@ -1,3 +1,18 @@
+Package: python-3.7
+Architecture: aarch64
+Installed-Size: 24860
+Maintainer: Fredrik Fornwall @fornwall
+Version: 3.7.5-3
+Homepage: https://python.org/
+Depends: python (= 3.7.5-3)
+Description: Static libraries for python
+Filename: dists/termux/extras/binary-aarch64/python_3.7.deb
+Size: 8972176
+MD5Sum: 8a3bb943cca803733255f6d4b20cc178
+SHA1: ee49179d41ce1812f832b04755f9ca072ebe29d1
+SHA256: 31192821940351c5bebf68ba3888cee1c5effb1b7a4f0d5bb5e871900db345dd
+SHA512: 2a3d6c67c176b366f4cf9cec7b89211dee7426e31195739020fa09ced2dac3816220547a326251d85a238e4efd6a619e29732b67624fc94a1ecaa1a919b54a7c
+
 Package: when
 Version: 9.0.1
 Maintainer: NibaZShab nibazshab@gmail.com
@@ -8,9 +23,9 @@ Priority: optional
 Architecture: aarch64
 Description: toolbox for termux
 Filename: dists/termux/extras/binary-aarch64/when.deb
-Size: 5184
-MD5Sum: 6703fddd77f973952eeefb607a7595fe
-SHA1: 2848291aa8d84b6b88d18305d9ac6f7eba607e42
-SHA256: 6bf8a3a92849f264098573bcf471f5f088a2f313b3ee5361024b864e597c5048
-SHA512: ed7c3f773b61d2bdfeecc9c3a3e3086c156abf498d45b5ff5e4676ae218fcdcf0773b2541e061c4dec68f9084747e5bf19e7837a7436259da14bc3ed4ea96473
+Size: 5164
+MD5Sum: 16abd059dcf4fc5a0f5aef9df6e2c5f3
+SHA1: 31adcc4f6f3302305c92e350c5f4c0688e149357
+SHA256: 172987d200ee09f8e9fcaa39c5165ded86997d438b36b067fea5835d1b5e0c4f
+SHA512: 6c9b0b377673a0447ad2b3f2826092a341b515789f413b2e725aefb2447c6ec8b6a543a2de697495ea7d7c2e1fe86a56d5fc237677c371084f7c9037fa42af22
 

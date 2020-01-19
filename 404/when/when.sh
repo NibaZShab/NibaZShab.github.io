@@ -549,14 +549,12 @@ sleep 0.025
 echo -e "～>  此处的选项都是 NibaZShab 自用的"
 sleep 0.025
 echo -e "～>  如有不懂，找他也没用"
-echo -e "\n\n\n"
+echo -e "\n/sdcard/$/ -> ~/0/\n\n"
 echo -e "1 )  hexo博客 连接github"
 sleep 0.025
 echo -e "2 )  clean 记录"
 sleep 0.025
-echo -e "3 )  /sdcard/$/ -> ~/0/"
-sleep 0.025
-echo -e "4 )  编译deb包 生成源"
+echo -e "3 )  编译deb包 生成源"
 sleep 0.025
 echo -e ""
 echo -e "                              0 )  返回"
@@ -570,7 +568,6 @@ case $hide in
 1 )
 	sleep 1
 	pkg in -y unzip git nodejs-lts openssh wget
-	rm -rf ~/博客/
 	mkdir -p ~/博客/
 	wget -O ~/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
 	cd ~/博客/
@@ -616,15 +613,13 @@ case $hide in
 	echo -e "$colorhint 读取ssh密钥请输入 cat ~/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend"
 	hide0 ; hide1 ;;
 2 )
-	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh\ncat ~/when > ~/开发/deb/data/data/com.termux/files/usr/bin/when" > $PREFIX/bin/clean
-	echo -e "#!/bin/bash\nvi ~/博客/0/source/_posts/06.md" > $PREFIX/bin/记录
+	echo -e "shopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh" > $PREFIX/bin/clean
+	echo -e "vi ~/博客/0/source/_posts/06.md" > $PREFIX/bin/记录
 	chmod +x $PREFIX/bin/clean
 	chmod +x $PREFIX/bin/记录
 	hide0 ; hide1 ;;
 3 )
-	ln -s /sdcard/$/ ~/0
-	hide0 ; hide1 ;;
-4 )
+	cat ~/when > ~/开发/deb/data/data/com.termux/files/usr/bin/when
 	dpkg-deb -b ~/开发/deb/ ~/开发/when.deb
 	termux-apt-repo ~/开发/ ~/开发/sourc/
 	cp -rf ~/开发/sourc/ ~/0/$/

@@ -20,6 +20,7 @@
     + **[石墨文档](https://shimo.im)**
     + **[ariang](http://aria2.net)**
     + **[f-droid](https://f-droid.org/packages/io.mrarm.irc/)**
+    + **[异星软件空间](http://yx.bsh.me/)**
   - **不可名状**
     + **[熊猫书签exhentai](https://expanda.org)**
     + **[恋爱游戏网](https://www.lianaiyx.com)**
@@ -28,7 +29,7 @@
     + **[loadbt](https://www.loadbt.com/files)**
     + **[bt搜索聚合](https://hao.su/909)**
     + **[tracker](https://github.com/ngosang/trackerslist)**
-    + **[tracker2](http://www.tkser.tk)**
+    + **[tracker](https://trackerslist.com/all.txt)**
     + **[iacg博客](https://iacg.rip)**
   - **没什么用**
     + **[企鹅邮箱](https://w.mail.qq.com)**
