@@ -303,6 +303,8 @@ echo -e "7 )  pip 清华源"
 sleep 0.025
 echo -e "8 )  npm 淘宝源"
 sleep 0.025
+echo -e "9 )  python_3.7"
+sleep 0.025
 echo -e ""
 echo -e "                              0 )  返回"
 sleep 0.025
@@ -361,6 +363,17 @@ case $work in
 	else
 		echo -e "请先安装 nodejs 环境"
 	fi
+	work0 ; work1 ;;
+9 )
+	sleep 1
+	pkg in -y wget unzip
+	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/12/12.zip
+	unzip 12.zip
+	rm -rf 12.zip
+	dpkg -i ~/python_3.7.5-3_aarch64.deb
+	dpkg -i ~/python-static_3.7.5-3_aarch64.deb
+	dpkg -i ~/python-tkinter_3.7.5-3_aarch64.deb
+	apt-mark python python-static
 	work0 ; work1 ;;
 0 )
 	echo -e "\n\n\n\n\n"
