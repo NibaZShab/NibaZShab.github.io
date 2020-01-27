@@ -46,6 +46,7 @@
     + **[知轩藏书](http://www.zxcs.me/)**
     + **[爱下电子书](https://m.aixdzs.com/)**
     + **[加密音乐解码](https://tool.ixarea.com/music/)**
+    + **[老游戏清单](https://mp.weixin.qq.com/s/85TTqyuKuXroYZn-b4SqQw)**
 
 ---
 # 完
