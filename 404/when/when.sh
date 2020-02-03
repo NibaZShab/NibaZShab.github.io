@@ -11,49 +11,49 @@ function hint (){ echo -e "$prompt" ; }
 function logo (){
 echo -e "\033[31m"
 echo -e "\n\n\n\n\n\n"
-sleep 0.025
+sleep 0.015
 echo -e "               +"
-sleep 0.025
+sleep 0.015
 echo -e "               +"
-sleep 0.025
+sleep 0.015
 echo -e "               +"
-sleep 0.025
+sleep 0.015
 echo -e "               +"
-sleep 0.025
+sleep 0.015
 echo -e "  +   +   +    +++++++    +++++++    +++++++"
-sleep 0.025
+sleep 0.015
 echo -e "  +   +   +    +     +    +     +    +     +"
-sleep 0.025
+sleep 0.015
 echo -e "  +   +   +    +     +    +++++++    +     +"
-sleep 0.025
+sleep 0.015
 echo -e "  +   +   +    +     +    +          +     +"
-sleep 0.025
+sleep 0.015
 echo -e "  +++++++++    +     +    +++++++    +     +"
 echo -e "\033[0m"
 }
 function home0 (){
 echo -e "\n\n"
-echo -e "1 )  更换清华源"
-sleep 0.025
-echo -e "2 )  修复底部小键盘"
-sleep 0.025
-echo -e "3 )  获取储存权限"
-sleep 0.025
-echo -e "4 )  使用fish终端"
-sleep 0.025
-echo -e "5 )  好van的"
-sleep 0.025
-echo -e "6 )  编程环境配置"
-sleep 0.025
-echo -e "7 )  超级大宝贝儿们"
-sleep 0.025
+echo -e " 1   更换清华源"
+sleep 0.015
+echo -e " 2   修复底部小键盘"
+sleep 0.015
+echo -e " 3   获取储存权限"
+sleep 0.015
+echo -e " 4   使用fish终端"
+sleep 0.015
+echo -e " 5   好van的"
+sleep 0.015
+echo -e " 6   编程环境配置"
+sleep 0.015
+echo -e " 7   超级大宝贝儿们"
+sleep 0.015
 echo -e ""
 echo -e "                             99 )  充软妹币"
-sleep 0.025
+sleep 0.015
 echo -e "                              0 )  退出"
-sleep 0.025
+sleep 0.015
 echo -e "---------------------------------------------"
-sleep 0.025
+sleep 0.015
 echo -e ""
 }
 function home1 (){
@@ -99,17 +99,17 @@ case $home in
 5 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	game0 ; game1 ;;
 6 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	work0 ; work1 ;;
 7 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	library0 ; library1 ;;
 99 )
 	sleep 1
@@ -134,7 +134,7 @@ case $home in
 520 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	hide0 ; hide1 ;;
 0 )
 	clear
@@ -150,37 +150,37 @@ esac
 }
 function game0 (){
 echo -e "\n\n"
-echo -e "1 )  猜数字"
-sleep 0.025
-echo -e "2 )  小火车"
-sleep 0.025
-echo -e "3 )  彩虹猫"
-sleep 0.025
-echo -e "4 )  贪吃蛇"
-sleep 0.025
-echo -e "5 )  moo"
-sleep 0.025
-echo -e "6 )"
-sleep 0.025
-echo -e "7 )  screenfetch"
-sleep 0.025
-echo -e "8 )  neofetch"
-sleep 0.025
-echo -e "9 )  纯文本浏览器"
-sleep 0.025
-echo -e "10 )  mpv播放器"
-sleep 0.025
-echo -e "11 )  本机ip查询"
-sleep 0.025
-echo -e "12 )  更换termux问候语"
-sleep 0.025
-echo -e "13 )  adb"
-sleep 0.025
+echo -e " 1   猜数字"
+sleep 0.015
+echo -e " 2   小火车"
+sleep 0.015
+echo -e " 3   彩虹猫"
+sleep 0.015
+echo -e " 4   贪吃蛇"
+sleep 0.015
+echo -e " 5   moo"
+sleep 0.015
+echo -e " 6   mpv播放器"
+sleep 0.015
+echo -e " 7   screenfetch"
+sleep 0.015
+echo -e " 8   neofetch"
+sleep 0.015
+echo -e " 9   纯文本浏览器"
+sleep 0.015
+echo -e " 10"
+sleep 0.015
+echo -e " 11   ip"
+sleep 0.015
+echo -e " 12   更换termux问候语"
+sleep 0.015
+echo -e " 13   adb"
+sleep 0.015
 echo -e ""
 echo -e "                              0 )  返回"
-sleep 0.025
+sleep 0.015
 echo -e "---------------------------------------------"
-sleep 0.025
+sleep 0.015
 echo -e ""
 }
 function game1 (){
@@ -219,8 +219,11 @@ case $game in
 	sleep 3
 	game0 ; game1 ;;
 6 )
-	echo "什么都没发生"
-	exit ;;
+	sleep 1
+	hint ; echo -e "使用方法：请自行百度" ; hint
+	sleep 3
+	pkg in -y mpv
+	game0 ; game1 ;;
 7 )
 	sleep 1
 	hint ; echo -e "使用方法：输入 screenfetch" ; hint
@@ -240,11 +243,8 @@ case $game in
 	pkg in -y w3m
 	game0 ; game1 ;;
 10 )
-	sleep 1
-	hint ; echo -e "使用方法：请自行百度" ; hint
-	sleep 3
-	pkg in -y mpv
-	game0 ; game1 ;;
+	echo "什么都没发生"
+	exit ;;
 11 )
 	sleep 1
 	if test -e $PREFIX/bin/curl ; then
@@ -275,7 +275,7 @@ case $game in
 0 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	home0 ; home1 ;;
 00 )
 	exit ;;
@@ -287,29 +287,29 @@ esac
 }
 function work0 (){
 echo -e "\n\n"
-echo -e "1 )  python"
-sleep 0.025
-echo -e "2 )  java"
-sleep 0.025
-echo -e "3 )  go"
-sleep 0.025
-echo -e "4 )  c/c++"
-sleep 0.025
-echo -e "5 )  php"
-sleep 0.025
-echo -e "6 )  nodejs"
-sleep 0.025
-echo -e "7 )  pip 清华源"
-sleep 0.025
-echo -e "8 )  npm 淘宝源"
-sleep 0.025
-echo -e "9 )  python_3.7"
-sleep 0.025
+echo -e " 1   python"
+sleep 0.015
+echo -e " 2   java"
+sleep 0.015
+echo -e " 3   go"
+sleep 0.015
+echo -e " 4   c/c++"
+sleep 0.015
+echo -e " 5   php"
+sleep 0.015
+echo -e " 6   nodejs"
+sleep 0.015
+echo -e " 7   pip 清华源"
+sleep 0.015
+echo -e " 8   npm 淘宝源"
+sleep 0.015
+echo -e " 9   python_3.7"
+sleep 0.015
 echo -e ""
 echo -e "                              0 )  返回"
-sleep 0.025
+sleep 0.015
 echo -e "---------------------------------------------"
-sleep 0.025
+sleep 0.015
 echo -e ""
 }
 function work1 (){
@@ -378,7 +378,7 @@ case $work in
 0 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	home0 ; home1 ;;
 00 )
 	exit ;;
@@ -390,29 +390,29 @@ esac
 }
 function library0 (){
 echo -e "\n\n"
-echo -e "1 )  刷流量"
-sleep 0.025
-echo -e "2 )  atilo安装linux发行版"
-sleep 0.025
-echo -e "3 )  annie视频下载工具"
-sleep 0.025
-echo -e "4 )  aria2下载器"
-sleep 0.025
-echo -e "5 )  命令行版百度云"
-sleep 0.025
-echo -e "6 )  qrcode二维码"
-sleep 0.025
-echo -e "7 )  hexo博客"
-sleep 0.025
-echo -e "8 )  bilibili挂机脚本"
-sleep 0.025
-echo -e "9 )  网易ncm格式转换"
-sleep 0.025
+echo -e " 1   刷流量"
+sleep 0.015
+echo -e " 2   atilo安装linux发行版"
+sleep 0.015
+echo -e " 3   annie视频下载工具"
+sleep 0.015
+echo -e " 4   aria2下载器"
+sleep 0.015
+echo -e " 5   命令行版百度云"
+sleep 0.015
+echo -e " 6   qrcode二维码"
+sleep 0.015
+echo -e " 7   hexo博客"
+sleep 0.015
+echo -e " 8   bilibili挂机脚本"
+sleep 0.015
+echo -e " 9   网易ncm格式转换"
+sleep 0.015
 echo -e ""
 echo -e "                              0 )  返回"
-sleep 0.025
+sleep 0.015
 echo -e "---------------------------------------------"
-sleep 0.025
+sleep 0.015
 echo -e ""
 }
 function library1 (){
@@ -543,7 +543,7 @@ case $library in
 0 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	home0 ; home1 ;;
 00 )
 	exit ;;
@@ -556,22 +556,22 @@ esac
 function hide0 (){
 echo -e "\n\n"
 echo -e "～>  你发现了一块 新大陆！"
-sleep 0.025
+sleep 0.015
 echo -e "～>  这是 被隐藏 的角落"
-sleep 0.025
+sleep 0.015
 echo -e "～>  此处的选项都是 NibaZShab 自用的"
-sleep 0.025
+sleep 0.015
 echo -e "～>  如有不懂，找他也没用"
 echo -e "\n/sdcard/$/ -> ~/0/\n\n"
-echo -e "1 )  hexo博客 连接github"
-sleep 0.025
-echo -e "2 )  clean 记录"
-sleep 0.025
-echo -e "3 )  编译deb包 生成源"
-sleep 0.025
+echo -e " 1   hexo博客 连接github"
+sleep 0.015
+echo -e " 2   clean 记录"
+sleep 0.015
+echo -e " 3   编译deb包 生成源"
+sleep 0.015
 echo -e ""
 echo -e "                              0 )  返回"
-sleep 0.025
+sleep 0.015
 echo ""
 }
 function hide1 (){
@@ -627,7 +627,7 @@ case $hide in
 	hide0 ; hide1 ;;
 2 )
 	echo -e "shopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh" > $PREFIX/bin/clean
-	echo -e "vi ~/博客/0/source/_posts/06.md" > $PREFIX/bin/记录
+	echo -e "vi ~/博客/0/source/_posts/0.md" > $PREFIX/bin/记录
 	chmod +x $PREFIX/bin/clean
 	chmod +x $PREFIX/bin/记录
 	hide0 ; hide1 ;;
@@ -640,7 +640,7 @@ case $hide in
 0 )
 	echo -e "\n\n\n\n\n"
 	logo
-	sleep 0.025
+	sleep 0.015
 	home0 ; home1 ;;
 00 )
 	exit ;;
@@ -651,6 +651,6 @@ case $hide in
 esac
 }
 logo
-sleep 0.025
+sleep 0.015
 home0 ; home1
 exit
