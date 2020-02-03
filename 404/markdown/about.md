@@ -10,9 +10,9 @@ title: 关于
 - 企鹅 -> QQ:936100289
 - 酷安 -> NAME:NibaZShab
 - Github -> NAME:NibaZShab
+- steam -> NAME:NibaZShab
 - 哔哩哔哩 -> UID:171382681
 - 邮箱 -> nibazshab@gmail.com
-- steam -> NAME:NibaZShab
 
 ---
 
