@@ -505,7 +505,7 @@ case $library in
 	library0 ; library1 ;;
 7 )
 	sleep 1
-	hint ; echo -e "请阅读小白教程，自行完成博客的搭建\n教程地址：https://nibazshab.github.io/post/04" ; hint
+	hint ; echo -e "请阅读小白教程，自行完成博客的搭建\n教程地址：https://nibazshab.github.io/post/3" ; hint
 	sleep 3
 	library0 ; library1 ;;
 8 )
