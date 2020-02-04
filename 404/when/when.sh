@@ -9,56 +9,41 @@ colorend="\033[0m"
 prompt="\n————————————————————————————————————\n"
 function hint (){ echo -e "$prompt" ; }
 function logo (){
-echo -e "\033[31m"
 echo -e "\n\n\n\n\n\n"
-sleep 0.015
-echo -e "               +"
-sleep 0.015
-echo -e "               +"
-sleep 0.015
-echo -e "               +"
-sleep 0.015
-echo -e "               +"
-sleep 0.015
-echo -e "  +   +   +    +++++++    +++++++    +++++++"
-sleep 0.015
-echo -e "  +   +   +    +     +    +     +    +     +"
-sleep 0.015
-echo -e "  +   +   +    +     +    +++++++    +     +"
-sleep 0.015
-echo -e "  +   +   +    +     +    +          +     +"
-sleep 0.015
-echo -e "  +++++++++    +     +    +++++++    +     +"
-echo -e "\033[0m"
+echo -e "               ■"
+echo -e "               ■"
+echo -e "               ■"
+echo -e "               ■"
+echo -e "  ■   ■   ■    ■■■■■■■    ■■■■■■■    ■■■■■■■"
+echo -e "  ■   ■   ■    ■     ■    ■     ■    ■     ■"
+echo -e "  ■   ■   ■    ■     ■    ■■■■■■■    ■     ■"
+echo -e "  ■   ■   ■    ■     ■    ■          ■     ■"
+echo -e "  ■■■■■■■■■    ■     ■    ■■■■■■■    ■     ■"
+echo -e "\n\n"
 }
 function home0 (){
-echo -e "\n\n"
-echo -e " 1   更换清华源"
-sleep 0.015
-echo -e " 2   修复底部小键盘"
-sleep 0.015
-echo -e " 3   获取储存权限"
-sleep 0.015
-echo -e " 4   使用fish终端"
-sleep 0.015
-echo -e " 5   好van的"
-sleep 0.015
-echo -e " 6   编程环境配置"
-sleep 0.015
-echo -e " 7   超级大宝贝儿们"
-sleep 0.015
-echo -e ""
-echo -e "                             99   充软妹币"
-sleep 0.015
-echo -e "                              0   退出"
-sleep 0.015
-echo -e "---------------------------------------------"
-sleep 0.015
-echo -e ""
+echo -e "\n\n\n\n\n"
+echo -e " 1   更换清华源\n"
+sleep 0.016
+echo -e " 2   修复底部小键盘\n"
+sleep 0.016
+echo -e " 3   获取储存权限\n"
+sleep 0.016
+echo -e " 4   使用fish终端\n"
+sleep 0.016
+echo -e " 5   好van的\n"
+sleep 0.016
+echo -e " 6   编程环境配置\n"
+sleep 0.016
+echo -e " 7   超级大宝贝儿们\n"
+sleep 0.016
+echo -e "                             99   充软妹币\n"
+sleep 0.016
+echo -e "                              0   退出\n\n\n"
 }
 function home1 (){
 cd ~
-read -p "[when] ~> 你选择的序号是：" home
+read -p "u0_when@localhost ~> " home
 case $home in
 1 )
 	sleep 1
@@ -97,44 +82,36 @@ case $home in
 	termux-reload-settings
 	home0 ; home1 ;;
 5 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	game0 ; game1 ;;
 6 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	work0 ; work1 ;;
 7 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	library0 ; library1 ;;
 99 )
 	sleep 1
-	read -p "[when] ~> 请输入充值的软妹币额度：" a
+	read -p "u0_when@localhost ~> 请输入充值的软妹币额度：" a
 	case $a in
 	[0-9]* )
-		read -p "[when] ~> 请输入支付密码："
-		echo -e "[when] ~> 连接服务器中..."
+		read -p "u0_when@localhost ~> 请输入支付密码："
+		echo -e "u0_when@localhost ~> 连接服务器中..."
 		sleep 1
-		echo -e "[when] ~> 恭喜！已成功充入 $a 软妹币！"
+		echo -e "u0_when@localhost ~> 恭喜！已成功充入 $a 软妹币！"
 		sleep 0.2s
-		echo -e "[when] ~> 已升级为 svip 版！" ;;
+		echo -e "u0_when@localhost ~> 已升级为 svip 版！" ;;
 	* )
 		sleep 1
-		echo -e "[when] ~> 服务器请求错误！"
+		echo -e "u0_when@localhost ~> 服务器请求错误！"
 		sleep 0.2s
-		echo -e "[when] ~> 正在进攻..."
+		echo -e "u0_when@localhost ~> 正在进攻..."
 		sleep 0.2s
-		echo -e "[when] ~> 入侵成功！你的软妹币我全拿走咯！" ;;
+		echo -e "u0_when@localhost ~> 入侵成功！你的软妹币我全拿走咯！" ;;
 	esac
 	exit ;;
 520 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	hide0 ; hide1 ;;
 0 )
 	clear
@@ -143,49 +120,44 @@ case $home in
 00 )
 	exit ;;
 * )
-	echo -e "[when] ~> 该选项超脱了天地之外！"
+	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
 	sleep 1
 	home1 ;;
 esac
 }
 function game0 (){
-echo -e "\n\n"
-echo -e " 1   猜数字"
-sleep 0.015
-echo -e " 2   小火车"
-sleep 0.015
-echo -e " 3   彩虹猫"
-sleep 0.015
-echo -e " 4   贪吃蛇"
-sleep 0.015
-echo -e " 5   moo"
-sleep 0.015
-echo -e " 6   mpv播放器"
-sleep 0.015
-echo -e " 7   screenfetch"
-sleep 0.015
-echo -e " 8   neofetch"
-sleep 0.015
-echo -e " 9   纯文本浏览器"
-sleep 0.015
-echo -e " 10"
-sleep 0.015
-echo -e " 11   ip"
-sleep 0.015
-echo -e " 12   更换termux问候语"
-sleep 0.015
-echo -e " 13   adb"
-sleep 0.015
-echo -e ""
-echo -e "                              0   返回"
-sleep 0.015
-echo -e "---------------------------------------------"
-sleep 0.015
-echo -e ""
+echo -e "\n\n\n\n\n"
+echo -e " 1   猜数字\n"
+sleep 0.016
+echo -e " 2   小火车\n"
+sleep 0.016
+echo -e " 3   彩虹猫\n"
+sleep 0.016
+echo -e " 4   贪吃蛇\n"
+sleep 0.016
+echo -e " 5   moo\n"
+sleep 0.016
+echo -e " 6   mpv播放器\n"
+sleep 0.016
+echo -e " 7   screenfetch\n"
+sleep 0.016
+echo -e " 8   neofetch\n"
+sleep 0.016
+echo -e " 9   纯文本浏览器\n"
+sleep 0.016
+echo -e " 10\n"
+sleep 0.016
+echo -e " 11   ip\n"
+sleep 0.016
+echo -e " 12   更换termux问候语\n"
+sleep 0.016
+echo -e " 13   adb\n"
+sleep 0.016
+echo -e "                              0   返回\n\n\n"
 }
 function game1 (){
 cd ~
-read -p "[when] ~> 你选择的序号是：" game
+read -p "u0_when@localhost ~> " game
 case $game in
 1 )
 	sleep 1
@@ -273,48 +245,41 @@ case $game in
 	chmod +x $PREFIX/bin/fastboot
 	game0 ; game1 ;;
 0 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	home0 ; home1 ;;
 00 )
 	exit ;;
 * )
-	echo -e "[when] ~> 该选项超脱了天地之外！"
+	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
 	sleep 1
 	game1 ;;
 esac
 }
 function work0 (){
-echo -e "\n\n"
-echo -e " 1   python"
-sleep 0.015
-echo -e " 2   java"
-sleep 0.015
-echo -e " 3   go"
-sleep 0.015
-echo -e " 4   c/c++"
-sleep 0.015
-echo -e " 5   php"
-sleep 0.015
-echo -e " 6   nodejs"
-sleep 0.015
-echo -e " 7   pip 清华源"
-sleep 0.015
-echo -e " 8   npm 淘宝源"
-sleep 0.015
-echo -e " 9   python_3.7"
-sleep 0.015
-echo -e ""
-echo -e "                              0   返回"
-sleep 0.015
-echo -e "---------------------------------------------"
-sleep 0.015
-echo -e ""
+echo -e "\n\n\n\n\n"
+echo -e " 1   python\n"
+sleep 0.016
+echo -e " 2   java\n"
+sleep 0.016
+echo -e " 3   go\n"
+sleep 0.016
+echo -e " 4   c/c++\n"
+sleep 0.016
+echo -e " 5   php\n"
+sleep 0.016
+echo -e " 6   nodejs\n"
+sleep 0.016
+echo -e " 7   pip 清华源\n"
+sleep 0.016
+echo -e " 8   npm 淘宝源\n"
+sleep 0.016
+echo -e " 9   python_3.7\n"
+sleep 0.016
+echo -e "                              0   返回\n\n\n"
 }
 function work1 (){
 cd ~
-read -p "[when] ~> 你选择的序号是：" work
+read -p "u0_when@localhost ~> " work
 case $work in
 1 )
 	sleep 1
@@ -376,48 +341,41 @@ case $work in
 	apt-mark python python-static
 	work0 ; work1 ;;
 0 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	home0 ; home1 ;;
 00 )
 	exit ;;
 * )
-	echo -e "[when] ~> 该选项超脱了天地之外！"
+	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
 	sleep 1
 	work1 ;;
 esac
 }
 function library0 (){
-echo -e "\n\n"
-echo -e " 1   刷流量"
-sleep 0.015
-echo -e " 2   atilo安装linux发行版"
-sleep 0.015
-echo -e " 3   annie视频下载工具"
-sleep 0.015
-echo -e " 4   aria2下载器"
-sleep 0.015
-echo -e " 5   命令行版百度云"
-sleep 0.015
-echo -e " 6   qrcode二维码"
-sleep 0.015
-echo -e " 7   hexo博客"
-sleep 0.015
-echo -e " 8   bilibili挂机脚本"
-sleep 0.015
-echo -e " 9   网易ncm格式转换"
-sleep 0.015
-echo -e ""
-echo -e "                              0   返回"
-sleep 0.015
-echo -e "---------------------------------------------"
-sleep 0.015
-echo -e ""
+echo -e "\n\n\n\n\n"
+echo -e " 1   刷流量\n"
+sleep 0.016
+echo -e " 2   atilo安装linux发行版\n"
+sleep 0.016
+echo -e " 3   annie视频下载工具\n"
+sleep 0.016
+echo -e " 4   aria2下载器\n"
+sleep 0.016
+echo -e " 5   命令行版百度云\n"
+sleep 0.016
+echo -e " 6   qrcode二维码\n"
+sleep 0.016
+echo -e " 7   hexo博客\n"
+sleep 0.016
+echo -e " 8   bilibili挂机脚本\n"
+sleep 0.016
+echo -e " 9   网易ncm格式转换\n"
+sleep 0.016
+echo -e "                              0   返回\n\n\n"
 }
 function library1 (){
 cd ~
-read -p "[when] ~> 你选择的序号是：" library
+read -p "u0_when@localhost ~> " library
 case $library in
 1 )
 	if test -e $PREFIX/bin/wget ; then
@@ -541,42 +499,31 @@ case $library in
 	rm -rf ~/ncmdump/
 	library0 ; library1 ;;
 0 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	home0 ; home1 ;;
 00 )
 	exit ;;
 * )
-	echo -e "[when] ~> 该选项超脱了天地之外！"
+	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
 	sleep 1
 	library1 ;;
 esac
 }
 function hide0 (){
-echo -e "\n\n"
-echo -e "～>  你发现了一块 新大陆！"
-sleep 0.015
-echo -e "～>  这是 被隐藏 的角落"
-sleep 0.015
-echo -e "～>  此处的选项都是 NibaZShab 自用的"
-sleep 0.015
-echo -e "～>  如有不懂，找他也没用"
-echo -e "\n/sdcard/$/ -> ~/0/\n\n"
-echo -e " 1   hexo博客 连接github"
-sleep 0.015
-echo -e " 2   clean 记录"
-sleep 0.015
-echo -e " 3   编译deb包 生成源"
-sleep 0.015
-echo -e ""
-echo -e "                              0   返回"
-sleep 0.015
-echo ""
+echo -e "\n\n\n\n\n"
+echo -e "  幸运的你，发现了新大陆，不幸的你，不明白这是干嘛的，而冷酷无情的我，也并不打算解释"
+echo -e "\n  /sdcard/$/ -> ~/0/\n\n"
+echo -e " 1   hexo博客 连接github\n"
+sleep 0.016
+echo -e " 2   clean 记录\n"
+sleep 0.016
+echo -e " 3   编译deb包 生成源\n"
+sleep 0.016
+echo -e "                              0   返回\n\n\n"
 }
 function hide1 (){
 cd ~
-read -p "[when] ~> 你选择的序号是：" hide
+read -p "u0_when@localhost ~> " hide
 case $hide in
 1 )
 	sleep 1
@@ -638,19 +585,17 @@ case $hide in
 	cp -rf ~/开发/sourc/ ~/0/$/
 	exit ;;
 0 )
-	echo -e "\n\n\n\n\n"
-	logo
-	sleep 0.015
+	echo -e "\n\n"
 	home0 ; home1 ;;
 00 )
 	exit ;;
 * )
-	echo -e "[when] ~> 该选项超脱了天地之外！"
+	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
 	sleep 1
 	hide1 ;;
 esac
 }
 logo
-sleep 0.015
+sleep 1
 home0 ; home1
 exit
