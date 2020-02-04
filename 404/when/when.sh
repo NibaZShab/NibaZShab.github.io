@@ -48,9 +48,9 @@ sleep 0.015
 echo -e " 7   超级大宝贝儿们"
 sleep 0.015
 echo -e ""
-echo -e "                             99 )  充软妹币"
+echo -e "                             99   充软妹币"
 sleep 0.015
-echo -e "                              0 )  退出"
+echo -e "                              0   退出"
 sleep 0.015
 echo -e "---------------------------------------------"
 sleep 0.015
@@ -177,7 +177,7 @@ sleep 0.015
 echo -e " 13   adb"
 sleep 0.015
 echo -e ""
-echo -e "                              0 )  返回"
+echo -e "                              0   返回"
 sleep 0.015
 echo -e "---------------------------------------------"
 sleep 0.015
@@ -306,7 +306,7 @@ sleep 0.015
 echo -e " 9   python_3.7"
 sleep 0.015
 echo -e ""
-echo -e "                              0 )  返回"
+echo -e "                              0   返回"
 sleep 0.015
 echo -e "---------------------------------------------"
 sleep 0.015
@@ -409,7 +409,7 @@ sleep 0.015
 echo -e " 9   网易ncm格式转换"
 sleep 0.015
 echo -e ""
-echo -e "                              0 )  返回"
+echo -e "                              0   返回"
 sleep 0.015
 echo -e "---------------------------------------------"
 sleep 0.015
@@ -570,7 +570,7 @@ sleep 0.015
 echo -e " 3   编译deb包 生成源"
 sleep 0.015
 echo -e ""
-echo -e "                              0 )  返回"
+echo -e "                              0   返回"
 sleep 0.015
 echo ""
 }
