@@ -16,7 +16,6 @@
 >  
   - **养老院**
     + **[奶牛传输](https://cowtransfer.com)**
-    + **[聚合图床](https://www.superbed.cn)**
     + **[石墨文档](https://shimo.im)**
     + **[ariang](http://aria2.net)**
     + **[f-droid](https://f-droid.org/packages/io.mrarm.irc/)**

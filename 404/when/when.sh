@@ -31,7 +31,7 @@ echo -e " 3   获取储存权限\n"
 sleep 0.016
 echo -e " 4   使用fish终端\n"
 sleep 0.016
-echo -e " 5   好van的\n"
+echo -e " 5   好康的\n"
 sleep 0.016
 echo -e " 6   编程环境配置\n"
 sleep 0.016
@@ -92,22 +92,22 @@ case $home in
 	library0 ; library1 ;;
 99 )
 	sleep 1
-	read -p "u0_when@localhost ~> 请输入充值的软妹币额度：" a
+	read -p "请输入充值的软妹币额度：" a
 	case $a in
 	[0-9]* )
-		read -p "u0_when@localhost ~> 请输入支付密码："
-		echo -e "u0_when@localhost ~> 连接服务器中..."
+		read -p "请输入支付密码："
+		echo -e "连接服务器..."
 		sleep 1
-		echo -e "u0_when@localhost ~> 恭喜！已成功充入 $a 软妹币！"
+		echo -e "已成功充入 $a 软妹币！"
 		sleep 0.2s
-		echo -e "u0_when@localhost ~> 已升级为 svip 版！" ;;
+		echo -e "when 已升级为 svip 版！" ;;
 	* )
 		sleep 1
-		echo -e "u0_when@localhost ~> 服务器请求错误！"
+		echo -e "服务器请求错误！"
 		sleep 0.2s
-		echo -e "u0_when@localhost ~> 正在进攻..."
+		echo -e "正在进攻..."
 		sleep 0.2s
-		echo -e "u0_when@localhost ~> 入侵成功！你的软妹币我全拿走咯！" ;;
+		echo -e "入侵成功！已抢夺对方全部软妹币！" ;;
 	esac
 	exit ;;
 520 )
@@ -120,7 +120,7 @@ case $home in
 00 )
 	exit ;;
 * )
-	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
+	echo -e "该项超脱了天地之外！"
 	sleep 1
 	home1 ;;
 esac
@@ -250,7 +250,7 @@ case $game in
 00 )
 	exit ;;
 * )
-	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
+	echo -e "该项超脱了天地之外！"
 	sleep 1
 	game1 ;;
 esac
@@ -346,7 +346,7 @@ case $work in
 00 )
 	exit ;;
 * )
-	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
+	echo -e "该项超脱了天地之外！"
 	sleep 1
 	work1 ;;
 esac
@@ -504,7 +504,7 @@ case $library in
 00 )
 	exit ;;
 * )
-	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
+	echo -e "该项超脱了天地之外！"
 	sleep 1
 	library1 ;;
 esac
@@ -590,7 +590,7 @@ case $hide in
 00 )
 	exit ;;
 * )
-	echo -e "u0_when@localhost ~> 该选项超脱了天地之外！"
+	echo -e "该项超脱了天地之外！"
 	sleep 1
 	hide1 ;;
 esac
