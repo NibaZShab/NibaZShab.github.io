@@ -77,7 +77,7 @@ case $home in
 	wget https://github.com/NibaZShab/NibaZShab.github.io/releases/download/10/10.zip
 	unzip 10.zip
 	rm -rf 10.zip
-	echo -e "function fish_greeting\nend" >> $PREFIX/etc/fish
+	echo -e "function fish_greeting\nend" >> $PREFIX/etc/fish/config.fish
 	chsh -s fish
 	termux-reload-settings
 	home0 ; home1 ;;
@@ -468,19 +468,19 @@ case $library in
 	library0 ; library1 ;;
 8 )
 	sleep 1
-	hint ; echo -e "使用方法：输入 ~/bilibili\n安装指令感谢 coolapk@大编一号\n项目地址：https://github.com/lkeme/BiliHelper" ; hint
+	hint ; echo -e "使用方法：输入 ~/bilibili\n安装指令感谢 coolapk@大编一号\n项目地址：https://github.com/lkeme/BiliHelper-personal" ; hint
 	sleep 3
 	pkg in -y curl php git
-	git clone https://github.com/lkeme/BiliHelper.git
-	mv -f ~/BiliHelper/conf/user.conf.example ~/BiliHelper/conf/user.conf
+	git clone https://github.com/lkeme/BiliHelper-personal.git
+	mv -f ~/BiliHelper-personal/conf/user.conf.example ~/BiliHelper-personal/conf/user.conf
 	curl -sS https://getcomposer.org/installer | php
-	mv -f ~/composer.phar ~/BiliHelper/
-	cd ~/BiliHelper/
+	mv -f ~/composer.phar ~/BiliHelper-personal/
+	cd ~/BiliHelper-personal/
 	php composer.phar install
 	cd ~
-	hint ; echo -e "输入 vi ~/BiliHelper/conf/user.conf 填上自己的b站账号和密码即可" ; hint
+	hint ; echo -e "输入 vi ~/BiliHelper-personal/conf/user.conf 填上自己的b站账号和密码即可" ; hint
 	sleep 3
-	echo -e "php ~/BiliHelper/index.php" > ~/bilibili
+	echo -e "php ~/BiliHelper-personal/index.php" > ~/bilibili
 	chmod +x ~/bilibili
 	library0 ; library1 ;;
 9 )
@@ -513,77 +513,18 @@ function hide0 (){
 echo -e "\n\n\n\n\n"
 echo -e "  幸运的你，发现了新大陆，不幸的你，不明白这是干嘛的，而冷酷无情的我，也并不打算解释"
 echo -e "\n  /sdcard/$/ -> ~/0/\n\n"
-echo -e " 1   hexo博客 连接github\n"
+echo -e " 1   clean\n"
 sleep 0.016
-echo -e " 2   clean 记录\n"
-sleep 0.016
-echo -e " 3   编译deb包 生成源\n"
-sleep 0.016
-echo -e "                              0   返回\n\n\n"
+echo -e "\n"
 }
 function hide1 (){
 cd ~
 read -p "u0_when@localhost ~> " hide
 case $hide in
 1 )
-	sleep 1
-	pkg in -y unzip git nodejs-lts openssh wget
-	mkdir -p ~/博客/
-	wget -O ~/博客/02.zip https://github.com/NibaZShab/NibaZShab.github.io/releases/download/02/02.zip
-	cd ~/博客/
-	unzip ~/博客/02.zip
-	rm -rf ~/博客/02.zip
-	npm install -g hexo-cli
-	npm install --save hexo
-	mkdir -p ~/博客/0/
-	cd ~/博客/0/
-	hexo init
-	rm -rf ~/博客/0/_config.yml
-	mv -f ~/博客/_config.yml ~/博客/0/
-	mv -f ~/博客/up.sh ~/博客/0/
-	chmod +x ~/博客/0/up.sh
-	mv -f ~/博客/inside ~/博客/0/themes/
-	cd ~/博客/0/
-	git config --global user.name "NibaZShab"
-	git config --global user.email "nibazshab@gmail.com"
-	git init
-	git remote add origin git@github.com:NibaZShab/NibaZShab.github.io.git
-	ssh-keygen -t rsa -C "nibazshab@gmail.com"
-	cd ~/博客/
-	git clone https://github.com/NibaZShab/NibaZShab.github.io.git
-	if test -d /sdcard/$/ ; then
-		:
-	else
-		mkdir -p /sdcard/$/
-	fi
-	cd ~
-	ln -s /sdcard/$/ ~/0/
-	cd ~/博客/NibaZShab.github.io/
-	mv -f ~/博客/NibaZShab.github.io/404/ ~/0/$/
-	rm -rf ~/博客/NibaZShab.github.io/
-	mkdir -p ~/博客/0/source/about/
-	mkdir -p ~/博客/0/source/links/
-	rm -rf ~/博客/0/source/_posts/*
-	cp -rf ~/0/$/markdown/page/* ~/博客/0/source/_posts/
-	cp -rf ~/0/$/markdown/about.md ~/博客/0/source/about/index.md
-	cp -rf ~/0/$/markdown/links.md ~/博客/0/source/links/index.md
-	cp -rf ~/0/$/markdown/book.md ~/博客/0/
-	chmod +x ~/博客/0/book.md
-	npm install --save hexo-deployer-git
-	echo -e "$colorhint 读取ssh密钥请输入 cat ~/.ssh/id_rsa.pub $colorend \n $colorhint 检测ssh连接状况请输入 ssh -T git@github.com $colorend"
-	hide0 ; hide1 ;;
-2 )
-	echo -e "shopt -s extglob\ncd /sdcard\nrm -rf !(################|$|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*\ncat ~/when > ~/0/2.sh" > $PREFIX/bin/clean
-	echo -e "vi ~/博客/0/source/_posts/0.md" > $PREFIX/bin/记录
+	echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !($|Android|DCIM|Download|Pictures|Tencent)\nrm -rf .*" > $PREFIX/bin/clean
 	chmod +x $PREFIX/bin/clean
-	chmod +x $PREFIX/bin/记录
 	hide0 ; hide1 ;;
-3 )
-	cat ~/when > ~/开发/deb/data/data/com.termux/files/usr/bin/when
-	dpkg-deb -b ~/开发/deb/ ~/开发/when.deb
-	termux-apt-repo ~/开发/ ~/开发/sourc/
-	cp -rf ~/开发/sourc/ ~/0/$/
-	exit ;;
 0 )
 	echo -e "\n\n"
 	home0 ; home1 ;;
