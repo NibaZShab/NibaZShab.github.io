@@ -1,4 +1,0 @@
-# https://nibazshab.github.io robots.txt -- just crawl it.
-
-User-agent: *
-Disallow: /404/
