@@ -25,19 +25,17 @@ function home0 (){
 echo -e "\n\n\n\n\n"
 echo -e " 1   更换清华源\n"
 sleep 0.016
-echo -e " 2   修复底部小键盘\n"
+echo -e " 2   底部小键盘\n"
 sleep 0.016
-echo -e " 3   获取储存权限\n"
+echo -e " 3   取得储存权限\n"
 sleep 0.016
 echo -e " 4   使用fish终端\n"
 sleep 0.016
-echo -e " 5   好康的\n"
+echo -e " 5   其他的东西\n"
 sleep 0.016
 echo -e " 6   编程环境配置\n"
 sleep 0.016
-echo -e " 7   超级大宝贝儿们\n"
-sleep 0.016
-echo -e "                             99   充软妹币\n"
+echo -e " 7   超级大宝贝儿            99   充软妹币\n"
 sleep 0.016
 echo -e "                              0   退出\n\n\n"
 }
@@ -435,7 +433,7 @@ case $library in
 	fi
 	mkdir -p ~/.config/aria2/
 	wget -O ~/.config/aria2/aria2.conf https://github.com/NibaZShab/NibaZShab.github.io/releases/download/09/09.conf
-	echo -e "echo \"rpc-key: 123456\"\nsleep 2\nam start -a android.intent.action.VIEW -d http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf" > ~/aria2
+	echo -e "echo \"rpc-key: 123456\"\nsleep 2\ntermux-open-url http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf" > ~/aria2
 	chmod +x ~/aria2
 	library0 ; library1 ;;
 5 )
