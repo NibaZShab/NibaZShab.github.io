@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 NibaZShab
+# Copyright (c) 2019-2020 NibaZShab
 # https://github.com/nibazshab/nibazshab.github.io/wiki/when
 clear
 colorhint="\033[36;43;1m"
@@ -19,7 +19,7 @@ function logo (){
 	echo -e "  ■■■■■■■■■    ■     ■    ■■■■■■■    ■     ■"
 }
 function home0 (){
-	echo -e "\n\n\n\n\n"
+	echo -e "\n\n此乃arm_when，功能略有缺失\n\n\n"
 	echo -e " 1   更换清华源\n"
 	sleep 0.016
 	echo -e " 2   底部小键盘\n"
@@ -28,7 +28,7 @@ function home0 (){
 	sleep 0.016
 	echo -e " 4   使用fish终端\n"
 	sleep 0.016
-	echo -e " 5   其他的东西\n"
+	echo -e " 5   其他东西\n"
 	sleep 0.016
 	echo -e " 6   编程环境配置\n"
 	sleep 0.016
@@ -102,9 +102,6 @@ function home1 (){
 					echo -e "boom!" ;;
 			esac
 			exit ;;
-		520 )
-			echo -e "\n\n"
-			hide0 ; hide1 ;;
 		0 )
 			clear
 			cat $PREFIX/etc/motd
@@ -125,23 +122,21 @@ function game0 (){
 	sleep 0.016
 	echo -e " 3   贪吃蛇\n"
 	sleep 0.016
-	echo -e " 4   moo\n"
+	echo -e " 4   mpv播放器\n"
 	sleep 0.016
-	echo -e " 5   mpv播放器\n"
+	echo -e " 5   screenfetch\n"
 	sleep 0.016
-	echo -e " 6   screenfetch\n"
+	echo -e " 6   neofetch\n"
 	sleep 0.016
-	echo -e " 7   neofetch\n"
+	echo -e " 7   纯文本浏览器\n"
 	sleep 0.016
-	echo -e " 8   纯文本浏览器\n"
+	echo -e " 8   ip\n"
 	sleep 0.016
 	echo -e " 9\n"
 	sleep 0.016
-	echo -e " 10   ip\n"
+	echo -e " 10   更换termux问候语\n"
 	sleep 0.016
-	echo -e " 11   更换termux问候语\n"
-	sleep 0.016
-	echo -e " 12   adb\n"
+	echo -e " 11   adb\n"
 	sleep 0.016
 	echo -e "                              0   返回\n\n\n"
 }
@@ -169,51 +164,40 @@ function game1 (){
 			game0 ; game1 ;;
 		4 )
 			sleep 1
-			apt-get moo
-			sleep 3
-			game0 ; game1 ;;
-		5 )
-			sleep 1
 			hint ; echo -e "使用方法: 请自行百度" ; hint
 			sleep 3
 			pkg in -y mpv
 			game0 ; game1 ;;
-		6 )
+		5 )
 			sleep 1
 			hint ; echo -e "使用方法: 输入 screenfetch" ; hint
 			sleep 3
 			pkg in -y screenfetch
 			game0 ; game1 ;;
-		7 )
+		6 )
 			sleep 1
 			hint ; echo -e "使用方法: 输入 neofetch" ; hint
 			sleep 3
 			pkg in -y neofetch
 			game0 ; game1 ;;
-		8 )
+		7 )
 			sleep 1
 			hint ; echo -e "名称: w3m\n使用方法: 请自行百度" ; hint
 			sleep 3
 			pkg in -y w3m
 			game0 ; game1 ;;
+		8 )
+			sleep 1
+			ip -br -c addr
+			exit ;;
 		9 )
 			echo "什么都没发生"
 			exit ;;
 		10 )
 			sleep 1
-			if test -e $PREFIX/bin/curl ; then
-				:
-			else
-				pkg in -y curl
-			fi
-			ip -br -c addr ; curl myip.ipip.net
-			sleep 3
-			game0 ; game1 ;;
-		11 )
-			sleep 1
 			echo -e "\n\n\n\n\n  ----------------------------------------------------\n\n             民生各有所乐兮, 余独好修以为常\n             虽体解吾犹未变兮, 岂余心之可惩\n\n\n               　　　／　　　 ／   | \n                　　 Γ￣￣￣￣ |  | \n                　　 |[]::　　 |   | \n                　　 |＿＿_＿＿|　|\n                　　 |[]::　　 |　 | \n                　　 |＿＿_＿＿|　| \n                ｶﾞﾗｯ |＿＿_＿＿|　 | \n                 .彡／(´･ω･)　／|　| \n                   　Γ￣￣￣￣ |　|／ \n                    Ｌ＿＿＿＿_|／\n\n\n" > $PREFIX/etc/motd
 			game0 ; game1 ;;
-		12 )
+		11 )
 			sleep 1
 			hint ; echo -e "感谢 Coolapk@GoFly闻雪" ; hint
 			sleep 3
@@ -253,8 +237,6 @@ function work0 (){
 	echo -e " 7   pip 清华源\n"
 	sleep 0.016
 	echo -e " 8   npm 淘宝源\n"
-	sleep 0.016
-	echo -e " 9   python_3.7\n"
 	sleep 0.016
 	echo -e "                              0   返回\n\n\n"
 }
@@ -309,18 +291,6 @@ function work1 (){
 				echo -e "请先安装 nodejs 环境"
 			fi
 			work0 ; work1 ;;
-		9 )
-			sleep 1
-			pkg in -y wget unzip
-			mkdir -p python3.7 ; cd python3.7
-			wget https://github.com/nibazshab/nibazshab.github.io/releases/download/12/12.zip
-			unzip 12.zip ; rm -rf 12.zip
-			dpkg -i python_3.7.5-3_aarch64.deb
-			dpkg -i python-static_3.7.5-3_aarch64.deb
-			dpkg -i python-tkinter_3.7.5-3_aarch64.deb
-			cd ~ ; rm -rf python3.7
-			apt-mark python python-static
-			work0 ; work1 ;;
 		0 )
 			echo -e "\n\n"
 			home0 ; home1 ;;
@@ -336,7 +306,7 @@ function library0 (){
 	echo -e "\n\n\n\n\n"
 	echo -e " 1   刷流量\n"
 	sleep 0.016
-	echo -e " 2   atilo安装linux发行版\n"
+	echo -e " 2   atilo安装linux\n"
 	sleep 0.016
 	echo -e " 3   annie视频下载工具\n"
 	sleep 0.016
@@ -379,46 +349,39 @@ function library1 (){
 			library0 ; library1 ;;
 		3 )
 			sleep 1
-			hint ; echo -e "编译指令感谢 coolapk@萌系生物研究员 提供\n项目地址: https://github.com/iawia002/annie" ; hint
+			hint ; echo -e "感谢 coolapk@萌系生物研究员\n项目地址: https://github.com/iawia002/annie" ; hint
 			sleep 3
 			pkg in -y golang git ffmpeg
 			git clone https://github.com/iawia002/annie.git
-			cd ~/annie/
-			echo -e "$colorhint 编译时间较长, 请耐心等待 $colorend"
-			sleep 2
-			GOOS=android GOARCH=arm64 go build -o annie main.go
-			mv -f annie $PREFIX/bin/
+			cd annie/
+			GOOS=android GOARCH=arm go build -o $PREFIX/bin/annie main.go
 			cd ~
-			rm -rf ~/annie
-			chmod -Rf 777 ~/go/
-			rm -rf ~/go/
+			chmod -Rf 777 go/
+			rm -rf annie/ go/
 			library0 ; library1 ;;
 		4 )
 			sleep 1
 			hint ; echo -e "使用方法: 输入 ~/aria2\n项目地址: https://github.com/aria2/aria2" ; hint
 			sleep 3
-			pkg in -y aria2 wget
+			pkg in -y aria2 wget clang
 			mkdir -p ~/.config/aria2/
 			touch ~/.config/aria2/aria2.session
 			wget -O ~/.config/aria2/aria2.conf https://github.com/nibazshab/nibazshab.github.io/releases/download/09/09.conf
-			echo -e "#!/bin/bash\necho \"rpc-key: 123456\"\nsleep 2\ntermux-open-url http://aria2.net\naria2c --conf-path=$HOME/.config/aria2/aria2.conf" > ~/aria2
-			chmod +x ~/aria2
+			wget https://github.com/nibazshab/nibazshab.github.io/releases/download/09/09.c
+			gcc -o ~/aria2 09.c
+			rm -rf 09.c
 			library0 ; library1 ;;
 		5 )
 			sleep 1
-			hint ; echo -e "使用方法: 输入 ~/bdy\n百度云文件下载于 /sdcard/Download/\n项目地址: https://github.com/iikira/BaiduPCS-Go" ; hint
+			hint ; echo -e "使用方法: 输入 ~/bdy\n项目地址: https://github.com/iikira/BaiduPCS-Go" ; hint
 			sleep 3
 			pkg in -y golang git
 			git clone https://github.com/iikira/BaiduPCS-Go.git
-			cd ~/BaiduPCS-Go/
-			echo -e "$colorhint 编译时间较长, 请耐心等待 $colorend"
-			sleep 2
-			GOOS=android GOARCH=arm64 go build -o bdy main.go
-			mv -f bdy ~
+			cd BaiduPCS-Go/
+			GOOS=android GOARCH=arm go build -o ~/bdy main.go
 			cd ~
-			rm -rf ~/BaiduPCS-Go/
-			chmod -Rf 777 ~/go/
-			rm -rf ~/go/
+			chmod -Rf 777 go/
+			rm -rf BaiduPCS-Go/ go/
 			library0 ; library1 ;;
 		6 )
 			sleep 1
@@ -434,20 +397,15 @@ function library1 (){
 			library0 ; library1 ;;
 		8 )
 			sleep 1
-			hint ; echo -e "使用方法: 输入 ~/bilibili\n安装指令感谢 coolapk@大编一号\n项目地址: https://github.com/lkeme/BiliHelper-personal" ; hint
+			hint ; echo -e "使用方法: 输入 node ~/BilibiliHelper/index.js\n项目地址: https://github.com/metowolf/BilibiliHelper" ; hint
 			sleep 3
-			pkg in -y curl php git
-			git clone https://github.com/lkeme/BiliHelper-personal.git
-			mv -f ~/BiliHelper-personal/conf/user.conf.example ~/BiliHelper-personal/conf/user.conf
-			curl -sS https://getcomposer.org/installer | php
-			mv -f ~/composer.phar ~/BiliHelper-personal/
-			cd ~/BiliHelper-personal/
-			php composer.phar install
-			cd ~
-			hint ; echo -e "输入 vi ~/BiliHelper-personal/conf/user.conf 填上自己的b站账号和密码即可" ; hint
+			pkg in -y nodejs-lts git
+			git clone https://github.com/metowolf/BilibiliHelper.git
+			cd ~/BilibiliHelper/
+			npm install
+			mv -f ~/BilibiliHelper/.env.example ~/BilibiliHelper/.env
+			echo -e "\n请输入 vi ~/BilibiliHelper/.env 编辑配置文件"
 			sleep 3
-			echo -e "php ~/BiliHelper-personal/index.php" > ~/bilibili
-			chmod +x ~/bilibili
 			library0 ; library1 ;;
 		9 )
 			sleep 1
@@ -455,14 +413,11 @@ function library1 (){
 			sleep 3
 			pkg in -y git clang taglib
 			git clone https://github.com/anonymous5l/ncmdump.git
-			cd ~/ncmdump/
-			echo -e "$colorhint 编译时间较长, 请耐心等待 $colorend"
-			sleep 2
-			g++ main.cpp cJSON.cpp aes.cpp ncmcrypt.cpp -o ncmdump -ltag
-			strip ncmdump
-			mv -f ncmdump $PREFIX/bin/
+			cd ncmdump/
+			g++ main.cpp cJSON.cpp aes.cpp ncmcrypt.cpp -o $PREFIX/bin/ncmdump -ltag
+			strip $PREFIX/bin/ncmdump
 			cd ~
-			rm -rf ~/ncmdump/
+			rm -rf ncmdump/
 			library0 ; library1 ;;
 		0 )
 			echo -e "\n\n"
@@ -473,48 +428,6 @@ function library1 (){
 			echo -e "该项超脱了天地之外!"
 			sleep 1
 			library1 ;;
-	esac
-}
-function hide0 (){
-	echo -e "\n\n\n\n\n"
-	echo -e "  幸运的你, 发现了新大陆, 不幸的你, 不明白这是干嘛的, 而冷酷无情的我, 也并不打算解释"
-	echo -e "\n  /sdcard/$/ -> ~/0/\n\n"
-	echo -e " 1   clean\n"
-	sleep 0.016
-	echo -e " 2   hexo\n"
-	echo -e "\n"
-}
-function hide1 (){
-	cd ~
-	read -p "u0_when@localhost ~> " hide
-	case $hide in
-		1 )
-			echo -e "#!/bin/bash\nshopt -s extglob\ncd /sdcard\nrm -rf !($|Android|DCIM|Download|Pictures)\nrm -rf .*" > $PREFIX/bin/clean
-			chmod +x $PREFIX/bin/clean
-			hide0 ; hide1 ;;
-		2 )
-			mkdir -p hexo ; cd hexo
-			npm install hexo-cli -g
-			npm install hexo --save
-			mkdir -p blog ; cd blog
-			hexo init
-			rm -rf _config.yml themes/* ; cd ~/0/2/
-			wget https://github.com/nibazshab/nibazshab.github.io/releases/download/02/02.zip
-			unzip 02.zip ; rm 02.zip
-			git clone https://github.com/nibazshab/nibazshab.github.io.git
-			mv nib*/404 ~/0/2/ ; rm -rf nib*/*
-			git config --global user.name "NibaZShab"
-			git config --global user.email "nibazshab@gmail.com"
-			exit ;;
-		0 )
-			echo -e "\n\n"
-			home0 ; home1 ;;
-		00 )
-			exit ;;
-		* )
-			echo -e "该项超脱了天地之外!"
-			sleep 1
-			hide1 ;;
 	esac
 }
 logo

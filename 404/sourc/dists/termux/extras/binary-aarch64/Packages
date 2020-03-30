@@ -1,15 +1,15 @@
 Package: when
-Version: 9.4
+Version: 10.0
 Maintainer: NibaZShab nibazshab@gmail.com
-Installed-Size: 14324
+Installed-Size: 12087
 Homepage: https://nibazshab.github.io
 Priority: optional
 Architecture: aarch64
 Description: toolbox for termux
-Filename: dists/termux/extras/binary-aarch64/when.deb
-Size: 4576
-MD5Sum: 7a96381626e4c419b4ffa8ef2cae9e82
-SHA1: 73500690b60f252d5d1cf79959f5c1b687f4be3e
-SHA256: 4b0ffb0e29a03915fa55647406181b6441914a2602d9d3d3c182cb3aa105e586
-SHA512: 0a2548e4b4976d788b9eb54b48a957b461fd9028c1f195e07a22f9fefd5be6a7580c02e1c8ff3977981c7a746dfff32c5d0bb58ed0db10065a34ab3c903d1546
+Filename: dists/termux/extras/binary-aarch64/when_aarch64.deb
+Size: 3952
+MD5Sum: 79e5ab687f5b81d70f6e69863a7534be
+SHA1: 9b5324112e335d4b63d8a3e81b690c951a4e32b5
+SHA256: 2c643c2bd21e0a0598bf074361365541d00461496c2ec87292bae8daa76c2cec
+SHA512: 09ce3accf12436321567782fc5dfa9d03eb5095a60e557da9587b2a09a4f2816ce6d840a93f575d5e9244adcc3dfae55736240c4761e68a011268b3bdb89f960
 
