@@ -22,8 +22,6 @@ title: 邻居
 
 ---
 
-- [蓝奏盘](https://wws.lanzous.com/b01bgqiwf)
-
 <details>
 <summary>网页小游戏</summary>
 <br>
