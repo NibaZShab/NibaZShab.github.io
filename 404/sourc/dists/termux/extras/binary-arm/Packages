@@ -1,15 +1,15 @@
 Package: when
-Version: 10.0
+Version: 13.5
 Maintainer: NibaZShab nibazshab@gmail.com
-Installed-Size: 11956
+Installed-Size: 11867
 Homepage: https://nibazshab.github.io
 Priority: optional
 Architecture: arm
 Description: toolbox for termux
 Filename: dists/termux/extras/binary-arm/when_arm.deb
-Size: 3896
-MD5Sum: d4a7b1c58d0d6ccdd40440e283e0eab8
-SHA1: 3c907043c9087127afed694cb25dcd51c0b4accb
-SHA256: ea56d97210aecb40f1c79e77a4ddfac7454f40002cbb809730165be644296ec7
-SHA512: d27ca8bd11514d5420c0b84cfdc54aa80cf2b7ceaacae879ed85e6805a113925e71d05ad2f7c4c0aea3623a507a78e704f4b8cc1b491166fbd1d17008eaa9d38
+Size: 4016
+MD5Sum: 2a52f3f0c48012e9ee8b3a52780d5949
+SHA1: c1da41033d00f86606071704dccf8c9658fcc546
+SHA256: acfde0c4e24b884a2bf6b46bdbdcbc95f331c3dc6a44f12d15f38a9ceb559ab6
+SHA512: fa719e07059aa84c066e123d1646a775b6cbc53cf78225829590713581ef7099fd16e04880f680c4ae8ea06b57d428cdf8be8cb9beb5271de77acc83b4c12aa5
 

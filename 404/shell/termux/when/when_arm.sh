@@ -19,7 +19,7 @@ function logo (){
 	echo -e "  ■■■■■■■■■    ■     ■    ■■■■■■■    ■     ■"
 }
 function home0 (){
-	echo -e "\n\n此乃arm_when，功能略有缺失\n\n\n"
+	echo -e "\n\n此乃arm处理器架构的when，功能略有缺失\n\n\n"
 	echo -e " 1   更换清华源\n"
 	sleep 0.016
 	echo -e " 2   底部小键盘\n"
@@ -38,7 +38,7 @@ function home0 (){
 }
 function home1 (){
 	cd ~
-	read -p "u0_when@localhost ~> " home
+	read -p " ~> " home
 	case $home in
 		1 )
 			sleep 1
@@ -142,7 +142,7 @@ function game0 (){
 }
 function game1 (){
 	cd ~
-	read -p "u0_when@localhost ~> " game
+	read -p " ~> " game
 	case $game in
 		1 )
 			sleep 1
@@ -242,7 +242,7 @@ function work0 (){
 }
 function work1 (){
 	cd ~
-	read -p "u0_when@localhost ~> " work
+	read -p " ~> " work
 	case $work in
 		1 )
 			sleep 1
@@ -316,7 +316,9 @@ function library0 (){
 	sleep 0.016
 	echo -e " 6   qrcode二维码\n"
 	sleep 0.016
-	echo -e " 7   hexo博客\n"
+	echo -e " 7   白嫖的网站hexo博客\n"
+	sleep 0.016
+	echo -e "  7.5   本地的动态hexo博客\n"
 	sleep 0.016
 	echo -e " 8   bilibili挂机工具\n"
 	sleep 0.016
@@ -326,7 +328,7 @@ function library0 (){
 }
 function library1 (){
 	cd ~
-	read -p "u0_when@localhost ~> " library
+	read -p " ~> " library
 	case $library in
 		1 )
 			if test -e $PREFIX/bin/wget ; then
@@ -394,6 +396,18 @@ function library1 (){
 			sleep 1
 			hint ; echo -e "请阅读小白教程, 自行完成博客的搭建\n教程地址: https://nibazshab.github.io/post/3" ; hint
 			sleep 3
+			library0 ; library1 ;;
+		7.5 )
+			sleep 1
+			hint ; echo -e "博客开启方法：cd ~/hexo/blog/ && hexo s" ; hint
+			sleep 2
+			pkg in -y nodejs-lts
+			mkdir -p ~/hexo/blog/
+			cd ~/hexo/
+			npm install hexo-cli -g
+			npm install hexo --save
+			cd ~/hexo/blog/
+			hexo init
 			library0 ; library1 ;;
 		8 )
 			sleep 1
