@@ -18,6 +18,13 @@ title: 邻居
 <div class="description" style="width:185px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">一名动漫爱好者所建立的网站</div>
 </div>
 </a>
+<a class="a-friend" target="_blank"  href="https://nibazshab.github.io/404/web">
+<img class="blog-avatar" src="https://i.loli.net/2020/06/30/S7uXVw35fQY4BnK.jpg" data-tag="bdshare">
+<div class="text-container">
+<div class="name">神明大人</div>
+<div class="description" style="width:185px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">在星期天，神抛弃了世界</div>
+</div>
+</a>
 </div>
 
 ---
