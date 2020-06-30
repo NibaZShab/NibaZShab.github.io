@@ -418,7 +418,7 @@ function library1 (){
 			cd ~/BilibiliHelper/
 			npm install
 			mv -f ~/BilibiliHelper/.env.example ~/BilibiliHelper/.env
-			echo -e "\n请输入 vi ~/BilibiliHelper/.env 编辑配置文件"
+			echo -e "\n请输入 vi ~/BilibiliHelper/.config 编辑配置文件"
 			sleep 3
 			library0 ; library1 ;;
 		9 )
